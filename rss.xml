@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>gaoxing&#39;s Blog</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 06 Mar 2021 20:04:49 +0800</pubDate>
+        <lastBuildDate>Sat, 06 Mar 2021 20:04:49 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://example.com/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/</guid>
+            <title>MarkDown的使用</title>
+            <link>http://example.com/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/</link>
+            <pubDate>Sat, 06 Mar 2021 20:04:49 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;markdown-使用指南&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#markdown-使用指南&#34;&gt;#&lt;/a&gt; MarkDown 使用指南&lt;/h1&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&#34;1-markdown简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-markdown简介&#34;&gt;#&lt;/a&gt; 1. MarkDown 简介&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/0081Kckwly1gkuqzjkidej303m03aa9x.jpg&#34; alt=&#34;image-20201119201957156&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Markdown 语言在 2004 由约翰・格鲁伯（英语：John Gruber）创建。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Markdown 编写的文档后缀为 &lt;strong&gt;.md&lt;/strong&gt;, &lt;strong&gt;.markdown&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-markdown编辑器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-markdown编辑器&#34;&gt;#&lt;/a&gt; 2. MarkDown 编辑器&lt;/h2&gt;
+&lt;p&gt;有很多编辑器可以用来书写 MarkDown，比如我们常用的 VSCode 代码编辑器，安装了支持 MarkDown 的插件就可以用来书写 MarkDown 文档。&lt;/p&gt;
+&lt;p&gt;这里我介绍一个非常好用的编辑器，叫做: &lt;strong&gt;Typora&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载地址&lt;/strong&gt;： &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90eXBvcmEuaW8v&#34;&gt;https://typora.io/&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/0081Kckwly1gkur4bs8jjj30la0903zh.jpg&#34; alt=&#34;image-20201119202433251&#34;&gt;&lt;/p&gt;
+&lt;p&gt;支持 MacOS,Windows 和 Linux 三个平台。&lt;/p&gt;
+&lt;h2 id=&#34;3-markdown基本语法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-markdown基本语法&#34;&gt;#&lt;/a&gt; 3. MarkDown 基本语法&lt;/h2&gt;
+&lt;h3 id=&#34;1标题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1标题&#34;&gt;#&lt;/a&gt; 1. 标题&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2-文字强调&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-文字强调&#34;&gt;#&lt;/a&gt; 2. 文字强调&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;粗体&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;***粗体字*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;斜体字&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*斜体字*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;粗体 + 斜体&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;***粗体+斜体***
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;3-列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-列表&#34;&gt;#&lt;/a&gt; 3. 列表&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;有序列表&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;有序列表的格式是：数字小数点 + 空格 + 文本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. abc
+2. bbc
+3. ccc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;无序列表&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;格式：横线 (星号) + 空格 + 文本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;* abc
+* bbc
+* ccc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;abc
+&lt;ul&gt;
+&lt;li&gt;bbc
+&lt;ul&gt;
+&lt;li&gt;ccc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不管是有序还是无序都支持嵌套和多级列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;abc
+&lt;ul&gt;
+&lt;li&gt;bbc&lt;/li&gt;
+&lt;li&gt;ccc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;hello
+&lt;ol&gt;
+&lt;li&gt;你好&lt;/li&gt;
+&lt;li&gt;哈哈哈&lt;/li&gt;
+&lt;li&gt;😁&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-链接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-链接&#34;&gt;#&lt;/a&gt; 4. 链接&lt;/h3&gt;
+&lt;p&gt;格式：方括号小括号 (链接)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5iYWlkdS5jb20=&#34;&gt;百度&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[百度](http://www.baidu.com)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;5-图片&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5-图片&#34;&gt;#&lt;/a&gt; 5. 图片&lt;/h3&gt;
+&lt;p&gt;格式：感叹号 + 外部链接的格式。 链接支持相对引用！&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png&#34; alt=&#34;百度&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;![百度](https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;6-水平分割线&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-水平分割线&#34;&gt;#&lt;/a&gt; 6. 水平分割线&lt;/h3&gt;
+&lt;p&gt;格式：空行 —&lt;/p&gt;
+&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;hello
+
+---
+
+world
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;7-引用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-引用&#34;&gt;#&lt;/a&gt; 7. 引用&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;引用其他文字段落的使用可以使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;格式： 大于号 (&amp;gt;) + 空格 + 内容&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;8-代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8-代码&#34;&gt;#&lt;/a&gt; 8. 代码&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;行内代码&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;格式：反引号 + 内容 + 反引号&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;console.log(&amp;quot;hello world&amp;quot;)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;多行代码&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;格式：三个反引号 + 内容 + 三个反引号&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;​```
+function add(x,y)&amp;#123;
+	return x + y
+&amp;#125;
+​```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;9-表格&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#9-表格&#34;&gt;#&lt;/a&gt; 9. 表格&lt;/h3&gt;
+&lt;p&gt;默认的列左对齐，也支持设置居中和右对齐，横杆大于等于 3， 列的竖必须闭合才能代表一列！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;默认对齐 (左对齐) :  &lt;code&gt;:----&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;居中对齐 :  &lt;code&gt;:---:&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;右对齐:  &lt;code&gt;---:&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;姓名&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;年龄&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;地址&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;大卫&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;20&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;北京市&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code&gt;| 姓名 | 年龄 |   地址 |
+| :--- | :---: | ---: |
+| 大卫 |   20 | 北京市 |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;10-任务列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#10-任务列表&#34;&gt;#&lt;/a&gt; 10. 任务列表&lt;/h3&gt;
+&lt;p&gt;展示待办事项效果，可以认为是列表的变种，可以混合使用&lt;/p&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;- [ ] text&lt;/code&gt;  : 方括号内部空格代指是待办事项&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;- [x] text&lt;/code&gt;  : 方括号内部 x 代指事项已经完成&lt;/p&gt;
+&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;
+&lt;p&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_0&#34; disabled=&#34;true&#34;&gt;&lt;label for=&#34;cbx_0&#34;&gt; 学习 markdown 语法&lt;/label&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;
+&lt;p&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_1&#34; checked=&#34;true&#34; disabled=&#34;true&#34;&gt;&lt;label for=&#34;cbx_1&#34;&gt; 跑步🏃&lt;/label&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;- [ ] 学习markdown语法
+- [x] 跑步🏃
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;11-脚注&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#11-脚注&#34;&gt;#&lt;/a&gt; 11. 脚注&lt;/h3&gt;
+&lt;p&gt;格式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;声明:  &lt;code&gt;[^text]: description&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;引用:  &lt;code&gt;hello[^text]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;12-删除线&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12-删除线&#34;&gt;#&lt;/a&gt; 12. 删除线&lt;/h3&gt;
+&lt;p&gt;格式：两个波浪线 + 文本 + 波浪线&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;删除的内容&lt;/s&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~~删除的内容~~
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
