@@ -1,0 +1,1414 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="gaoxing's Blog" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="gaoxing's Blog" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="gaoxing's Blog" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/">
+
+
+
+  <title>
+C++期末考试考点 |
+gaoxing's Blog = 热爱可抵岁月漫长</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">C++期末考试考点
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-06-16 08:19:40">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-06-16T08:19:40+08:00">2021-06-16</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>14k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>12 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">gaoxing's Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/006xVoHRly8gr3z4ov6jzj31cj0u07wh.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/header.png">
+    <meta itemprop="name" content="gaoxiaoxin">
+    <meta itemprop="description" content="热爱可抵岁月漫长, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="gaoxing's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h3 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h3>
+<ol>
+<li>
+<p>创作动机：希望将自己在准备期末复习时候的知识点进行总结，并且分享给他人。希望与兄弟们一起提升。只总结了笔试的知识点，机试，好像也有。</p>
+</li>
+<li>
+<p>要求： 本文档因为时间急，任务重，在细节方面可能会有一些问题，如果有问题，希望大家提出来。从而减少大家因为本文档丢分的可能性。</p>
+</li>
+<li>
+<p>注 ： 本文档，大部分均来源于课本，只是里面穿插了一些作者的思考 (很少…)。读百遍，不如手敲一遍。希望大家看完本文档可以有自己的思考，最好对照着课本。</p>
+</li>
+<li>
+<p>如果有看不懂的，那就是作者太菜，大家可以问问身边的大佬。</p>
+</li>
+<li>
+<p>寄语 ： 希望大家在今天的 c++ 考试中旗开得胜，成功上岸。</p>
+</li>
+</ol>
+<h3 id="一-单项选择题"><a class="markdownIt-Anchor" href="#一-单项选择题">#</a> 一。单项选择题</h3>
+<ol>
+<li>
+<p>类  ： 是面向对象程序设计的最基本的概念，是 c++ 最强力的特征，是进行封装和数据隐藏的工具，他将数据与操作紧密的结合起来</p>
+</li>
+<li>
+<p>构造函数 / 析构函数   ：  构造函数  =&gt; 特殊的成员函数，主要用于为对象分配空间，进行初始化</p>
+<p>析构函数  :  =&gt;  函数销毁时使用，可以在里面清除已经申请的空间。</p>
+</li>
+<li>
+<p>重载函数 ： 静态连编 ， 通过参数的不同，来调用函数名字相同的函数</p>
+</li>
+<li>
+<p>参数的默认值： 在函数自定义的时候，为函数的形参赋值，如果在函数调用的时候没有传入该函数，则将形参所对应的值赋值给形参 ；</p>
+</li>
+<li>
+<p>this 指针： 对象 p-&gt; 属性 p；</p>
+</li>
+<li>
+<p>引用 : &amp; ,  <code>const</code></p>
+</li>
+<li>
+<p>友元函数：既可以是不属于任何类的非成员函数，也可以是另外一个类的成员函数。不是当前类的成员函数，而是独立于当前类的外部函数 ！！! 只是在这个类内定义一下，friend 就相当于一个钥匙 。</p>
+<ul>
+<li>友元函数在类外声明的时候不需要加 域运算符：：</li>
+<li>友元函数不是类的成员，所以不能直接访问对象的数据成员，也不能通过 this 指针来访问，必须通过作为入口参数传递进来的对象名来访问引用该对象的数据成员 ，  <code>friend void disp (Gril &amp;x)&#123; cout &lt;&lt; x.name &lt;&lt; &#125;</code></li>
+</ul>
+</li>
+<li>
+<p>抽象类 ： 至少含有一个纯虚函数的类，抽象类因为里面有纯虚函数，所以不能创建对象，但可以声明指向类的指针变量，此指针可以指向它的派生类，进而实现多态性。</p>
+</li>
+<li>
+<p>纯虚函数 ：在基类说明的虚函数，在基类里面没有定义，但是要求在它的派生类中根据需要对它进行定义，</p>
+<p>纯虚函数声明的一般形式 ：</p>
+<pre><code>virtual 函数类型 函数名 (参数表) = 0 ;
+</code></pre>
+<p>此格式与一般的虚函数定义格式基本相同，只是在后面多了 “=0” 。 声明为纯虚函数之后，不在给出函数的具体实现。</p>
+<ul>
+<li>纯虚函数作用是在基类里面为派生类保留一个函数的名字。</li>
+<li>纯虚函数不能被调用</li>
+</ul>
+</li>
+<li>
+<p>流输出数据格式化控制 ：</p>
+<p>这个由于，本人也没看。。。所以大家看看书吧。在<mark>书 295</mark></p>
+</li>
+</ol>
+<h3 id="二阅读程序写结果"><a class="markdownIt-Anchor" href="#二阅读程序写结果">#</a> 二。阅读程序写结果</h3>
+<ol>
+<li>
+<ul>
+<li>
+<p>类：  是面向对象程序设计的最基本的概念，是 c++ 最强力的特征，是进行封装和数据隐藏的工具，他将数据与操作紧密的结合起来；</p>
+</li>
+<li>
+<p><code>const</code>  成员函数 ： <mark>成员函数后</mark>加 <code>const</code>  后我们称为这个函数为<strong>常函数</strong></p>
+<pre><code>类型说明符(void / int ) 函数名(参数表) const ;
+</code></pre>
+<ol>
+<li><code>const </code>  是函数类型的一个组成部分 ，因此在声明函数和定义函数时都要有关键字 <code>const</code>  在调用的时候不必加  <code>const</code> ；</li>
+<li>常函数内不可以修改成员属性；</li>
+</ol>
+</li>
+<li>
+<p><code>const</code>  对象 ： <mark>对象前</mark>加 <code>const</code>  称该对象为常对象</p>
+<pre><code>const 类名 对象名[参数表]；或者
+类名 const 对象名[参数表]
+</code></pre>
+<ol>
+<li>常对象在定义对象的时候必须初始化，而且不能被更新 ；</li>
+<li>常对象只能调用常成员函数，不能调用普通的成员函数 ；</li>
+</ol>
+</li>
+<li>
+<p>常成员函数和普通成员函数的访问特性比较</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数据成员</th>
+<th>普通成员函数</th>
+<th>常成员函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">普通数据成员</td>
+<td>可以访问，也可以改变值</td>
+<td>可以访问，但不可以改变值</td>
+</tr>
+<tr>
+<td style="text-align:center">常数据成员</td>
+<td>可以访问，但不可以改变值</td>
+<td>可以访问，但不可以改变值</td>
+</tr>
+<tr>
+<td style="text-align:center">常对象的数据成员</td>
+<td>不允许访问和改变值</td>
+<td>可以访问，但不可以改变值</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<p>基类、派生类对象的构造和析构过程</p>
+<ol>
+<li>
+<p>基类、派生类对象的构造和析构的执行顺序</p>
+<p>通常情况下 ， 当创建派生类对象时，首先执行基类的构造函数，然后执行派生类的构造函数；当撤销派生类对象时，则先执行派生类的析构函数，然后再执行基类的析构函数。</p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+class Base&#123;
+public :
+	Base()&#123;
+		cout &lt;&lt; &quot;Base 的 构造函数已经启动&quot; &lt;&lt; endl;
+	&#125;	
+	~Base()&#123;
+		cout &lt;&lt; &quot;Base 的 析构函数已经启动&quot; &lt;&lt; endl;
+	&#125;
+&#125;;
+class Derived : public Base
+&#123;
+public :
+  	Derived()&#123;
+ 		cout &lt;&lt; &quot;Derived 的 构造函数已经启动&quot; &lt;&lt; endl;
+ 	&#125;
+ 	~Derived()&#123;
+ 		cout &lt;&lt; &quot;Derived 的 析构函数已经启动&quot; &lt;&lt; endl;
+ 	&#125;
+ &#125;;
+int main() &#123;
+	Derived d1;
+	return 0;
+&#125;
+</code></pre>
+<p>结果为 ：</p>
+<p><img data-src="https://tva3.sinaimg.cn/large/006xVoHRly8grjsz6w8xrj30dn03wmxf.jpg" alt="image-20210615224616177"></p>
+</li>
+<li>
+<p>派生类构造函数和析构函数的构造规则</p>
+<ol>
+<li>
+<p>派生类不能继承基类中的构造函数和析构函数， 当基类含有带参数的构造函数时，派生类必须定义构造函数，以提供把参数传递给基类构造函数的途径。</p>
+<pre><code>//格式为：
+派生类名(参数总表):基类名(参数表)
+&#123;
+	派生类新增数据成员的初始化语句
+&#125;
+</code></pre>
+<ul>
+<li>
+<p>其中基类的构造函数的参数，通常来源于<mark>派生类的构造函数的参数总表</mark>，<mark>也可以用常数值</mark>；</p>
+</li>
+<li>
+<p>当基类函数中，使用了默认的构造函数，或者使用了没有参数的构造函数，那么派生类中的构造函数就不需要加   <code>:基类名(参数表)</code> ；</p>
+</li>
+<li>
+<p>但是如果基类函数中，构造函数中哪怕带有一个参数，那么派生类中的构造函数也必须在 该派生类的构造函数中定义该参数，并且向基类构造函数传递过去！！！</p>
+<pre><code class="language-c++">class Base&#123;
+public :
+	Base(int n)
+	&#123;
+		i = n;
+	&#125;
+	void showi()
+	&#123;
+		cout &lt;&lt; &quot;i = &quot; &lt;&lt; i &lt;&lt; endl;
+	&#125;
+private :
+	int i ;
+&#125;
+class Derived : public Base &#123;
+	public :     
+    // 构造函数参数表中只有基类的一个参数，
+    // 但也必须有！！！
+		Derived (int n) : Base (n)
+		&#123;   &#125;
+&#125;
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>含有对象成员（子对象）的派生类的构造函数</p>
+<p>当派生类中含有内嵌的对象成员（子对象）时，其构造函数形式为:</p>
+<pre><code>派生类名（参数总表）: 基类名(参数表 0)， 对象成员名1(参数表 1)， ······，对象成员名n (参数表 n)
+&#123;
+	派生类新增数据成员的初始化语句
+&#125;
+</code></pre>
+<ol>
+<li>
+<p>在定义派生类的构造函数时，构造函数的执行顺序如下 ：</p>
+<p>1. 基类构造，对基类数据成员初始化 —》 2. 调用内嵌对象成员的构造函数，进行初始化 — 》 3. 执行派生类的构造函数进行初始化。</p>
+</li>
+<li>
+<p>析构函数执行顺序与构造函数的执行顺序相反。</p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+class Base&#123;
+public :
+	Base(int i)
+	&#123;
+		x = i;
+		cout &lt;&lt; &quot;Base 的 构造函数已经启动&quot; &lt;&lt; endl;
+	&#125;	
+	~Base()&#123;
+		cout &lt;&lt; &quot;Base 的 析构函数已经启动&quot; &lt;&lt; endl;
+	&#125;
+	void show()&#123;
+		cout &lt;&lt; &quot;x = &quot; &lt;&lt; x &lt;&lt; endl;
+	&#125;
+private :
+	int x;
+&#125;;
+class Derived : public Base
+&#123;
+public :
+  	Derived(int i) : Base (i) , b1(i)
+	&#123;					
+ 		cout &lt;&lt; &quot;Derived 的 构造函数已经启动&quot; &lt;&lt; endl;
+ 	&#125;
+ 	~Derived()&#123;
+ 		cout &lt;&lt; &quot;Derived 的 析构函数已经启动&quot; &lt;&lt; endl;
+ 	&#125;
+private :
+	Base b1;
+ &#125;;
+int main() &#123;
+	Derived d1(10);
+	d1.show();
+	return 0;
+&#125;
+</code></pre>
+<p>结果为：</p>
+<p><img data-src="https://tva4.sinaimg.cn/large/006xVoHRly8grjt2gi8mcj30d406ut9c.jpg" alt="image-20210615232656325"></p>
+</li>
+</ol>
+<p>​</p>
+</li>
+</ol>
+</li>
+<li>
+<p>虚函数的基本调用方法，基类对象的指针如何动态确定对象，从而调用相应的虚函数。</p>
+<p><mark>最好看一下课本 236~238</mark></p>
+<p>虚函数 ： 在基类中被关键字 virtual 说明 ，并在派生类中重新定义的函数。</p>
+<p>​		<mark>作用</mark>：允许在派生类中重新定义与基类同名的函数 ，并且可以通过基类指针或引用来访问基类和派生类中的同名函数。</p>
+<p>​	<mark>注</mark>：1. 在派生类中重新定义时，重新定义的虚函数必须和基类里面的一模一样！！!<mark> 理解不了去看课本 239</mark></p>
+<p>​			2. 虚函数不能是友元函数和静态成员函数。</p>
+<p><mark>利用动态联编，实现动态的多态性。</mark></p>
+<ol>
+<li>
+<p>虚函数的基本调用方法： 见上面作用 ； == 》 <mark>通过基类指针或引用来访问基类和派生类中的同名函数。</mark> 这个就是。</p>
+<p>详细如下：</p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+class B0
+&#123;
+   public:
+   	 virtual void print (char * p)
+   	 &#123;
+   	 	cout &lt;&lt; p&lt;&lt; &quot;print()&quot; &lt;&lt; endl;	
+	 &#125;	
+&#125;;
+class B1 : public B0
+&#123;
+   public :
+   	 virtual void print (char * p)
+	  &#123;
+		cout &lt;&lt; p&lt;&lt; &quot;print()&quot; &lt;&lt; endl;	
+      &#125;	
+&#125;;
+class B2 : public B1
+&#123;
+   public :
+   	 virtual void print (char * p)
+	  &#123;
+		cout &lt;&lt; p&lt;&lt; &quot;print()&quot; &lt;&lt; endl;	
+      &#125;	
+&#125;;
+int main() &#123;
+	B0 ob0 ,* op;
+	op = &amp; ob0;
+	op -&gt; print(&quot;B0::&quot;);
+	B1 ob1 ;
+	op = &amp; ob1;
+	op -&gt; print(&quot;B1::&quot;);
+	B2 ob2 ;
+	op = &amp; ob2;
+	op -&gt; print(&quot;B2::&quot;);
+	return 0;
+&#125;
+</code></pre>
+<p><img data-src="https://tva3.sinaimg.cn/large/006xVoHRly8grjt3b37n8j306y048glh.jpg" alt="image-20210615235443587"></p>
+<p>不推荐使用对象名和点运算符的方式调用虚函数，这种是静态联编，没有利用虚函数的特性。只用通过基类指针访问虚函数时才能获得运行时的多态性。</p>
+</li>
+<li>
+<p>基类对象的指针如何动态确定对象，从而调用相应的虚函数 ：</p>
+<p>通过指针所指的派生类的对象来决定对象。参考上面代码</p>
+</li>
+</ol>
+</li>
+<li>
+<p>构造函数重载（有参、无参、拷贝构造）后，调用哪个？</p>
+<p>静态联编实现的多态，通过参数的个数，种类不同而决定调用那个构造函数。</p>
+</li>
+<li>
+<p>虚基类构造函数调用顺序 ？</p>
+<ol>
+<li>
+<p>使用虚基类的原因以及用处：</p>
+<p>假设有一个基类 Base ， 和从基类中派生出的两个派生类 Base1 , Base2 , 但现在又从类 Base1 和 Base2 中派生出一个类 Derived ;</p>
+<p><img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8grjt5e95kpj30i309f3yh.jpg" alt="image-20210616000607143"></p>
+<p>那么在 Derived 中会保留两份 Base 上的成员 。如果在 Derived 中调用 Base 上的成员，就会出现二义性，为避免二义性，所以引入虚函数。<mark>详情请看课本 170~172</mark></p>
+</li>
+<li>
+<p>虚基类在派生类中声明，其语法为 ：</p>
+<pre><code>class 派生类名 ： virtual 继承方式 基类名&#123;
+ ······
+&#125;
+</code></pre>
+</li>
+<li>
+<p>现在开始就是题目的解答了 ：：：</p>
+<ol>
+<li>
+<p><mark>！！！</mark> 建立一个对象时，如果这个对象中含有从虚基类继承来的成员，则虚基类的成员是由<mark>最远</mark> 派生类的构造函数通过调用虚基类的构造函数进行初始化，忽略其他派生类的构造函数对虚基类的构造函数的调用。</p>
+</li>
+<li></li>
+</ol>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+class Base&#123;
+public :
+	Base(int sa)
+	&#123;
+		a = sa;
+		cout &lt;&lt; &quot;Base 的 构造函数已经启动&quot; &lt;&lt; endl;
+	&#125;	
+	~Base()&#123;
+		cout &lt;&lt; &quot;Base 的 析构函数已经启动&quot; &lt;&lt; endl;
+	&#125;
+	void show()&#123;
+		cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+	&#125;
+private :
+	int a;
+&#125;;
+class Base1 : virtual public Base
+&#123;
+public :
+	Base1(int sa,int sb) : Base(sa) 
+	&#123;
+		b = sb;
+		cout &lt;&lt; &quot;Base1 的 构造函数已经启动&quot; &lt;&lt; endl;
+	&#125;	
+	~Base1()&#123;
+		cout &lt;&lt; &quot;Base1 的 析构函数已经启动&quot; &lt;&lt; endl;
+	&#125;
+	void show()&#123;
+		cout &lt;&lt; &quot;b = &quot; &lt;&lt; b &lt;&lt; endl;
+	&#125;
+private :
+	int b;
+&#125;;
+class Base2 : virtual public Base
+&#123;
+public :
+	Base2 (int sa,int sc) : Base(sa) 
+	&#123;
+		c = sc;
+		cout &lt;&lt; &quot;Base2 的 构造函数已经启动&quot; &lt;&lt; endl;
+	&#125;	
+	~Base2()&#123;
+		cout &lt;&lt; &quot;Base2 的 析构函数已经启动&quot; &lt;&lt; endl;
+	&#125;
+	void show()&#123;
+		cout &lt;&lt; &quot;c = &quot; &lt;&lt; c &lt;&lt; endl;
+	&#125;
+private :
+	int c;
+&#125;;
+class Derived : public Base1,public Base2
+&#123;
+public :
+  	Derived(int sa,int sb,int sc,int sd) : Base (sa), Base1(sa, sb), Base2(sa, sc)
+	&#123;	
+		d = sd;				
+ 		cout &lt;&lt; &quot;Derived 的 构造函数已经启动&quot; &lt;&lt; endl;
+ 	&#125;
+ 	~Derived()&#123;
+ 		cout &lt;&lt; &quot;Derived 的 析构函数已经启动&quot; &lt;&lt; endl;
+ 	&#125;
+private :
+	int d;
+ &#125;;
+int main() &#123;
+	Derived d1(2, 4, 6, 8);
+	return 0;
+&#125;
+</code></pre>
+<p><img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8grjt3bpa15j30c90743zd.jpg" alt="image-20210616003120129"></p>
+</li>
+</ol>
+</li>
+<li>
+<p>对象成员、基类构造析构调用</p>
+<p>掌握构造和析构的基本用法。</p>
+</li>
+</ol>
+<h3 id="三程序填空题并写出程序的运行结果"><a class="markdownIt-Anchor" href="#三程序填空题并写出程序的运行结果">#</a> 三。程序填空题，并写出程序的运行结果</h3>
+<ol>
+<li>
+<p>类内定义 / 类外定义成员函数</p>
+<ol>
+<li>类内定义，没啥说的，就是在自己的类里面定义一个函数</li>
+<li>类外定义，就是在类里面进行函数的声明，在类外面进行函数的定义，为了防止函数的定义不知道自己姓啥，在类的定义前面挂了一个  姓  =&gt; 类名。</li>
+</ol>
+<p><mark>详情请看课本 53</mark></p>
+<pre><code>// 1. 类内定义
+class Base&#123;
+public :
+	Base(int sa)
+	&#123;
+		a = sa;
+		cout &lt;&lt; &quot;Base 的 构造函数已经启动&quot; &lt;&lt; endl;
+	&#125;	
+	~Base()&#123;
+		cout &lt;&lt; &quot;Base 的 析构函数已经启动&quot; &lt;&lt; endl;
+	&#125;
+	void show()&#123;
+		cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+	&#125;
+private :
+	int a;
+&#125;;
+// 其中void show 就是类内定义。
+// 2. 类外定义
+class Base&#123;
+public :
+	Base(int sa)
+	&#123;
+		a = sa;
+		cout &lt;&lt; &quot;Base 的 构造函数已经启动&quot; &lt;&lt; endl;
+	&#125;	
+	~Base()&#123;
+		cout &lt;&lt; &quot;Base 的 析构函数已经启动&quot; &lt;&lt; endl;
+	&#125;
+	void show();
+private :
+	int a;
+&#125;;
+void Base::show() &#123;
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt;endl;
+&#125;
+// 其中void show 就是类外定义。
+</code></pre>
+</li>
+<li>
+<p>静态数据成员的基本用法、调用，特别是书上例子。   <mark>课本 96</mark></p>
+<ol>
+<li>
+<p>联想 c 语言中的静态数据类型 ，c 语言中的静态数据类型是在函数中定义，在每次函数销毁的时候进行保留，自身不被销毁，从而将上次调用函数得到的数据传递给下一个该函数。   那么 c++ 中的静态成员函数有着异曲同工之妙，只不过是将 c 语言中的 函数 扩展到了 c++ 中的 类 ，函数的多次调用扩展到了，该类多个对象对该数据的调用。 <mark>从而在 c++ 中实现同一个类中的多个对象对指定数据的共享</mark></p>
+</li>
+<li>
+<p>使用方法：</p>
+<pre><code>static 数据类型 数据成员名；
+</code></pre>
+</li>
+<li>
+<p>注意事项：</p>
+<ol>
+<li>静态数据成员的初始化与普通成员不同，静态成员初始化应在类外单独进行，而且应在定义对象之前进行，一般在主函数 main 之前 。</li>
+<li>静态数据成员属于类，而不像普通数据成员那样属于某一对象，因此可以使用 <mark>” 类名::“</mark>, 访问静态的数据成员。  =》   类名：：静态数据成员名</li>
+</ol>
+</li>
+<li>
+<p>既然都说要看书上的栗子，那必然需要看一眼，<mark>课本 98</mark></p>
+<p>！！！ 课本上栗子的一个小 bug , 在 ==dev c++== 中写  <code>strlen,strcpy</code>  需要引入头文件  <code>string.h</code>    , 课本上引入的是  <code>string</code> ;  具体原因在这里不做说明。</p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;string.h&gt;
+using namespace std;
+class Student 
+&#123;
+public :
+	Student(char * name1, char * stu_no1, float score1); // 
+	~Student();
+	void show();
+	void show_count_sum_ave();
+private :
+	char * name;
+	char * stu_no;
+	float score ;
+	static int count ;
+	static float sum ;
+	static float ave ;
+&#125;;
+Student::Student(char * name1, char * stu_no1, float score1)
+&#123;
+	name = new char[strlen(name1) + 1];
+	strcpy(name,name1);
+	stu_no = new char[strlen(stu_no1) + 1];
+	strcpy(stu_no,stu_no1);
+	score = score1;
+	++count;
+	sum = sum + score;
+	ave = sum / count;
+&#125;
+Student::~Student()
+&#123;
+	delete []name;
+	delete []stu_no;
+	--count;
+	sum = sum - score;
+&#125;
+void Student::show()
+&#123;
+	cout &lt;&lt; &quot;\n姓名: &quot; &lt;&lt; name;
+	cout &lt;&lt; &quot;\n学号: &quot; &lt;&lt; stu_no;
+	cout &lt;&lt; &quot;\n成绩: &quot; &lt;&lt; score;
+&#125;
+void Student::show_count_sum_ave()
+&#123;
+	cout &lt;&lt; &quot;\n学生人数: &quot; &lt;&lt; count ;
+	cout &lt;&lt; &quot;\n平时成绩: &quot; &lt;&lt; ave;
+&#125;
+int Student::count= 0 ;     // 静态数据成员初始化  
+float Student::sum = 0.0 ;
+float Student::ave = 0.0 ;
+int main() &#123;
+	Student stu1(&quot;李明&quot;, &quot;08150201&quot;, 90);
+	stu1.show();
+	stu1.show_count_sum_ave();
+	cout &lt;&lt; &quot;\n----------------\n&quot;;
+	Student stu2(&quot;张大伟&quot;, &quot;08150202&quot;, 80);
+	stu2.show();
+	stu2.show_count_sum_ave();
+	return 0; 
+&#125;
+</code></pre>
+<p><img data-src="https://tva2.sinaimg.cn/large/006xVoHRly8grjt84ml43j30hy0b5q3h.jpg" alt="image-20210616013533331"></p>
+</li>
+</ol>
+</li>
+<li>
+<p>构造函数初始化成员列表，初始化成员变量和成员对象；</p>
+<ol>
+<li>
+<p>构造函数初始化成员列表：</p>
+<p>先看一个使用赋值语句初始化数据成员的栗子 ：</p>
+<pre><code class="language-c++">class Base
+&#123;
+public :
+	Base (int a1, int b1)&#123;
+		a = a1;
+		b = b1;
+        cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; &quot; b = &quot; &lt;&lt; b ;
+	&#125;
+private :
+	int a;
+	int b;
+&#125;;
+</code></pre>
+<p>其实使用成员初始化列表对数据成员初始化 就是 使用赋值语句初始化数据成员的<mark>变式</mark>；</p>
+<p>将 等号赋值语句 用  ：(冒号)  拉出来，然后还是一一对应。</p>
+<p>下面看一个使用成员初始化列表对数据成员初始化的栗子：</p>
+<pre><code class="language-c++">class Base
+&#123;
+public :
+	Base (int a1, int b1):a(a1),b(b1)
+	&#123;	
+		cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; &quot; b = &quot; &lt;&lt; b ;
+	&#125;
+private :
+	int a;
+	int b;
+&#125;;
+</code></pre>
+</li>
+<li>
+<p>初始化成员变量和成员对象</p>
+<p>可能就是等号赋值？？？ ， 理解不了。。。，是我语文不好了。。。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>引用参数传递</p>
+<ol>
+<li>
+<p>建立引用，实质上是为变量另外起一个别名，其实也就是相当于一个人有了大名，然后又起了小名；小名就是他的别名。他还是他，就是多了个名字。对别名引用的数据进行修改，就是对变量本身进行修改；</p>
+<p>举个栗子 ： 有个人，他大名叫张三，小名叫小明，那么有人给张三 100 元，和有人给小明 100 元是一样的。都是张三得到了 100 元。</p>
+</li>
+<li>
+<p>格式如下：</p>
+<pre><code>类型 &amp; 引用名 = 已定义的变量名 
+</code></pre>
+</li>
+<li>
+<p>注意事项 ：</p>
+<ol>
+<li>
+<p>引用名在声明引用时，必须立即对它初始化，不能声明后再赋值。</p>
+<pre><code class="language-c++">// 错误示范
+int i ; 
+int &amp;j ;
+j = i;
+// 正确示范
+int i ;
+int &amp;j = i;
+</code></pre>
+</li>
+<li>
+<p>别名也可以有别名；</p>
+</li>
+</ol>
+</li>
+<li>
+<p>下面先看一个栗子：</p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+void swap(int &amp;m, int &amp;n)&#123;
+	int temp ;
+	temp = m ;
+	m = n ;
+	n = temp;
+&#125;
+int main()
+&#123;
+	int a = 5,b = 10;
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt;&quot; b = &quot;&lt;&lt; b &lt;&lt; endl;
+	swap(a,b);
+	cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt;&quot; b = &quot;&lt;&lt; b &lt;&lt; endl;
+	return 0;
+&#125;
+</code></pre>
+<p>在这个程序中，我们可以看到，a, b 是两个基本数据类型 ，在他们被当成参数传入 swap 中时，他们的别名分别是  m, n; 并且通过对别名进行操作，交换了二者的顺序。</p>
+<p>这里说说我的理解：张三（a) , 在外面（main）人们 (其他数据）与他发生事件，是与张三发生事件，而在 家里（swap）中，家人都会亲切的呼喊他的小名<mark>小明</mark>，从而与小明发生事件。那么张三和小明转换的关键在哪里？？？分析一下，就可以看出是因为在 swap 中为 a (张三) 起了别名 。</p>
+<p>所以我说这些废话的意义在哪里呢？？？这里是要提醒你，起别名是在调用该数据的函数的参数中起！！！<mark>注意参考注意事项第一条</mark> ，这里是符合第一条的！！！</p>
+</li>
+</ol>
+</li>
+<li>
+<p>基类对象、派生类对象、虚函数的基本用法，通过基类对象的指针调用虚函数；</p>
+<p>上面有讲到。</p>
+</li>
+<li>
+<p>运算符重载：双目运算符、一元运算符（++ 前置、后置）</p>
+<ol>
+<li>
+<p>运算符重载：</p>
+<p>c++ 为运算符重载提供了一种方法，即在进行运算符重载时，定义一个运算符重载函数 operator ， 后面跟一个要重载的运算符</p>
+<p>例：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">operator +</td>
+<td style="text-align:center">加</td>
+</tr>
+<tr>
+<td style="text-align:center">operator -</td>
+<td style="text-align:center">减</td>
+</tr>
+<tr>
+<td style="text-align:center">operator *</td>
+<td style="text-align:center">乘</td>
+</tr>
+<tr>
+<td style="text-align:center">operator &lt;</td>
+<td style="text-align:center">小于</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>一言不合举栗子</li>
+</ol>
+<pre><code class="language-c++">// 重载 + ，实现对两个对象的加法操作
+#include&lt;iostream&gt;
+using namespace std;
+class Base 
+&#123;
+public :
+	Base (int a1 = 0, int b1 = 0)&#123;
+		a = a1;
+		b = b1;
+	&#125;
+	~Base()	&#123;
+	&#125;;
+	int a;
+	int b;
+&#125;;
+// 一般不直接引入对象，一般引入对象的别名，并且在不打算改变对象数据时，加上const，防止不下心改变对象数据。
+Base operator + (const Base &amp;base1, const Base &amp;base2)&#123;
+	Base base3;
+	base3.a = base1.a + base2.a;
+	base3.b = base1.b + base2.b;
+	return base3;
+&#125;
+int main()
+&#123;
+	Base b1(2,4), b2(1,3), b3;
+	b3 = b1 + b2; // 等价于b3 = operator+ (b1,b2);
+	cout &lt;&lt; &quot;b3.a = &quot; &lt;&lt; b3.a &lt;&lt; &quot;  b3.b = &quot; &lt;&lt; b3.b &lt;&lt; endl;
+	return 0;
+&#125;
+</code></pre>
+<p>结果为： b3.a = 3  b3.b = 7</p>
+<ol start="2">
+<li>但是对上面的栗子进行反思，我们为了能在类外引用 a 和 b , 而将 a,b 两个对象数据暴露为公有数据类型。这不符合 c++ 中封装的理念！！！所以想办法更改，那么在 Base 中 为运算符重载函数加上友元标签，将 a,b 设为私有，则有：</li>
+</ol>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+class Base 
+&#123;
+public :
+	Base (int a1 = 0, int b1 = 0)&#123;
+		a = a1;
+		b = b1;
+	&#125;
+	~Base()	&#123;
+	&#125;;
+	void show()&#123;
+		cout &lt;&lt; &quot; a = &quot; &lt;&lt; a &lt;&lt; &quot;   b = &quot; &lt;&lt; b &lt;&lt; endl; 
+	&#125;
+	friend Base operator + (const Base &amp;, const Base &amp;);
+private :
+	int a;
+	int b;
+&#125;;
+Base operator + (const Base &amp;base1, const Base &amp;base2)&#123;
+	Base base3;
+	base3.a = base1.a + base2.a;
+	base3.b = base1.b + base2.b;
+	return base3;
+&#125;
+int main()
+&#123;
+	Base b1(2,4), b2(1,3), b3;
+	b3 = b1 + b2;
+	cout &lt;&lt; &quot;b3: &quot; ;
+	b3.show();
+	return 0;
+&#125;
+</code></pre>
+<p>这样就满足了 封装 。</p>
+</li>
+<li>
+<p>双目运算符：</p>
+<ol>
+<li>类外友元函数重载  ：有些头大，书上也没讲啥，上面那个就是一个双目运算符重载；</li>
+</ol>
+<p>没啥说的，给你们看看书上的代码吧</p>
+<pre><code>见书204页，哈哈，去看书吧，我估计我打上去，就是我更加熟练了。。。
+其实，仔细看完书上的代码，你就会发现，它就是用我上面的方法将四个运算符实现了重载，并且堆到了一起。。。
+</code></pre>
+<ol start="2">
+<li>
+<p>类内成员运算符重载 ：</p>
+<p>其实和上面   类外友元函数重载  区别不是太大，就是第三人称转换成了第一人称 。 不会有人不理解吧！！！不理解扣我，我给讲哈。</p>
+<p>在上面类外友元函数重载中，是将 随机俩个对象，进行运算。而在 类内成员运算符重载中 ，其实就是将两个对象中的一个替换为我（调用该方法的对象），另外一个随机。</p>
+<ol>
+<li>
+<p>格式：</p>
+<pre><code></code></pre>
+</li>
+</ol>
+<p>// 类内<br>
+ class X &#123;<br>
+函数类型 operator 运算符 (形参表)&#123;<br>
+函数体<br>
+&#125;<br>
+&#125;<br>
+// 类外<br>
+ class X &#123;<br>
+函数类型 operator 运算符 (形参表);<br>
+&#125;<br>
+ 函数类型 X::operator 运算符 (形参表)&#123;<br>
+函数体<br>
+&#125;<br>
+```</p>
+<ol start="2">
+<li>简单实现一下：</li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+class Base 
+&#123;
+public :
+	Base (int a1 = 0, int b1 = 0)&#123;
+		a = a1;
+		b = b1;
+	&#125;
+	~Base()	&#123;
+	&#125;;
+	void show()&#123;
+		cout &lt;&lt; &quot; a = &quot; &lt;&lt; a &lt;&lt; &quot;   b = &quot; &lt;&lt; b &lt;&lt; endl; 
+	&#125;
+	Base operator + (const Base &amp;base1)
+	&#123;
+	Base base2;
+	base2.a = base1.a + a;
+	base2.b = base1.b + b;
+	return base2;
+	&#125;
+private :
+	int a;
+	int b;
+&#125;;
+int main()
+&#123;
+	Base b1(2,4), b2(1,3), b3;
+	b3 = b1 + b2;
+	cout &lt;&lt; &quot;b3: &quot; ;
+	b3.show();
+	return 0;
+&#125;
+</code></pre>
+</li>
+<li>
+<p>一元（单目）运算符（++ 前置、后置）<mark>课本 216，不妨一看</mark></p>
+<ol>
+<li>
+<p>在 c<ins> 中通过在运算符函数参数表中是否插入关键字 int 来区分前缀</ins>，–和后缀 ++ ， – ；</p>
+<p>例如 ： 前缀  <code>ob.operator++()</code></p>
+<p>​				后缀 <code>ob.operator++(int)</code></p>
+</li>
+<li>
+<p>在使用函数类型调用时，将后缀中的 <code>int</code>  替换为 0;</p>
+</li>
+<li>
+<p>举个栗子：代码实现：</p>
+<pre><code class="language-c++">// 1. 使用成员函数重载
+
+#include&lt;iostream&gt;
+using namespace std;
+class Three &#123;
+public :
+	Three (int i1 = 0, int i2 = 0, int i3 = 0);
+	void show();
+	Three operator --();
+	Three operator --(int);
+private :
+	int i1, i2, i3;
+&#125;;
+Three::Three (int i1 ,int i2, int i3)
+&#123;
+	// this-&gt; 主要是用来区分对象成员与参数 
+	this-&gt;i1 = i1;
+	this-&gt;i2 = i2;
+	this-&gt;i3 = i3;
+&#125;
+void Three::show()
+&#123;
+	cout &lt;&lt; &quot;i1 = &quot; &lt;&lt; i1 &lt;&lt; &quot;  i2 = &quot; &lt;&lt; i2 &lt;&lt; &quot;  i3 = &quot; &lt;&lt; i3 &lt;&lt; endl;
+&#125;
+Three Three::operator --()
+&#123;
+	--i1;
+	--i2;
+	--i3;
+	return *this ;
+&#125;
+Three Three::operator --(int)
+&#123;
+	Three temp(*this);
+	i1--;
+	i2--;
+	i3--;
+	return temp ;
+&#125;
+int main()
+&#123;
+	Three obj1(4, 5, 6), obj2;
+	obj1.show();
+	--obj1;
+	obj1.show();
+	obj2 = obj1 --;
+	obj2.show();
+	obj1.show();
+	return 0;
+&#125;
+</code></pre>
+<p><img data-src="https://tva4.sinaimg.cn/large/006xVoHRly8grjt3co5asj30bh05baa4.jpg" alt="image-20210616043016354"></p>
+<p>++ 就是将重载运算符中的 – 换成 ++；</p>
+<pre><code class="language-c++">// 2. 友元函数重载
+#include&lt;iostream&gt;
+using namespace std;
+class Three &#123;
+public :
+	Three (int i1 = 0, int i2 = 0, int i3 = 0);
+	void show();
+	friend Three operator ++(Three &amp;);
+	friend Three operator ++(Three &amp;, int);
+private :
+	int i1, i2, i3;
+&#125;;
+Three::Three (int i1 ,int i2, int i3)
+&#123;
+	// this-&gt; 主要是用来区分对象成员与参数 
+	this-&gt;i1 = i1;
+	this-&gt;i2 = i2;
+	this-&gt;i3 = i3;
+&#125;
+void Three::show()
+&#123;
+	cout &lt;&lt; &quot;i1 = &quot; &lt;&lt; i1 &lt;&lt; &quot;  i2 = &quot; &lt;&lt; i2 &lt;&lt; &quot;  i3 = &quot; &lt;&lt; i3 &lt;&lt; endl;
+&#125;
+Three operator ++(Three &amp;three)
+&#123;
+	++three.i1;
+	++three.i2;
+	++three.i3;
+	return three ;
+&#125;
+Three operator ++(Three &amp; three, int)
+&#123;
+	three.i1++;
+	three.i2++;
+	three.i3++;
+	return three ;
+&#125;
+int main()
+&#123;
+	Three obj1(4, 5, 6), obj2;
+	obj1.show();
+	++obj1;
+	obj1.show();
+	obj1++;
+	obj1.show();
+	return 0;
+&#125;
+</code></pre>
+<p><img data-src="https://tva4.sinaimg.cn/large/006xVoHRly8grjt3e2gz2j30a103l0sm.jpg" alt="image-20210616044005752"></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-06-16 08:40:17" itemprop="dateModified" datetime="2021-06-16T08:40:17+08:00">2021-06-16</time>
+  </span>
+  <span id="2021/06/16/C++期末考点/" class="item leancloud_visitors" data-flag-title="C++期末考试考点" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechat.png" alt="gaoxiaoxin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/pay.png" alt="gaoxiaoxin 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>gaoxiaoxin <i class="ic i-at"><em>@</em></i>gaoxing's Blog
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" title="C++期末考试考点">http://example.com/2021/06/16/C++期末考点/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeuibk9fj20zk0m8ay2.jpg" title="MarkDown的使用">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>MarkDown的使用</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E5%8D%95%E9%A1%B9%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text"> 一。单项选择题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E9%98%85%E8%AF%BB%E7%A8%8B%E5%BA%8F%E5%86%99%E7%BB%93%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text"> 二。阅读程序写结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%A8%8B%E5%BA%8F%E5%A1%AB%E7%A9%BA%E9%A2%98%E5%B9%B6%E5%86%99%E5%87%BA%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">4.</span> <span class="toc-text"> 三。程序填空题，并写出程序的运行结果</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="gaoxiaoxin"
+      data-src="/images/header.png">
+  <p class="name" itemprop="name">gaoxiaoxin</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">2</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhb3hpYW94aW4=" title="https:&#x2F;&#x2F;github.com&#x2F;gaoxiaoxin"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTM5MzIzMjkyNTE=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;3932329251"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" title="C++期末考试考点">C++期末考试考点</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/" title="MarkDown的使用">MarkDown的使用</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">gaoxiaoxin @ gaoxing's Blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">15k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">14 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/06/16/C++期末考点/',
+    favicon: {
+      show: "(＠￣ー￣＠)",
+      hide: "┗( T﹏T )┛"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
