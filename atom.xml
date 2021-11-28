@@ -3,7 +3,62 @@
     <id>http://example.com</id>
     <title>gaoxing&#39;s Blog</title>
     <link href="http://example.com" />
-    <updated>2021-11-20T13:23:43.274Z</updated>
+    <updated>2021-11-28T13:48:28.959Z</updated>
+    <entry>
+        <id>http://example.com/2021/11/28/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</id>
+        <title>区分不同环境实现环境变量的切换</title>
+        <link rel="alternate" href="http://example.com/2021/11/28/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+        <content type="html">&lt;h3 id=&#34;区分不同环境实现环境变量的切换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#区分不同环境实现环境变量的切换&#34;&gt;#&lt;/a&gt; 区分不同环境实现环境变量的切换&lt;/h3&gt;
+&lt;p&gt;在开发中，我们经常需要根据不同的环境设置不同的环境变量，常见的环境有三种:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;开发环境: devlopment&lt;br&gt;
+ 对应于 vue_cli 项目中的 npm run serve&lt;/li&gt;
+&lt;li&gt;生产环境: production&lt;br&gt;
+ 对应于 vue_cli 项目中的 npm run build&lt;/li&gt;
+&lt;li&gt;测试环境: test&lt;br&gt;
+ 对应于 vue_cli 项目中的 npm run test&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;那我们如何在项目中去根据环境的不同去更改 BASE_URL 呢？&lt;br&gt;
+常见的方式是:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;手动修改不同的变量&lt;/li&gt;
+&lt;li&gt;根据 process.env.NODE_ENV 的值进行区分&lt;/li&gt;
+&lt;li&gt;编写不同的环境变量配置文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;手动修改不同的变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#手动修改不同的变量&#34;&gt;#&lt;/a&gt; 手动修改不同的变量&lt;/h4&gt;
+&lt;p&gt;没错，你没想错，就是单纯的手动，在需要你&lt;span class=&#34;spoiler bulr&#34; title=&#34;...&#34;&gt;人工 (智能)&lt;/span&gt; 去修改不同环境下的变量&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption&gt;&lt;span&gt;示例&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// devlopment &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/dev&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// production &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/prod&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/test&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;需要哪个，就自己去换。。。&lt;/p&gt;
+&lt;div class=&#34;note danger&#34;&gt;
+&lt;p&gt;不推荐&lt;/p&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;根据processenvnode_env的值进行区分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#根据processenvnode_env的值进行区分&#34;&gt;#&lt;/a&gt; 根据 process.env.NODE_ENV 的值进行区分&lt;/h4&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;示例&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; TIME_OUT = &lt;span class=&#34;number&#34;&gt;10000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (process.env.NODE_ENV === &lt;span class=&#34;string&#34;&gt;&amp;#x27;development&amp;#x27;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;#x27;http://xiaoxx.org/dev&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (process.env.NODE_ENV === &lt;span class=&#34;string&#34;&gt;&amp;#x27;production&amp;#x27;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;#x27;http://xiaoxx.org/prod&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;#x27;http://xiaoxx.org/test&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;export&lt;/span&gt; &amp;#123; BASE_URL, TIME_OUT &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后再该使用的地方使用就可&lt;/p&gt;
+&lt;div class=&#34;note success&#34;&gt;
+&lt;p&gt;推荐&lt;/p&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;编写不同的环境变量配置文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#编写不同的环境变量配置文件&#34;&gt;#&lt;/a&gt; 编写不同的环境变量配置文件&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;vue 官方配置&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbGkudnVlanMub3JnL3poL2d1aWRlL21vZGUtYW5kLWVudi5odG1sIyVFNiVBOCVBMSVFNSVCQyU4Rg==&#34;&gt; https://cli.vuejs.org/zh/guide/mode-and-env.html# 模式&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8gwv9xz3rhej307602mq2u.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+如图所示：自定义三个.env 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;自定义文件后，需要重新启动项目&lt;br&gt;
+三个文件的配置&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;development&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/dev&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_NAME = &lt;span class=&#34;string&#34;&gt;&amp;quot;xiaoxx&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;production&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/prod&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_NAME = &lt;span class=&#34;string&#34;&gt;&amp;quot;xiaoxxprod&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;test&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/test&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_NAME = &lt;span class=&#34;string&#34;&gt;&amp;quot;xiaoxxtest&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;结语&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结语&#34;&gt;#&lt;/a&gt; 结语&lt;/h4&gt;
+&lt;p&gt;感谢大家的观看，希望给大家带来帮助，噩梦般的期中考试周过去了，接下来要开始学前端了！！！&lt;/p&gt;
+</content>
+        <updated>2021-11-28T13:48:28.959Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2021/11/20/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</id>
         <title>使用Node.js实现自动化发送邮件</title>
@@ -19,6 +74,10 @@
 这里因为笔者又懒又烂。。。，就不上图了 ， 流程线来一套：&lt;/p&gt;
 &lt;p&gt;设置 -&amp;gt; 账户 -&amp;gt; POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV 服务 -&amp;gt; 开启服务… 你会看见的&lt;/p&gt;
 &lt;p&gt;开启后，点击下方的&lt;strong&gt;生成授权码&lt;/strong&gt; 就可以&lt;/p&gt;
+&lt;h3 id=&#34;参考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考&#34;&gt;#&lt;/a&gt; 参考&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudzNzY2hvb2xzLmNvbS9ub2RlanMvbm9kZWpzX2VtYWlsLmFzcA==&#34;&gt;https://www.w3schools.com/nodejs/nodejs_email.asp&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;结语&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结语&#34;&gt;#&lt;/a&gt; 结语&lt;/h3&gt;
 &lt;p&gt;文章虽短，但是却是一个好的开始&lt;/p&gt;
 </content>
