@@ -1,0 +1,724 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="gaoxing's Blog" href="https://gaoxiaoxin.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="gaoxing's Blog" href="https://gaoxiaoxin.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="gaoxing's Blog" href="https://gaoxiaoxin.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://gaoxiaoxin.github.io/2021/12/06/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+
+
+
+  <title>
+Python 期末复习 |
+gaoxing's Blog = 热爱可抵岁月漫长</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Python 期末复习
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-12-06 15:58:37">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-12-06T15:58:37+08:00">2021-12-06</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>7.5k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>7 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">gaoxing's Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/006xVoHRly8gr3z3av20hj31c00u0gzi.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhnx9glj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/2021/12/06/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/header.png">
+    <meta itemprop="name" content="gaoxiaoxin">
+    <meta itemprop="description" content="热爱可抵岁月漫长, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="gaoxing's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h4 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h4>
+<p>博主对老师公布的考点进行自己的总结，希望和大家一起学习，一起进步。如果有不对或者不准确的地方，希望各位大佬给以指正和补充，资料主要为老师的 PPT，加上自己的一些理解（菜鸡，理解的很少）不喜勿喷</p>
+<h4 id="选择填空"><a class="markdownIt-Anchor" href="#选择填空">#</a> 选择填空</h4>
+<h6 id="python-中的数据类型那些是可哈希的"><a class="markdownIt-Anchor" href="#python-中的数据类型那些是可哈希的">#</a> python 中的数据类型那些是可哈希的？</h6>
+<ul>
+<li>先搞清楚可哈希的意思 -&gt; 一个对象在其生命周期内，如果保持不变，那就是 hashable (可哈希的), 就是不变的数据结构</li>
+<li>结合哈希表的定义：通过给定的关键字的值直接访问到具体对应的值的一个数据结构</li>
+<li>课件上写: <ins class="dot">可哈希对象是指拥有<strong> hash</strong> (self) 内置函数的对象</ins></li>
+<li>那么回想 python 中满足上述的 可哈希的数据类型就只有 <ins>字符串</ins>，<ins>元组 (tuple)</ins></li>
+<li>不可哈希的有 <ins>列表</ins>，<ins>集合</ins>，<ins>字典</ins>.</li>
+</ul>
+<p>参考链接:</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE3NzUzOTAzL2FydGljbGUvZGV0YWlscy84NTM0NTk5Ng==">https://blog.csdn.net/qq_17753903/article/details/85345996</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xNTM0ODE1">https://cloud.tencent.com/developer/article/1534815</span></li>
+</ul>
+<h6 id="按位运算"><a class="markdownIt-Anchor" href="#按位运算">#</a> 按位运算</h6>
+<p><img data-src="https://tva3.sinaimg.cn/large/006xVoHRly8gx476nxokyj30pb0aiq57.jpg" alt=""><br>
+<span class="spoiler bulr" title="...">我真是垃圾现在还在用别人的图床</span><br>
+其实位运算在之前的离散都学过，差不多的</p>
+<ul>
+<li>按位与:
+<blockquote>
+<p>回想与运算：必须两个都是真，才能为真，那么现在对应编程语言就是，双方都为 1 的时候为 1，其他的时候就是 0<br>
+ 例: i1,i2 = 3, 6 对应的二进制数是 11B 和 110B 则<br>
+ i1 &amp; i2 = <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mfrac linethickness="0px"><mrow><mn>011</mn><mi>B</mi></mrow><mrow><mn>110</mn><mi>B</mi></mrow></mfrac><mrow><mn>010</mn><mi>B</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{011B \atop 110B}{010B}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.567165em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.222165em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0</span><span class="mord mtight">1</span><span class="mord mtight">0</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.5508em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9590928571428572em;"><span style="top:-2.156em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">1</span><span class="mord mtight">0</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span style="top:-2.971em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">0</span><span class="mord mtight">1</span><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> = 2<br>
+ 掉头发，写数学公式，还好是个简单的公式</p>
+</blockquote>
+</li>
+<li>按位或
+<blockquote>
+<p>同样和或运算有相通的地方：只要有一个为真，结果就为真<br>
+例: i1 | i2 = <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mfrac linethickness="0px"><mrow><mn>011</mn><mi>B</mi></mrow><mrow><mn>110</mn><mi>B</mi></mrow></mfrac><mrow><mn>111</mn><mi>B</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{011B \atop 110B}{111B}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.567165em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.222165em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">1</span><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.5508em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9590928571428572em;"><span style="top:-2.156em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">1</span><span class="mord mtight">0</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span style="top:-2.971em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">0</span><span class="mord mtight">1</span><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> = 7</p>
+</blockquote>
+</li>
+<li>按位异或
+<blockquote>
+<p>当且仅当两个数的真值不相同的时候是真，不然为假<br>
+用公式表示为: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mover accent="true"><mi>V</mi><mo>ˉ</mo></mover><mi>Q</mi><mo>⇔</mo><mo stretchy="false">(</mo><mi>P</mi><mo>∧</mo><mi mathvariant="normal">¬</mi><mi>Q</mi><mo stretchy="false">)</mo><mi>V</mi><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>P</mi><mo>∧</mo><mi>Q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P \bar V Q \Leftrightarrow (P \land \neg Q) V (\neg P \land Q)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0145499999999998em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8201099999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">ˉ</span></span></span></span></span></span></span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">⇔</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">¬</span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord">¬</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span></span></span></span><br>
+ 例:i1 ^ i2 = <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mfrac linethickness="0px"><mrow><mn>011</mn><mi>B</mi></mrow><mrow><mn>110</mn><mi>B</mi></mrow></mfrac><mrow><mn>101</mn><mi>B</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{011B \atop 110B}{101B}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.567165em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.222165em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.5508em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9590928571428572em;"><span style="top:-2.156em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">1</span><span class="mord mtight">0</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span><span style="top:-2.971em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">0</span><span class="mord mtight">1</span><span class="mord mtight">1</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> = 5</p>
+</blockquote>
+</li>
+<li>左位移
+<blockquote>
+<p>缺位用 0 补<br>
+例: i1 &lt;&lt; 1 = 11B &lt;&lt; 1 = 110B = 6</p>
+</blockquote>
+</li>
+<li>右位移
+<blockquote>
+<p>同上<br>
+例: i1 &gt;&gt; 1 = 11B &gt;&gt; 1 = 1B = 1</p>
+</blockquote>
+</li>
+<li>按位取反
+<blockquote>
+<p>~x<br>
+ 将 1 变为 0, 将 0 变为 1<br>
+ 例: ~i1 = 00B = 0</p>
+</blockquote>
+</li>
+</ul>
+<h6 id="身份运算符"><a class="markdownIt-Anchor" href="#身份运算符">#</a> 身份运算符</h6>
+<p>用于比较两个对象是否对应同样的存储单元</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">使用方法</th>
+<th style="text-align:center">功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">is</td>
+<td style="text-align:center">x is y</td>
+<td style="text-align:center">如果 x 和 y 对应同样的存储单元，则返回 True；否则，返回 False</td>
+</tr>
+<tr>
+<td style="text-align:center">is not</td>
+<td style="text-align:center">x is y</td>
+<td style="text-align:center">如果 x 和 y 不对应同样的存储单元，则返回 True；否则，返回 False</td>
+</tr>
+</tbody>
+</table>
+<p><img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8gx4czaieiij30qr07jdi4.jpg" alt=""><br>
+先上一个例子:</p>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x, y = <span class="number">15</span>,<span class="number">15</span></span><br><span class="line"><span class="built_in">print</span>(x <span class="keyword">is</span> y)</span><br><span class="line"><span class="built_in">print</span>(x <span class="keyword">is</span> <span class="keyword">not</span> y)</span><br><span class="line"><span class="built_in">print</span>(x <span class="keyword">is</span> <span class="number">15</span>)</span><br><span class="line"><span class="comment"># 输出为: True False True</span></span><br></pre></td></tr></table></figure>
+<p>Why, 为什么就会出现上面的情况，用我们学习 C 语言的经历来看，这就是完全不可能的！！<br>
+<img data-src="https://tva2.sinaimg.cn/large/006xVoHRly8gx49znxnxoj30fi06bjs0.jpg" alt=""><br>
+从上面大家可以看见虽然 a, b 的值是一样的，但是他们是存储在不同的地址中的！<br>
+但为什么 Python 和 C 不一样呢？<br>
+这是因为: Python 中使用了<ins>引用语义</ins> ==&gt; 变量保存的仅仅是 <ins>值的引用</ins>，即变量保存的是<ins>内存及其地址的抽象</ins></p>
+<ul>
+<li>变量的每一次初始化，都会开辟一个新的存储空间，并将新的内容的地址赋值给变量。
+<blockquote>
+<p>就像 x = 15, y = 15, 那么就会在 x = 15 的时候，开辟一块空间用于存储 15，然后将这个地址赋给 x, 当 y = 15 的时候，再将 15 的地址给 y 一份。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">15</span></span><br><span class="line">b = <span class="number">15</span></span><br><span class="line"><span class="built_in">print</span>(a <span class="keyword">is</span> b)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>对于 Python 中的复杂数据类型（如：列表、元组、字典等），如果仅仅是对其中的一个或多个元素进行修改，并不会改变其地址，如果进行删除或者添加操作，也只是单纯的改变内部元素的地址引用，但是，如果对整体进行重新赋值，那么就会对这些复杂数据类型重新赋予一个新的地址，来覆盖之前的地址，也只有在这种情况下，这些复杂数据类型的地址才会发生改变</li>
+<li>并且可变类型和不可变类型也不一样
+<blockquote>
+<p>不可变数据类型 (int, float, str, tuple)，不允许变量的值发生变化，如果改变了变量的值，相当于是新建了一个对象，而对于相同的值的对象，在内存中则只有一个对象，就是不可变数据类型引用的地址的值不可改变</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>可变数据类型 (list, dict)，允许变量的值发生变化，即如果对变量进行 append、+= 等这种操作后，只是改变了变量的值，而不会新建一个对象，变量引用的对象的地址不会改变，只是对应地址的内容改变或者地址发生了扩充，所以对于相同的值的不同对象，会存在多份，即每个对象都有自己的地址</p>
+</blockquote>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">x1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">x2 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(x1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(x2))</span><br><span class="line">x2 = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(x2))</span><br><span class="line">x2.append(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(x2)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(x2))</span><br><span class="line">b1 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">b2 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b2))</span><br><span class="line">b2 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(b2))</span><br></pre></td></tr></table></figure>
+<p>这方面深究的话，就已经涉及到 Python 的内部底层实现了，大家如果有兴趣的话，可以去看看 - 资料链接: <span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vdHJhZGl0aW9uYWwvcC8xMzM5MTA5OC5odG1s">https://www.cnblogs.com/traditional/p/13391098.html</span></p>
+<h6 id="位置参数-关键字参数"><a class="markdownIt-Anchor" href="#位置参数-关键字参数">#</a> 位置参数， 关键字参数</h6>
+<ol>
+<li>位置参数 (就是最简单的那个)<br>
+ 通过位置来体现实参和形参的对应关系的方法</li>
+</ol>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span>(<span class="params">x, y</span>):</span></span><br><span class="line">  <span class="keyword">return</span> x + y</span><br><span class="line">x = <span class="number">1</span></span><br><span class="line">y = <span class="number">2</span></span><br><span class="line">z = <span class="built_in">sum</span>(x, y)</span><br><span class="line"><span class="built_in">print</span>(z)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>关键字参数<br>
+就是使用关键字进行一个强绑定，形式为: “形参 = 实参”</li>
+</ol>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span>(<span class="params">x, y=<span class="number">1</span>, z=<span class="number">2</span></span>):</span></span><br><span class="line">  <span class="keyword">return</span>  x + y + z</span><br><span class="line">x = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>(x, z = <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<h6 id="函数关键字全局变量内层函数中使用外层函数变量"><a class="markdownIt-Anchor" href="#函数关键字全局变量内层函数中使用外层函数变量">#</a> 函数关键字，全局变量，内层函数中使用外层函数变量</h6>
+<p>其实全局变量，局部变量，还有函数中使用全局变量，在 JavaScript 中是有作用域链查找规则的，Python 中也类似</p>
+<ol>
+<li>全局变量<br>
+在所有函数外定义的变量就是全局变量，其在所有函数中都可以使用<div class="note info">
+<p>相对而言，局部变量就是在一个函数中定义的变量，其作用域是从定义局部变量的位置至函数结束位置</p>
+</div>
+</li>
+</ol>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GlobalVar1</span>():</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">f&#x27;全局x = <span class="subst">&#123;x&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GlobalVar2</span>():</span></span><br><span class="line">  x = <span class="number">100</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">f&#x27;局部x = <span class="subst">&#123;x&#125;</span>&#x27;</span>)</span><br><span class="line">x = <span class="number">20</span></span><br><span class="line">GlobalVar1()</span><br><span class="line">GlobalVar2()</span><br><span class="line">GlobalVar1()</span><br><span class="line"><span class="comment"># 输出为 20 , 100, 20</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>global 关键字 global (全局)<br>
+ 在一个函数中使用 global 关键字，可以声明在该函数中使用的是全局变量，而非局部变量</li>
+</ol>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GlobalVar1</span>():</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">f&#x27;全局x = <span class="subst">&#123;x&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GlobalVar2</span>():</span></span><br><span class="line">  <span class="keyword">global</span> x</span><br><span class="line">  x = <span class="number">100</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">f&#x27;局部x = <span class="subst">&#123;x&#125;</span>&#x27;</span>)</span><br><span class="line">x = <span class="number">20</span></span><br><span class="line">GlobalVar1()</span><br><span class="line">GlobalVar2()</span><br><span class="line">GlobalVar1()</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>nonlocal 关键字 nonlocal (不是本地的)<br>
+ 在 Python 中，函数的定义可以嵌套，即在一个函数的函数体中可以包含另一个函数的定义。通过 nonlocal 关键字，可以使内层的函数直接使用外层函数中定义的变量</li>
+</ol>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 没有使用关键字</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span>():</span></span><br><span class="line">    x = <span class="number">10</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span>():</span></span><br><span class="line">        x = <span class="number">20</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;inner x = <span class="subst">&#123;x&#125;</span>&#x27;</span>)</span><br><span class="line">    inner()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;outer x = <span class="subst">&#123;x&#125;</span>&#x27;</span>)</span><br><span class="line">outer()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用了nonlocal关键字</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span>():</span></span><br><span class="line">    x = <span class="number">10</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span>():</span></span><br><span class="line">        <span class="keyword">nonlocal</span> x</span><br><span class="line">        x = <span class="number">20</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;inner x = <span class="subst">&#123;x&#125;</span>&#x27;</span>)</span><br><span class="line">    inner()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;outer x = <span class="subst">&#123;x&#125;</span>&#x27;</span>)</span><br><span class="line">outer()</span><br></pre></td></tr></table></figure>
+<h6 id="为类添加方法"><a class="markdownIt-Anchor" href="#为类添加方法">#</a> 为类添加方法</h6>
+<p>类中的方法分为两类</p>
+<ul>
+<li>普通方法需要通过类的实例对象根据方法名调用</li>
+<li>内置方法是在特定情况下由系统自动执行</li>
+</ul>
+<ol>
+<li>在定义类的普通方法时，要求第一个参数需要对应调用方法时所使用的实例对象（一般命名为 self，但也可以改为其他名字）。然后就像定义普通函数一样，使用 def 定义就行<div class="note warning">
+<p>个人习惯，喜欢将 self 改为 this, 下面全是 this</p>
+</div>
+</li>
+</ol>
+<figure class="highlight python"><figcaption><span>Number</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Num</span>:</span></span><br><span class="line">    x = <span class="number">1</span></span><br><span class="line">    y = <span class="number">2</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">this, x, y</span>):</span></span><br><span class="line">        this.x = x</span><br><span class="line">        this.y = y</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sum</span>(<span class="params">this</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(this.x + this.y)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    num1 = Num(<span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line">    num1.<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
+<h6 id="类方法和静态方法"><a class="markdownIt-Anchor" href="#类方法和静态方法">#</a> 类方法和静态方法</h6>
+<ol>
+<li>类方法是指使用 ++@classmethod++(class (类)+method (方法))) 修饰的方法，其<ins>第一个参数是类本身</ins>（而不是类的实例对象）</li>
+</ol>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Complex</span>:</span> <span class="comment">#定义Complex类</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">this,real=<span class="number">0</span>,image=<span class="number">0</span></span>):</span> <span class="comment">#定义构造方法</span></span><br><span class="line">        this.real=real <span class="comment">#初始化一个复数的实部值</span></span><br><span class="line">        this.image=image <span class="comment">#初始化一个复数的虚部值</span></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">cls,c1,c2</span>):</span> <span class="comment">#定义类方法add，实现两个复数的加法运算</span></span><br><span class="line">        <span class="built_in">print</span>(cls) <span class="comment">#输出cls</span></span><br><span class="line">        c=Complex() <span class="comment">#创建Complex类对象c</span></span><br><span class="line">        c.real=c1.real+c2.real <span class="comment">#实部相加</span></span><br><span class="line">        c.image=c1.image+c2.image <span class="comment">#虚部相加</span></span><br><span class="line">        <span class="keyword">return</span> c</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    c1=Complex(<span class="number">1</span>,<span class="number">2.5</span>)</span><br><span class="line">    c2=Complex(<span class="number">2.2</span>,<span class="number">3.1</span>)</span><br><span class="line">    c=Complex.add(c1,c2) <span class="comment">#直接使用类名调用类方法add</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;c1+c2的结果为%.2f+%.2fi&#x27;</span>%(c.real,c.image))</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>静态方法<br>
+静态方法是指使用 @staticmethod 修饰的方法。
+<blockquote>
+<p>与类方法不同的地方在于，静态方法中没有类方法中的第一个类参数。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Complex</span>:</span> <span class="comment">#定义Complex类</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">this,real=<span class="number">0</span>,image=<span class="number">0</span></span>):</span> <span class="comment">#定义构造方法</span></span><br><span class="line">        this.real=real <span class="comment">#初始化一个复数的实部值</span></span><br><span class="line">        this.image=image <span class="comment">#初始化一个复数的虚部值</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">c1,c2</span>):</span> <span class="comment">#定义类方法add，实现两个复数的加法运算</span></span><br><span class="line">        c=Complex() <span class="comment">#创建Complex类对象c</span></span><br><span class="line">        c.real=c1.real+c2.real <span class="comment">#实部相加</span></span><br><span class="line">        c.image=c1.image+c2.image <span class="comment">#虚部相加</span></span><br><span class="line">        <span class="keyword">return</span> c</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    c1=Complex(<span class="number">1</span>,<span class="number">2.5</span>)</span><br><span class="line">    c2=Complex(<span class="number">2.2</span>,<span class="number">3.1</span>)</span><br><span class="line">    c=Complex.add(c1,c2) <span class="comment">#直接使用类名调用类方法add</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;c1+c2的结果为%.2f+%.2fi&#x27;</span>%(c.real,c.image))</span><br></pre></td></tr></table></figure>
+<h6 id="为类动态扩展方法"><a class="markdownIt-Anchor" href="#为类动态扩展方法">#</a> 为类动态扩展方法</h6>
+<p>在给对象绑定方法时，需要使用 types 模块中的 MethodType 方法，其第一个参数是要绑定的函数名，第二个参数是绑定的对象名。</p>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#就是老师的ppt</span></span><br><span class="line"><span class="keyword">from</span> types <span class="keyword">import</span> MethodType</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SetName</span>(<span class="params">this,name</span>):</span> <span class="comment">#定义SetName函数</span></span><br><span class="line">  this.name=name</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SetSno</span>(<span class="params">this,sno</span>):</span> <span class="comment">#定义SetSno函数</span></span><br><span class="line">  this.sno=sno</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    stu1=Student() <span class="comment">#定义Student类对象stu1</span></span><br><span class="line">    stu2=Student() <span class="comment">#定义Student类对象stu2</span></span><br><span class="line">    stu1.SetName=MethodType(SetName,stu1)</span><br><span class="line">    Student.SetSno=SetSno <span class="comment">#为Student类绑定SetSno方法</span></span><br><span class="line">    stu1.SetName(<span class="string">&#x27;李晓明&#x27;</span>)</span><br><span class="line">    stu1.SetSno(<span class="string">&#x27;1810100&#x27;</span>)</span><br><span class="line">    <span class="comment">#stu2.SetName(&#x27;张刚&#x27;) #取消注释则会报错</span></span><br><span class="line">    stu2.SetSno(<span class="string">&#x27;1810101&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>只有给那个实例上动态绑定，才可以在那个上面使用。</li>
+<li>由于绑定的是类上的方法，所以方法的第一个参数是 self</li>
+</ol>
+</blockquote>
+<h6 id="控制关于类的访问"><a class="markdownIt-Anchor" href="#控制关于类的访问">#</a> 控制关于类的访问</h6>
+<p>使用 @property 装饰器</p>
+<ul>
+<li>使用 @property 来定义一个用于获取属性值的方法 (getter)</li>
+<li>使用 @属性名.setter 的装饰器</li>
+<li>如果一个属性只有用于获取属性值的 getter 方法，而没有用于设置属性的 setter 方法，则该属性是一个只读属性</li>
+</ul>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>:</span></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">score</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self._score</span><br><span class="line"><span class="meta">    @score.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">score</span>(<span class="params">self,score</span>):</span></span><br><span class="line">        <span class="keyword">if</span> score &lt; <span class="number">0</span> <span class="keyword">or</span> score &gt;<span class="number">100</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;成绩不合规范&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self._score = score</span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> datetime.datetime.now().year-self.birthyear</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    stu = Student()  <span class="comment"># 创建Student类对象stu</span></span><br><span class="line">    stu.score = <span class="number">80</span>  <span class="comment"># 将stu对象的score属性赋值为80</span></span><br><span class="line">    stu.birthyear = <span class="number">2000</span>  <span class="comment"># 将stu对象的birthyear属性赋值为2000</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;年龄：%d,成绩：%d&#x27;</span> % (stu.age, stu.score))</span><br><span class="line">    <span class="comment"># stu.age = 19 #只读属性</span></span><br><span class="line">    stu.score = <span class="number">105</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;年龄：%d,成绩：%d&#x27;</span>%(stu.age,stu.score))</span><br></pre></td></tr></table></figure>
+<div class="note info">
+<p>在类的 setter 和 getter 方法中使用 self 访问属性时，需要在属性名前加上下划线，否则系统会因不断递归调用而报错 (其实就是套娃，不加_你就一直在 get 那个属性)</p>
+</div>
+<blockquote>
+<p>总结：其实 @property 和 @属性名.setter 就是起到一个代理的作用，将你对类属性的访问代理了，经过人家的处理，你才能进行 get 或者 set</p>
+</blockquote>
+<h6 id="生成器"><a class="markdownIt-Anchor" href="#生成器">#</a> 生成器</h6>
+<p>生成器简单实现:</p>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(g))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> g:</span><br><span class="line">    <span class="built_in">print</span>(i, end=<span class="string">&#x27; &#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>上面我们打印出 g 的类型为 class’generator’, 那么 generator 是什么呢？</p>
+<blockquote>
+<p>在语义上可以把它理解成一个状态机，内部封装了多个状态<br>
+执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象 (迭代器)，可以依次遍历 Generator 函数内部的每一个状态。<br>
+上面是使用 for 去将遍历器的状态打印出来，其实还可以 使用 .<strong>next</strong> () 或 next ()</p>
+</blockquote>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>))</span><br><span class="line"><span class="built_in">print</span>(g.__next__())</span><br><span class="line"><span class="built_in">print</span>(g.__next__())</span><br><span class="line"><span class="built_in">print</span>(g.__next__())</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(g))</span><br></pre></td></tr></table></figure>
+<p>复杂实现:</p>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">faclist</span>(<span class="params">n</span>):</span> <span class="comment">#定义函数faclist</span></span><br><span class="line">    result=<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,n+<span class="number">1</span>): <span class="comment">#i在2至n范围内依次取值</span></span><br><span class="line">        <span class="keyword">yield</span> result <span class="comment">#遇到yield即暂停执行并返回result，下次执行时继续		#从此处开始执行</span></span><br><span class="line">        result*=i <span class="comment">#将i乘到result上</span></span><br><span class="line">f = faclist(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(f)</span><br><span class="line"><span class="built_in">print</span>(f.__next__())</span><br><span class="line"><span class="built_in">print</span>(f.__next__())</span><br><span class="line"><span class="built_in">print</span>(f.__next__())</span><br><span class="line"><span class="built_in">print</span>(f.__next__())</span><br></pre></td></tr></table></figure>
+<p>执行上面函数，可以看出当我们调用 faclist 函数的时候，该函数也不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象（Iterator Object）。<br>
+下一步，必须调用遍历器对象的 next 方法，使得指针移向下一个状态。也就是说，每次调用 next 方法，内部指针就从函数头部或上一次停下来的地方开始执行，直到遇到下一个 yield 表达式（或 return 语句）为止。换言之，Generator 函数是分段执行的，yield 表达式是暂停执行的标记，而 next 方法可以恢复执行。</p>
+<p>遍历 (迭代) 器对象的 next 方法运行逻辑如下:</p>
+<ul>
+<li>遇到 yield 表达式，就暂停执行后面的操作，并将紧跟在 yield 后面的那个表达式的值，作为返回的对象的 value 属性值。</li>
+<li>下一次调用 next 方法时，再继续往下执行，直到遇到下一个 yield 表达式。</li>
+<li>如果没有再遇到新的 yield 表达式，就一直运行到函数结束</li>
+<li>如果还继续调用 next，那么就会引发 StopIteration 异常</li>
+</ul>
+<h6 id="迭代器"><a class="markdownIt-Anchor" href="#迭代器">#</a> 迭代器</h6>
+<ul>
+<li>可直接使用 for 循环遍历的对象统称为<ins>可迭代对象</ins>（Iterable）</li>
+<li><ins>迭代器</ins>（Iterator）是指可以通过 next 函数不断获取下一个值的对象，<ins>并不是所有的可迭代对象都是迭代器</ins></li>
+<li>可以使用 isinstance 方法判断一个对象是否是可迭代对象或迭代器。</li>
+</ul>
+<ol>
+<li>对于可迭代对象，通过 iter 函数得到迭代器</li>
+</ol>
+<figure class="highlight python"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(ls))  <span class="comment"># 会报错</span></span><br><span class="line">it = <span class="built_in">iter</span>(ls)</span><br><span class="line"><span class="built_in">print</span>(it.__next__())</span><br><span class="line"><span class="built_in">print</span>(ls)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>next 函数<br>
+上面已经讲的很详细了</li>
+</ol>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-12-07 16:38:45" itemprop="dateModified" datetime="2021-12-07T16:38:45+08:00">2021-12-07</time>
+  </span>
+  <span id="2021/12/06/Python期末复习/" class="item leancloud_visitors" data-flag-title="Python 期末复习" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechat.png" alt="gaoxiaoxin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/pay.png" alt="gaoxiaoxin 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>gaoxiaoxin <i class="ic i-at"><em>@</em></i>gaoxing's Blog
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://gaoxiaoxin.github.io/2021/12/06/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="Python 期末复习">https://gaoxiaoxin.github.io/2021/12/06/Python期末复习/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipet4bz0yj20zk0m8e81.jpg" title="TypeScript基础总结">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>TypeScript基础总结</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%A1%AB%E7%A9%BA"><span class="toc-number">2.</span> <span class="toc-text"> 选择填空</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#python-%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E9%82%A3%E4%BA%9B%E6%98%AF%E5%8F%AF%E5%93%88%E5%B8%8C%E7%9A%84"><span class="toc-number">2.0.1.</span> <span class="toc-text"> python 中的数据类型那些是可哈希的？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%8C%89%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 按位运算</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 身份运算符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E5%8F%82%E6%95%B0-%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 位置参数， 关键字参数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%85%B3%E9%94%AE%E5%AD%97%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%86%85%E5%B1%82%E5%87%BD%E6%95%B0%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%A4%96%E5%B1%82%E5%87%BD%E6%95%B0%E5%8F%98%E9%87%8F"><span class="toc-number">2.0.5.</span> <span class="toc-text"> 函数关键字，全局变量，内层函数中使用外层函数变量</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%BA%E7%B1%BB%E6%B7%BB%E5%8A%A0%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.6.</span> <span class="toc-text"> 为类添加方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%B1%BB%E6%96%B9%E6%B3%95%E5%92%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.7.</span> <span class="toc-text"> 类方法和静态方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%BA%E7%B1%BB%E5%8A%A8%E6%80%81%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.8.</span> <span class="toc-text"> 为类动态扩展方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%85%B3%E4%BA%8E%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE"><span class="toc-number">2.0.9.</span> <span class="toc-text"> 控制关于类的访问</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-number">2.0.10.</span> <span class="toc-text"> 生成器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-number">2.0.11.</span> <span class="toc-text"> 迭代器</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="gaoxiaoxin"
+      data-src="/images/header.png">
+  <p class="name" itemprop="name">gaoxiaoxin</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">7</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhb3hpYW94aW4=" title="https:&#x2F;&#x2F;github.com&#x2F;gaoxiaoxin"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTM5MzIzMjkyNTE=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;3932329251"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/" title="MarkDown的使用">MarkDown的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript基础总结">TypeScript基础总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/10/21/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" title="测试块">测试块</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" title="C++期末考试考点">C++期末考试考点</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/11/28/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="区分不同环境实现环境变量的切换">区分不同环境实现环境变量的切换</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/11/20/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" title="使用Node.js实现自动化发送邮件">使用Node.js实现自动化发送邮件</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/12/06/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="Python期末复习">Python期末复习</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">gaoxiaoxin @ gaoxing's Blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">28k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">25 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/12/06/Python期末复习/',
+    favicon: {
+      show: "(＠￣ー￣＠)",
+      hide: "┗( T﹏T )┛"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

@@ -25,12 +25,12 @@
 
   
 
-<link rel="canonical" href="https://gaoxiaoxin.github.io/2021/10/21/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/">
+<link rel="canonical" href="https://gaoxiaoxin.github.io/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/">
 
 
 
   <title>
-测试块 |
+TypeScript 基础总结 |
 gaoxing's Blog = 热爱可抵岁月漫长</title>
 <meta name="generator" content="Hexo 5.4.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -58,23 +58,23 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">测试块
+  <h1 itemprop="name headline">TypeScript 基础总结
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2021-10-21 22:12:55">
+  <span class="item" title="创建时间：2021-12-01 19:53:42">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2021-10-21T22:12:55+08:00">2021-10-21</time>
+    <time itemprop="dateCreated datePublished" datetime="2021-12-01T19:53:42+08:00">2021-12-01</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>423</span>
+    <span>1.1k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -115,12 +115,12 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
           <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhnx9glj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
         </ul>
       </div>
     </header>
@@ -149,7 +149,7 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/2021/10/21/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/">
+  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/header.png">
@@ -164,115 +164,72 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h3 id="链接块"><a class="markdownIt-Anchor" href="#链接块">#</a> 链接块</h3>
-<div class="links"><div class="item" title="高小兴"><a href="https://gaoxiaoxin.github.io/" class="image" data-background-image="https://tva1.sinaimg.cn/large/006xVoHRly8gr4e8fw1j7j30ku0kugmg.jpg"></a>
-          <div class="info">
-          <a href="https://gaoxiaoxin.github.io/" class="title">测试站点</a>
-          <p class="desc">我是一个测试块</p>
-          </div></div></div>
-<h3 id="代码块"><a class="markdownIt-Anchor" href="#代码块">#</a> 代码块</h3>
-<figure class="highlight javascript"><figcaption><span>Hello</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">&#x27;Hello World&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="emoji绘文字"><a class="markdownIt-Anchor" href="#emoji绘文字">#</a> emoji 绘文字</h3>
-<p>💍<br>
-🎶</p>
-<h3 id="文字特效"><a class="markdownIt-Anchor" href="#文字特效">#</a> 文字特效</h3>
-<p><ins>下划线</ins><br>
-<ins class="wavy">波浪线</ins><br>
-<ins class="dot">着重点</ins><br>
-<ins class="primary">紫色下划线</ins><br>
-<ins class="wavy success">绿色波浪线</ins><br>
-<ins class="dot warning">黄色着重点</ins><br>
-<s>删除线</s><br>
-<s class="danger">红色删除线</s><br>
- == 荧光高亮 ==<br>
-<span class="rainbow"> 赤橙黄绿青蓝紫</span><br>
-<span class="red">红色</span><br>
-<span class="pink">粉色</span><br>
-<span class="orange">橙色</span><br>
-<span class="yellow">黄色</span><br>
-<span class="green">绿色</span><br>
-<span class="aqua">靛青</span><br>
-<span class="blue">蓝色</span><br>
-<span class="purple">紫色</span><br>
-<span class="grey">灰色</span><br>
-快捷键 <span class="kbd">Ctrl</span> + <span class="kbd red">C</span><br>
-H<sub>2</sub>0<br>
-29<sup>th</sup></p>
-<h3 id="隐藏文字"><a class="markdownIt-Anchor" href="#隐藏文字">#</a> 隐藏文字</h3>
-<p><span class="spoiler" title="...">你看见我了</span>：鼠标滑过显示内容<br>
-<span class="spoiler bulr" title="...">你又看见我了</span>：选中文字显示内容</p>
-<h3 id="标签块"><a class="markdownIt-Anchor" href="#标签块">#</a> 标签块</h3>
-<p><span class="label">default</span><br>
-<span class="label primary">primary</span><br>
-<span class="label info">info</span><br>
-<span class="label success">✔️success</span><br>
-<span class="label warning">warning</span><br>
-<span class="label danger">💔danger</span></p>
-<h3 id="提示块"><a class="markdownIt-Anchor" href="#提示块">#</a> 提示块</h3>
-<div class="note default">
-<p>默认默认</p>
-</div>
-<div class="note primary">
-<p>基本基本</p>
-</div>
-<div class="note info">
-<p>提示提示</p>
-</div>
-<div class="note success">
-<p>成功成功</p>
-</div>
-<div class="note warning">
-<p>警告警告</p>
-</div>
-<div class="note danger">
-<p>危险危险</p>
-</div>
-<div class="note danger no-icon">
-<p>危险危险</p>
-</div>
-<h3 id="标签卡"><a class="markdownIt-Anchor" href="#标签卡">#</a> 标签卡</h3>
-<div class="tab" data-id="id1" data-title="卡片1">
-<p>这里是卡片 1 的内容<br>
-<span class="label success"> success</span></p>
-</div>
-<h3 id="折叠块"><a class="markdownIt-Anchor" href="#折叠块">#</a> 折叠块</h3>
-<details><summary>默认默认 这里是一段文字</summary><div>
-<p><ins>下划线</ins></p>
-</div></details>
-<details class="primary"><summary>紫色</summary><div>
-<div class="note info">
-<p>参考信息</p>
-</div>
-<ul>
-<li>第一行</li>
-<li>第二行</li>
-</ul>
-</div></details>
-<details class="info"><summary>蓝色</summary><div>
-<div class="tab" data-id="id3" data-title="卡片 1">
-<p>这里是卡片 1 的内容</p>
-</div>
-<div class="tab" data-id="id3" data-title="卡片 2">
-<p>这里是卡片 2 的内容</p>
-</div>
-</div></details>
-<details class="success"><summary>绿色</summary><div>
-<div class="links"><div class="item" title="優萌初華" style="--block-color:#e9546b;"><span class="exturl image" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=" data-background-image="/images/404.png"></span>
-          <div class="info">
-          <span class="exturl title" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=">優萌初華</span>
-          <p class="desc">https://shoka.lostyu.me</p>
-          </div></div></div>
-</div></details>
-<details class="warning"><summary>黄色</summary><div>
-<p><span class="spoiler bulr" title="...">警告警告警告警告警告</span><br>
-<span class="label success"> label</span></p>
-</div></details>
-<details class="danger"><summary>红色</summary><div>
-<p><span class="label danger">danger</span></p>
-</div></details>
-<h3 id="多媒体"><a class="markdownIt-Anchor" href="#多媒体">#</a> 多媒体</h3>
-<div class="media-container"><div class="player" data-type="audio" data-src='[{"title":"列表 1","list":["https://music.163.com/#/playlist?id=6814561344"]},{"title":"列表 2","list":["https://music.163.com/#/playlist?id=6601973343"]}]'></div></div>
-<div class="media-container"><div class="player" data-type="video" data-src='[{"name":"测试 1","url":"https://cdn.kastatic.org/ka-youtube-converted/O_nY1TM2RZM.mp4/O_nY1TM2RZM.mp4#t=0"},{"name":"测试 2","url":"https://cdn.kastatic.org/ka-youtube-converted/O_nY1TM2RZM.mp4/O_nY1TM2RZM.mp4#t=0"}]'></div></div>
+    <h4 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h4>
+<p>之前感觉学 Ts 的时候，自己做了笔记就万事大吉，结果。。。呵呵 (我真是个可爱的傻子)</p>
+<h4 id="什么是typescript"><a class="markdownIt-Anchor" href="#什么是typescript">#</a> 什么是 TypeScript？</h4>
+<p>TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.<br>
+TypeScript 是 JavaScript 的一个超集，主要提供了类型系统和对 ES6 的支持。防止了 Javascript 之前对类型的不检测，可以在编译期间发现并纠正错误，支持模块，泛型和接口</p>
+<h4 id="typescript初体验"><a class="markdownIt-Anchor" href="#typescript初体验">#</a> TypeScript 初体验</h4>
+<ol>
+<li>安装 Typescript</li>
+</ol>
+<blockquote>
+<p>npm install -g typescript</p>
+</blockquote>
+<ol start="2">
+<li>验证是否安装上</li>
+</ol>
+<blockquote>
+<p>tsc -v<br>
+Version 4.4.3</p>
+</blockquote>
+<ol start="3">
+<li>创建文件 helloWorld.ts，输入代码</li>
+</ol>
+<blockquote>
+<p>let message: string = ‘Hello Typescript’<br>
+console.log(message)</p>
+</blockquote>
+<ol start="4">
+<li>编译文件</li>
+</ol>
+<blockquote>
+<p>tsc helloWorld.ts<br>
+.ts -&gt; .js</p>
+</blockquote>
+<p>那我们这样的是将 ts 编译为 js 再去运行，那我们如何让它更便捷的让我们使用呢？<br>
+回想一下，js 可以在 node 环境下运行，那么 ts 呢？答案是肯定的，那就是  ts-node</p>
+<ol>
+<li>安装 ts-node</li>
+</ol>
+<blockquote>
+<p>npm install -g ts-node</p>
+</blockquote>
+<ol start="2">
+<li>下载依赖插件</li>
+</ol>
+<blockquote>
+<p>npm install -D tslib @types/node</p>
+</blockquote>
+<ol start="3">
+<li>测试使用</li>
+</ol>
+<blockquote>
+<p>ts-node helloWorld.ts</p>
+</blockquote>
+<h4 id="typescript数据类型"><a class="markdownIt-Anchor" href="#typescript数据类型">#</a> TypeScript 数据类型</h4>
+<h5 id="原始数据类型"><a class="markdownIt-Anchor" href="#原始数据类型">#</a> 原始数据类型</h5>
+<h6 id="1-boolean类型"><a class="markdownIt-Anchor" href="#1-boolean类型">#</a> 1. Boolean 类型</h6>
+<figure class="highlight typescript"><figcaption><span>Boolean</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> isDone: <span class="built_in">boolean</span> = <span class="literal">false</span> </span><br><span class="line"><span class="built_in">console</span>.log(isDone)</span><br></pre></td></tr></table></figure>
+<h6 id="2-number类型"><a class="markdownIt-Anchor" href="#2-number类型">#</a> 2. number 类型</h6>
+<p>number 类型既可以表示 十进制，也可以表示二进制，八进制，十六进制</p>
+<figure class="highlight typescript"><figcaption><span>Number</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 十进制</span></span><br><span class="line"><span class="keyword">let</span> num: <span class="built_in">number</span> = <span class="number">100</span></span><br><span class="line"><span class="comment">// 二进制</span></span><br><span class="line"><span class="keyword">let</span> num2: <span class="built_in">number</span> = <span class="number">0b100</span></span><br><span class="line"><span class="comment">// 八进制</span></span><br><span class="line"><span class="keyword">let</span> num3: <span class="built_in">number</span> = <span class="number">0o100</span></span><br><span class="line"><span class="comment">// 十六进制</span></span><br><span class="line"><span class="keyword">let</span> num4: <span class="built_in">number</span> = <span class="number">0x100</span></span><br><span class="line"><span class="built_in">console</span>.log(num, num2, num3, num4)</span><br></pre></td></tr></table></figure>
+<h6 id="3-string类型"><a class="markdownIt-Anchor" href="#3-string类型">#</a> 3. string 类型</h6>
+<figure class="highlight typescript"><figcaption><span>string</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str: <span class="built_in">string</span> = <span class="string">&quot;Hello TypeScript&quot;</span></span><br><span class="line"><span class="keyword">let</span> ts: <span class="built_in">string</span> = <span class="string">&quot;World&quot;</span></span><br><span class="line"><span class="keyword">let</span> hello: <span class="built_in">string</span> = <span class="string">`Hello <span class="subst">$&#123;ts&#125;</span>`</span></span><br></pre></td></tr></table></figure>
+<h6 id="4-null和undefined"><a class="markdownIt-Anchor" href="#4-null和undefined">#</a> 4. null 和 undefined</h6>
+<figure class="highlight ts"><figcaption><span>null和undefined</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> u:<span class="literal">undefined</span> = <span class="literal">undefined</span></span><br><span class="line"><span class="keyword">let</span> n:<span class="literal">null</span> = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+<p>他们不能相互赋值，会引起报错。他们的值只有自己的类型</p>
+
   </div>
 
    <footer>
@@ -283,9 +240,9 @@ H<sub>2</sub>0<br>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2021-11-28 23:29:13" itemprop="dateModified" datetime="2021-11-28T23:29:13+08:00">2021-11-28</time>
+    <time title="修改时间：2021-12-06 16:01:26" itemprop="dateModified" datetime="2021-12-06T16:01:26+08:00">2021-12-06</time>
   </span>
-  <span id="2021/10/21/样式测试/" class="item leancloud_visitors" data-flag-title="测试块" title="阅读次数">
+  <span id="2021/12/01/TypeScript基础总结/" class="item leancloud_visitors" data-flag-title="TypeScript 基础总结" title="阅读次数">
       <span class="icon">
         <i class="ic i-eye"></i>
       </span>
@@ -322,7 +279,7 @@ H<sub>2</sub>0<br>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://gaoxiaoxin.github.io/2021/10/21/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" title="测试块">https://gaoxiaoxin.github.io/2021/10/21/样式测试/</a>
+    <a href="https://gaoxiaoxin.github.io/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript 基础总结">https://gaoxiaoxin.github.io/2021/12/01/TypeScript基础总结/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -341,20 +298,20 @@ H<sub>2</sub>0<br>
     <div class="item left">
       
 
-  <a href="/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeudstjqj20zk0m8k3r.jpg" title="C++期末考试考点">
+  <a href="/2021/11/28/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhnx9glj20zk0m8npd.jpg" title="区分不同环境实现环境变量的切换">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>C++期末考试考点</h3>
+  <h3>区分不同环境实现环境变量的切换</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2021/11/20/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhfehz7j20zk0m8u0x.jpg" title="使用Node.js实现自动化发送邮件">
+  <a href="/2021/12/06/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesng5oej20zk0m87d4.jpg" title="Python期末复习">
   <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3>使用Node.js实现自动化发送邮件</h3>
+  <h3>Python期末复习</h3>
   </a>
 
     </div>
@@ -373,7 +330,7 @@ H<sub>2</sub>0<br>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%9D%97"><span class="toc-number">1.</span> <span class="toc-text"> 链接块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text"> 代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#emoji%E7%BB%98%E6%96%87%E5%AD%97"><span class="toc-number">3.</span> <span class="toc-text"> emoji 绘文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E7%89%B9%E6%95%88"><span class="toc-number">4.</span> <span class="toc-text"> 文字特效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%90%E8%97%8F%E6%96%87%E5%AD%97"><span class="toc-number">5.</span> <span class="toc-text"> 隐藏文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text"> 标签块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%E5%9D%97"><span class="toc-number">7.</span> <span class="toc-text"> 提示块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E5%8D%A1"><span class="toc-number">8.</span> <span class="toc-text"> 标签卡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E5%8F%A0%E5%9D%97"><span class="toc-number">9.</span> <span class="toc-text"> 折叠块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%AA%92%E4%BD%93"><span class="toc-number">10.</span> <span class="toc-text"> 多媒体</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFtypescript"><span class="toc-number">2.</span> <span class="toc-text"> 什么是 TypeScript？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#typescript%E5%88%9D%E4%BD%93%E9%AA%8C"><span class="toc-number">3.</span> <span class="toc-text"> TypeScript 初体验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#typescript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text"> TypeScript 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.1.</span> <span class="toc-text"> 原始数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-boolean%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.1.1.</span> <span class="toc-text"> 1. Boolean 类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-number%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.1.2.</span> <span class="toc-text"> 2. number 类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-string%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.1.3.</span> <span class="toc-text"> 3. string 类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-null%E5%92%8Cundefined"><span class="toc-number">4.1.4.</span> <span class="toc-text"> 4. null 和 undefined</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -449,12 +406,12 @@ H<sub>2</sub>0<br>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/2021/11/28/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2021/11/20/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/2021/12/06/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -478,15 +435,6 @@ H<sub>2</sub>0<br>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/11/20/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" title="使用Node.js实现自动化发送邮件">使用Node.js实现自动化发送邮件</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
     <span><a href="/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" title="C++期末考试考点">C++期末考试考点</a></span>
   </li>
 
@@ -496,25 +444,7 @@ H<sub>2</sub>0<br>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript基础总结">TypeScript基础总结</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/" title="MarkDown的使用">MarkDown的使用</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2021/10/21/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" title="测试块">测试块</a></span>
+    <span><a href="/2021/11/20/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" title="使用Node.js实现自动化发送邮件">使用Node.js实现自动化发送邮件</a></span>
   </li>
 
       
@@ -532,7 +462,34 @@ H<sub>2</sub>0<br>
 <div class="breadcrumb">
 </div>
 
+    <span><a href="/2021/10/21/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" title="测试块">测试块</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
     <span><a href="/2021/12/06/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="Python期末复习">Python期末复习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/" title="MarkDown的使用">MarkDown的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript基础总结">TypeScript基础总结</a></span>
   </li>
 
   </ul>
@@ -575,7 +532,7 @@ H<sub>2</sub>0<br>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2021/10/21/样式测试/',
+    path: '2021/12/01/TypeScript基础总结/',
     favicon: {
       show: "(＠￣ー￣＠)",
       hide: "┗( T﹏T )┛"
