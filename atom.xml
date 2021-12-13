@@ -16,7 +16,7 @@
 &lt;li&gt;先搞清楚可哈希的意思 -&amp;gt; 一个对象在其生命周期内，如果保持不变，那就是 hashable (可哈希的), 就是不变的数据结构&lt;/li&gt;
 &lt;li&gt;结合哈希表的定义：通过给定的关键字的值直接访问到具体对应的值的一个数据结构&lt;/li&gt;
 &lt;li&gt;课件上写: &lt;ins class=&#34;dot&#34;&gt;可哈希对象是指拥有&lt;strong&gt; hash&lt;/strong&gt; (self) 内置函数的对象&lt;/ins&gt;&lt;/li&gt;
-&lt;li&gt;那么回想 python 中满足上述的 可哈希的数据类型就只有 &lt;ins&gt;字符串&lt;/ins&gt;，&lt;ins&gt;元组 (tuple)&lt;/ins&gt;&lt;/li&gt;
+&lt;li&gt;那么回想 python 中满足上述的 可哈希的数据类型就只有 &lt;ins&gt;整形&lt;/ins&gt;，&lt;ins&gt;浮点型&lt;/ins&gt;，&lt;ins&gt;字符串&lt;/ins&gt;，&lt;ins&gt;元组 (tuple)&lt;/ins&gt;&lt;/li&gt;
 &lt;li&gt;不可哈希的有 &lt;ins&gt;列表&lt;/ins&gt;，&lt;ins&gt;集合&lt;/ins&gt;，&lt;ins&gt;字典&lt;/ins&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;参考链接:&lt;/p&gt;
@@ -88,7 +88,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;is not&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;x is y&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;x is not y&lt;/td&gt;
 &lt;td style=&#34;text-align:center&#34;&gt;如果 x 和 y 不对应同样的存储单元，则返回 True；否则，返回 False&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
