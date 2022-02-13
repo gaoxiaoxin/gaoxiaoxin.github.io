@@ -3,7 +3,112 @@
     <id>https://gaoxiaoxin.github.io</id>
     <title>gaoxing&#39;s Blog</title>
     <link href="https://gaoxiaoxin.github.io" />
-    <updated>2021-12-06T07:58:37.103Z</updated>
+    <updated>2022-02-13T11:49:32.603Z</updated>
+    <entry>
+        <id>https://gaoxiaoxin.github.io/2022/02/13/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</id>
+        <title>浅析js事件循环,</title>
+        <link rel="alternate" href="https://gaoxiaoxin.github.io/2022/02/13/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
+        <content type="html">&lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
+&lt;p&gt;我们经常使用着 javaScript, 但是却有时候并不知道它是为什么去运行，是基于什么机制去执行。只是单纯的会用就行。那么我们了解的 js 是什么呢？当我们说起它，我们会想起什么呢？ 动态弱类型语言，解释性语言，单线程，非阻塞。但是它为什么是单线程，非阻塞。内部是如何实现？还是会有一些疑问。&lt;/p&gt;
+&lt;h4 id=&#34;正文&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#正文&#34;&gt;#&lt;/a&gt; 正文&lt;/h4&gt;
+&lt;p&gt;js 这门语言是专门设计来与浏览器进行交互的脚本语言，那么作用决定性质，所以他就有了单线程与非阻塞的特性。单线程是为了在 js 操作 DOM 的时候不会由于多个操作操作同一个 DOM 元素而导致 (避免样式错乱), 同一个时间只能做一件事。非阻塞是为了让用户在进行一个高耗时的操作后，不至于页面卡死。&lt;/p&gt;
+&lt;p&gt;那么我们下面来重点说一下非阻塞&lt;/p&gt;
+&lt;h4 id=&#34;非阻塞&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#非阻塞&#34;&gt;#&lt;/a&gt; 非阻塞&lt;/h4&gt;
+&lt;p&gt;非阻塞其实理解起来就是把一个 &amp;quot;我们需要它异步&amp;quot; 操作的事件挂起来，让它去执行，等有结果再去处理它，那么把它挂在哪呢？挂起来后什么时候去处理？如何处理？这是个问题。&lt;/p&gt;
+&lt;h5 id=&#34;执行栈与事件任务队列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#执行栈与事件任务队列&#34;&gt;#&lt;/a&gt; 执行栈与事件 (任务) 队列&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;执行栈 (execution context stack) 是程序代码执行的地方，js 程序会按照从上到下的顺序去执行代码，把需要执行的代码依次入栈，执行完再出栈。&lt;/li&gt;
+&lt;li&gt;任务队列 (task queue) 在执行栈外，当异步任务返回结果就会向 task queue 中放一个事件。&lt;/li&gt;
+&lt;li&gt;webApi, 异步事件挂载到这，等它返回结果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;用一个图表示就是&lt;br&gt;
+&lt;img data-src=&#34;https://pic4.zhimg.com/80/v2-da078fa3eadf3db4bf455904ae06f84b_720w.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+现在我们知道，异步事件被挂载到 webApi 中，等它返回结果后就会被加入 task queue。&lt;br&gt;
+那么他们具体是怎么处理呢？&lt;/p&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;其实就想上面那个图一样，js 会先处理执行栈中的代码，遇见需要异步处理的事件就将它挂到 webApi 上，等异步事件返回结果就将它加到任务队列中，然后等执行栈中的事件处理完空闲的时候就去处理任务队列中的事件。并且不断去重复这个过程，我们称之为事件循环。&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;那么我们就需要知道另外一个知识点：宏任务和微任务&lt;/p&gt;
+&lt;h6 id=&#34;宏任务和微任务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#宏任务和微任务&#34;&gt;#&lt;/a&gt; 宏任务和微任务&lt;/h6&gt;
+&lt;p&gt;上面的任务队列中其实又分为宏任务 (macro task) 和微任务 (micro task), 两者又有不同的队列。&lt;br&gt;
+那么我们为什么要有两种任务队列呢？&lt;/p&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;页面渲染事件，各种 IO 的完成事件等随时被添加到任务队列中，一直会保持先进先出的原则执行，我们不能准确地控制这些事件被添加到任务队列中的位置。但是这个时候突然有高优先级的任务需要尽快执行，那么一种类型的任务就不合适了，所以引入了微任务队列。 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zZWdtZW50ZmF1bHQuY29tL2EvMTE5MDAwMDAyMjgwNTUyMw==&#34;&gt;来源&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;macrotasks: 包含生成 dom 对象、解析 HTML、执行主线程 js 代码、更改当前 URL 还有其他的一些事件如页面加载、输入、网络事件和定时器事件。&lt;/li&gt;
+&lt;li&gt;microtasks: primose 事件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那么 js 代码如何执行呢？&lt;br&gt;
+先在执行栈中执行，然后有异步任务就放到 webApi 中，等它返回结果就放到任务队列中，并且分为宏任务和微任务。当执行栈中空闲的时候，就进行事件循环。事件循环的模式为：先看一下宏任务中是否有需要执行的任务，如果有就取一件出来执行，然后去执行由它产生的微任务。如何没有就去看微任务。然后去循环。&lt;/p&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;这里将 srcipt 整体代码看作宏任务&lt;/p&gt;
+&lt;/div&gt;
+&lt;h5 id=&#34;结语&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结语&#34;&gt;#&lt;/a&gt; 结语&lt;/h5&gt;
+&lt;p&gt;上面说的是一些比较简单的，基础的东西。&lt;/p&gt;
+&lt;h5 id=&#34;参考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考&#34;&gt;#&lt;/a&gt; 参考&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zMzA1ODk4Mw==&#34;&gt;https://zhuanlan.zhihu.com/p/33058983&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8yNDQ2MDc2OQ==&#34;&gt;https://zhuanlan.zhihu.com/p/24460769&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zZWdtZW50ZmF1bHQuY29tL2EvMTE5MDAwMDAyMjgwNTUyMw==&#34;&gt;https://segmentfault.com/a/1190000022805523&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <updated>2022-02-13T11:49:32.603Z</updated>
+    </entry>
+    <entry>
+        <id>https://gaoxiaoxin.github.io/2022/01/10/%E8%AF%A6%E8%A7%A3%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/</id>
+        <title>从变量提升,this指向,作用域深耕(上)</title>
+        <link rel="alternate" href="https://gaoxiaoxin.github.io/2022/01/10/%E8%AF%A6%E8%A7%A3%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/"/>
+        <content type="html">&lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
+&lt;p&gt;学习前端规规整整一年过去了，收获很多东西，也失去一些，哈哈，人生也就这样，失失得得。之前学习 js 的时候对很多东西的理解只是浮于表面，现在从另外一个角度和层次对这些知识进行整理汇总和表达。&lt;/p&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;本文的内容可能会很长，请大家保持耐心，前面的会很简单，是我们对某些概念的基本理解，在后面才会对这些概念进行深入的理解，并且前面的一些基础概念不会是重点，如果看完我写的还是不太明确，可以去我引用的参考资料中去进行学习，感谢这些大佬们的思路和分享&lt;/p&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;变量提升&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量提升&#34;&gt;#&lt;/a&gt; 变量提升&lt;/h4&gt;
+&lt;p&gt;对于很多学习 js 的小伙伴来说，var 的变量提升和函数优先这些概念应该都不会陌生，那么现在让我们去看一下&lt;/p&gt;
+&lt;p&gt;由于 js 是一个解释型语言，所以 js 的代码会一行一行的执行，那么当我们在一个变量进行声明之前对它进行调用， 是不是就会报错显示这个变量是 not defined 呢？&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(a); &lt;span class=&#34;comment&#34;&gt;//  undefined&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; a = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;foo(); &lt;span class=&#34;comment&#34;&gt;// 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;foo&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其实我们会输出 a 为 undefined, 而不是我们想的那个 not defined ; 那么是为什么呢？其实这个是因为&lt;ins&gt; Javascript&lt;/ins&gt;&lt;ins&gt; 引擎&lt;/ins&gt;会在代码执行前对代码进行一个&lt;ins&gt;预解析&lt;/ins&gt;，先获取所有被声明的变量，然后一行一行地运行。这样的话就会造成 var 变量和函数声明可以在代码未执行到它的时候进行使用，这就是我们现在讲的重点 &lt;mark&gt;变量提升&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;那么什么是提升 (Hoisting) 呢？&lt;/p&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;&lt;ins&gt;变量提升 (Hoisting)&lt;/ins&gt; 被认为是，Javascript 中&lt;ins&gt;执行上下文&lt;/ins&gt; (特别是创建和执行阶段) 工作方式的一种认识。&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;简单讲就是 js 引擎会在&lt;ins&gt;预编译期间&lt;/ins&gt;将变量声明和函数声明提升到对应作用域的最顶层&lt;br&gt;
+下面来看一段代码&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(foo)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;foo&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; foo = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(foo)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上面的话第一个打印输出 foo 为 foo 函数，而第二个打印输出 foo 就显示 foo 变为了 1&lt;br&gt;
+ 然后再看一个，大家可以想一下，这个会输出什么&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(a);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; a = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;foo&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(a);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; a = &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;foo();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;会输出两个 undefined, 其实代码进行一个转换后是这个样子&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; a;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(a);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;a = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;foo&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; a;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(a);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  a = &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;foo();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;通过这两个例子大家应该对变量提升有了一个更好的认识，但是在第一个例子中，我们发现当函数声明和变量声明同时存在的情况下，在&lt;ins&gt;两者声明之前&lt;/ins&gt; foo 是函数，那么这个就是我们老生常谈的 &lt;ins&gt;函数优先&lt;/ins&gt;&lt;br&gt;
+：在函数名和变量名冲突的时候，js 引擎预编译期间会优先进行函数的声明。官方一点讲就是，js 在预解析的时候&lt;ins&gt;首先会处理函数声明，其次会处理变量声明，如果如果变量名称跟已经声明的形式参数或函数相同，则变量声明不会干扰已经存在的这类属性&lt;/ins&gt;。&lt;/p&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;函数优先 (函数声明优先) : 注意我们这里说的函数优先是指的是函数声明优先，并不是指函数表达式优先&lt;/p&gt;
+&lt;/div&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(foo); &lt;span class=&#34;comment&#34;&gt;// undefined&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; foo = &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; (&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;现在的话我们是讲完了 var , 但是还有人说 js 现在不是还可以用 let , const 对变量进行声明吗，他们还不像 var 这样，他们只带块级作用域。我们现在来看，上个代码看一下:&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(a);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; a = &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(a);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; a = &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;当我们运行这个代码，编译器就会给我们报一个错误 : &lt;ins&gt;Cannot access ‘a’ before initialization&lt;/ins&gt;, 翻译为汉语就是：在 a 进行初始化之前我们无法进行访问。其实我们可以想到函数表达式也同样会报这个错。&lt;/p&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;let , const 没有变量提升！！！&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;现在讲完了一些基础东西，我们对这些东西进行一个思考:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;变量提升到底是提升什么东西？&lt;/li&gt;
+&lt;li&gt;let, const 和 var 在变量声明的时候有什么区别&lt;/li&gt;
+&lt;li&gt;函数声明为什么优先&lt;br&gt;
+这些问题我们后面进行解答&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;引用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#引用&#34;&gt;#&lt;/a&gt; 引用&lt;/h4&gt;
+&lt;p&gt;&lt;a src=&#34;https://developer.mozilla.org/zh-CN/docs/Glossary/Hoisting&#34;&gt;1.mdn 文档&lt;/a&gt;&lt;br&gt;
+&lt;a src=&#34;https://zhuanlan.zhihu.com/p/159456303?utm_source=qq&amp;utm_medium=social&amp;utm_oi=1275089624591687680&#34;&gt;2.js 变量提升和函数提升&lt;/a&gt;&lt;br&gt;
+&lt;a src=&#34;https://zhuanlan.zhihu.com/p/28140450&#34;&gt;一个大佬对 let 的理解&lt;/a&gt;&lt;/p&gt;
+</content>
+        <updated>2022-01-10T09:14:30.992Z</updated>
+    </entry>
     <entry>
         <id>https://gaoxiaoxin.github.io/2021/12/06/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</id>
         <title>Python期末复习</title>

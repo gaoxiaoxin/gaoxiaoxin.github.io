@@ -25,11 +25,12 @@
 
   
 
-<link rel="canonical" href="https://gaoxiaoxin.github.io/links/">
+<link rel="canonical" href="https://gaoxiaoxin.github.io/2022/02/13/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">
 
 
 
-  <title>友链 |
+  <title>
+浅析 js 事件循环， |
 gaoxing's Blog = 热爱可抵岁月漫长</title>
 <meta name="generator" content="Hexo 5.4.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -57,8 +58,34 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">友链
+  <h1 itemprop="name headline">浅析 js 事件循环，
   </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-02-13 19:49:32">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-02-13T19:49:32+08:00">2022-02-13</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>1.4k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
 
           </div>
         </div>
@@ -89,11 +116,11 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
       <div id="imgs" class="pjax">
         <ul>
           <li class="item" data-background-image="https://tva1.sinaimg.cn/large/006xVoHRly8gr3z3av20hj31c00u0gzi.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
           <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeu1usa7j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
         </ul>
       </div>
     </header>
@@ -114,9 +141,15 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
       <div class="inner">
         <div id="main" class="pjax">
           
-  <div class="page wrap">
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/links/index.html">
+  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/2022/02/13/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/header.png">
@@ -131,19 +164,50 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="-swig0-"><a class="markdownIt-Anchor" href="#-swig0-">#</a> <div class="links"><div class="item" title="霜月琉璃" style="--block-color:#e9546b;"><span class="exturl image" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=" data-background-image="https://cdn.jsdelivr.net/gh/amehime/shoka@latest/images/avatar.jpg"></span>
-          <div class="info">
-          <span class="exturl title" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=">優萌初華</span>
-          <p class="desc">琉璃的医学 & 编程笔记</p>
-          </div></div><div class="item" title="霜月琉璃"><span class="exturl image" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=" data-background-image="/images/avatar.jpg"></span>
-          <div class="info">
-          <span class="exturl title" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=">優萌初華</span>
-          <p class="desc">https://shoka.lostyu.me</p>
-          </div></div><div class="item" title="優萌初華" style="--block-color:#9d5b8b;"><span class="exturl image" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=" data-background-image="/images/404.png"></span>
-          <div class="info">
-          <span class="exturl title" data-url="aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=">優萌初華</span>
-          <p class="desc">琉璃的医学 & 编程笔记</p>
-          </div></div></div></h1>
+    <h4 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h4>
+<p>我们经常使用着 javaScript, 但是却有时候并不知道它是为什么去运行，是基于什么机制去执行。只是单纯的会用就行。那么我们了解的 js 是什么呢？当我们说起它，我们会想起什么呢？ 动态弱类型语言，解释性语言，单线程，非阻塞。但是它为什么是单线程，非阻塞。内部是如何实现？还是会有一些疑问。</p>
+<h4 id="正文"><a class="markdownIt-Anchor" href="#正文">#</a> 正文</h4>
+<p>js 这门语言是专门设计来与浏览器进行交互的脚本语言，那么作用决定性质，所以他就有了单线程与非阻塞的特性。单线程是为了在 js 操作 DOM 的时候不会由于多个操作操作同一个 DOM 元素而导致 (避免样式错乱), 同一个时间只能做一件事。非阻塞是为了让用户在进行一个高耗时的操作后，不至于页面卡死。</p>
+<p>那么我们下面来重点说一下非阻塞</p>
+<h4 id="非阻塞"><a class="markdownIt-Anchor" href="#非阻塞">#</a> 非阻塞</h4>
+<p>非阻塞其实理解起来就是把一个 &quot;我们需要它异步&quot; 操作的事件挂起来，让它去执行，等有结果再去处理它，那么把它挂在哪呢？挂起来后什么时候去处理？如何处理？这是个问题。</p>
+<h5 id="执行栈与事件任务队列"><a class="markdownIt-Anchor" href="#执行栈与事件任务队列">#</a> 执行栈与事件 (任务) 队列</h5>
+<ul>
+<li>执行栈 (execution context stack) 是程序代码执行的地方，js 程序会按照从上到下的顺序去执行代码，把需要执行的代码依次入栈，执行完再出栈。</li>
+<li>任务队列 (task queue) 在执行栈外，当异步任务返回结果就会向 task queue 中放一个事件。</li>
+<li>webApi, 异步事件挂载到这，等它返回结果。</li>
+</ul>
+<p>用一个图表示就是<br>
+<img data-src="https://pic4.zhimg.com/80/v2-da078fa3eadf3db4bf455904ae06f84b_720w.jpg" alt=""><br>
+现在我们知道，异步事件被挂载到 webApi 中，等它返回结果后就会被加入 task queue。<br>
+那么他们具体是怎么处理呢？</p>
+<div class="note info">
+<p>其实就想上面那个图一样，js 会先处理执行栈中的代码，遇见需要异步处理的事件就将它挂到 webApi 上，等异步事件返回结果就将它加到任务队列中，然后等执行栈中的事件处理完空闲的时候就去处理任务队列中的事件。并且不断去重复这个过程，我们称之为事件循环。</p>
+</div>
+<p>那么我们就需要知道另外一个知识点：宏任务和微任务</p>
+<h6 id="宏任务和微任务"><a class="markdownIt-Anchor" href="#宏任务和微任务">#</a> 宏任务和微任务</h6>
+<p>上面的任务队列中其实又分为宏任务 (macro task) 和微任务 (micro task), 两者又有不同的队列。<br>
+那么我们为什么要有两种任务队列呢？</p>
+<div class="note info">
+<p>页面渲染事件，各种 IO 的完成事件等随时被添加到任务队列中，一直会保持先进先出的原则执行，我们不能准确地控制这些事件被添加到任务队列中的位置。但是这个时候突然有高优先级的任务需要尽快执行，那么一种类型的任务就不合适了，所以引入了微任务队列。 <span class="exturl" data-url="aHR0cHM6Ly9zZWdtZW50ZmF1bHQuY29tL2EvMTE5MDAwMDAyMjgwNTUyMw==">来源</span></p>
+</div>
+<ul>
+<li>macrotasks: 包含生成 dom 对象、解析 HTML、执行主线程 js 代码、更改当前 URL 还有其他的一些事件如页面加载、输入、网络事件和定时器事件。</li>
+<li>microtasks: primose 事件</li>
+</ul>
+<p>那么 js 代码如何执行呢？<br>
+先在执行栈中执行，然后有异步任务就放到 webApi 中，等它返回结果就放到任务队列中，并且分为宏任务和微任务。当执行栈中空闲的时候，就进行事件循环。事件循环的模式为：先看一下宏任务中是否有需要执行的任务，如果有就取一件出来执行，然后去执行由它产生的微任务。如何没有就去看微任务。然后去循环。</p>
+<div class="note primary">
+<p>这里将 srcipt 整体代码看作宏任务</p>
+</div>
+<h5 id="结语"><a class="markdownIt-Anchor" href="#结语">#</a> 结语</h5>
+<p>上面说的是一些比较简单的，基础的东西。</p>
+<h5 id="参考"><a class="markdownIt-Anchor" href="#参考">#</a> 参考</h5>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zMzA1ODk4Mw==">https://zhuanlan.zhihu.com/p/33058983</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8yNDQ2MDc2OQ==">https://zhuanlan.zhihu.com/p/24460769</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9zZWdtZW50ZmF1bHQuY29tL2EvMTE5MDAwMDAyMjgwNTUyMw==">https://segmentfault.com/a/1190000022805523</span></li>
+</ul>
 
   </div>
 
@@ -155,9 +219,9 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2021-10-21 22:40:49" itemprop="dateModified" datetime="2021-10-21T22:40:49+08:00">2021-10-21</time>
+    <time title="修改时间：2022-02-14 00:04:03" itemprop="dateModified" datetime="2022-02-14T00:04:03+08:00">2022-02-14</time>
   </span>
-  <span id="links/" class="item leancloud_visitors" data-flag-title="友链" title="阅读次数">
+  <span id="2022/02/13/js事件循环/" class="item leancloud_visitors" data-flag-title="浅析 js 事件循环，" title="阅读次数">
       <span class="icon">
         <i class="ic i-eye"></i>
       </span>
@@ -194,7 +258,7 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://gaoxiaoxin.github.io/links/index.html" title="友链">https://gaoxiaoxin.github.io/links/index.html</a>
+    <a href="https://gaoxiaoxin.github.io/2022/02/13/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="浅析 js 事件循环，">https://gaoxiaoxin.github.io/2022/02/13/js事件循环/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -208,6 +272,23 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
 
   </div>
   
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/01/10/%E8%AF%A6%E8%A7%A3%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclize41wj20zk0m87gk.jpg" title="从变量提升,this指向,作用域深耕(上)">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>从变量提升,this指向,作用域深耕(上)</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
   <div class="wrap" id="comments"></div>
 
 
@@ -220,19 +301,7 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#-swig0-"><span class="toc-number">1.</span> <span class="toc-text"> 
-          
-          優萌初華
-          琉璃的医学 &amp; 编程笔记
-          
-          
-          優萌初華
-          https:&#x2F;&#x2F;shoka.lostyu.me
-          
-          
-          優萌初華
-          琉璃的医学 &amp; 编程笔记
-          </span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-number">2.</span> <span class="toc-text"> 正文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E9%98%BB%E5%A1%9E"><span class="toc-number">3.</span> <span class="toc-text"> 非阻塞</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E6%A0%88%E4%B8%8E%E4%BA%8B%E4%BB%B6%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97"><span class="toc-number">3.1.</span> <span class="toc-text"> 执行栈与事件 (任务) 队列</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 宏任务和微任务</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">3.2.</span> <span class="toc-text"> 结语</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">3.3.</span> <span class="toc-text"> 参考</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
       </div>
@@ -335,24 +404,6 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/11/28/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="区分不同环境实现环境变量的切换">区分不同环境实现环境变量的切换</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" title="C++期末考试考点">C++期末考试考点</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
     <span><a href="/2021/10/21/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" title="测试块">测试块</a></span>
   </li>
 
@@ -371,16 +422,7 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/11/20/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" title="使用Node.js实现自动化发送邮件">使用Node.js实现自动化发送邮件</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript基础总结">TypeScript基础总结</a></span>
+    <span><a href="/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/" title="MarkDown的使用">MarkDown的使用</a></span>
   </li>
 
       
@@ -398,6 +440,24 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
 <div class="breadcrumb">
 </div>
 
+    <span><a href="/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript基础总结">TypeScript基础总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" title="C++期末考试考点">C++期末考试考点</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
     <span><a href="/2022/02/13/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="浅析js事件循环,">浅析js事件循环,</a></span>
   </li>
 
@@ -407,7 +467,16 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/" title="MarkDown的使用">MarkDown的使用</a></span>
+    <span><a href="/2021/11/20/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" title="使用Node.js实现自动化发送邮件">使用Node.js实现自动化发送邮件</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/11/28/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="区分不同环境实现环境变量的切换">区分不同环境实现环境变量的切换</a></span>
   </li>
 
   </ul>
@@ -450,7 +519,7 @@ gaoxing's Blog = 热爱可抵岁月漫长</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'links/',
+    path: '2022/02/13/js事件循环/',
     favicon: {
       show: "(＠￣ー￣＠)",
       hide: "┗( T﹏T )┛"
