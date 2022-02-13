@@ -3,7 +3,21 @@
     <id>https://gaoxiaoxin.github.io</id>
     <title>gaoxing&#39;s Blog</title>
     <link href="https://gaoxiaoxin.github.io" />
-    <updated>2022-02-13T11:49:32.603Z</updated>
+    <updated>2022-02-13T16:09:34.475Z</updated>
+    <entry>
+        <id>https://gaoxiaoxin.github.io/2022/02/14/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</id>
+        <title>从进程和线程角度去理解事件循环</title>
+        <link rel="alternate" href="https://gaoxiaoxin.github.io/2022/02/14/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
+        <content type="html">&lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
+&lt;p&gt;之前因为有些事件循环的问题在深入整理的时候出了些岔子，然后一直不太懂，直到有个大佬给我发了一篇文章，写的是太棒了 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82ODQ0OTAzOTE5Nzg5ODAxNDg2&#34;&gt;https://juejin.cn/post/6844903919789801486&lt;/span&gt; 。我不想去仿照着大佬的文章写，或者说临摹，大家可以去看看原文。我这里简单说一下自己的感悟。&lt;/p&gt;
+&lt;h4 id=&#34;感悟&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#感悟&#34;&gt;#&lt;/a&gt; 感悟&lt;/h4&gt;
+&lt;p&gt;事件循环其实是几个浏览器的渲染进程的几个子进程组成的一个循环结构。我们说到循环，我们首先会想到一个 ⚪， 其实 ⚪ 也是有一个开头的， 那么事件循环这个圆的开头在那呢？我认为是 &amp;quot;js 引擎线程控制的执行栈&amp;quot;, 当 js 整体代码作为一个宏任务，其中的代码依次在执行栈中执行。那么循环就开启了，其中的触发事件放入事件触发线程中，定时器事件交与定时器触发器线程，网络请求交给异步 http 请求线程，当满足事件触发的条件，事件触发线程就会将异步执行代码放入其管理的任务队列中。&lt;br&gt;
+&lt;img data-src=&#34;https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/8/21/16cb1d70e5120bea~tplv-t2oaga2asx-watermark.awebp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;结语&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结语&#34;&gt;#&lt;/a&gt; 结语&lt;/h4&gt;
+&lt;p&gt;人生就是一个上或者下的过程，是一个锥形，我们出生的时候是在我们的最底部，当然每个人的最底部不一样，或高或低。你能看到的天空其实就只是你人生锥形的最大面，只有你不断的向上走，你的天空才会扩大。不知足无畏，因为他们的天空就那么大，他们只是生活在自己认为的天空中。&lt;/p&gt;
+</content>
+        <updated>2022-02-13T16:09:34.475Z</updated>
+    </entry>
     <entry>
         <id>https://gaoxiaoxin.github.io/2022/02/13/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</id>
         <title>浅析js事件循环,</title>
