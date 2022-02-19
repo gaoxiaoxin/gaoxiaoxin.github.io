@@ -72,7 +72,6 @@
   --text-color: var(--grey-7);
   --header-text-color: var(--grey-0);
   --primary-color: var(--color-red);
-  --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%);
 }
 .primary {
   --note-border: #cda0c7;
@@ -2505,29 +2504,11 @@ main >.inner {
 .social .item.github i {
   color: #191717;
 }
-.social .item.twitter::before {
-  background-color: #00aff0;
-}
-.social .item.twitter i {
-  color: #00aff0;
-}
-.social .item.zhihu::before {
-  background-color: #1e88e5;
-}
-.social .item.zhihu i {
-  color: #1e88e5;
-}
 .social .item.music::before {
   background-color: #e60026;
 }
 .social .item.music i {
   color: #e60026;
-}
-.social .item.about::before {
-  background-color: #3b5998;
-}
-.social .item.about i {
-  color: #3b5998;
 }
 .social .item:focus i,
 .social .item:hover i {

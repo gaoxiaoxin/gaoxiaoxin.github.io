@@ -3,14 +3,45 @@
     <channel>
         <title>gaoxing&#39;s Blog</title>
         <link>https://gaoxiaoxin.github.io</link>
-        <description></description>
+        <description>遇见的都是天意
+拥有的都是幸运</description>
         <language>zh-CN</language>
-        <pubDate>Mon, 14 Feb 2022 00:09:34 +0800</pubDate>
-        <lastBuildDate>Mon, 14 Feb 2022 00:09:34 +0800</lastBuildDate>
+        <pubDate>Fri, 18 Feb 2022 17:59:13 +0800</pubDate>
+        <lastBuildDate>Fri, 18 Feb 2022 17:59:13 +0800</lastBuildDate>
+        <category>进程和线程</category>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/02/14/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/02/18/JavaScript/postcss/</guid>
+            <title>postcss的使用</title>
+            <link>https://gaoxiaoxin.github.io/2022/02/18/JavaScript/postcss/</link>
+            <pubDate>Fri, 18 Feb 2022 17:59:13 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;先上官网 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9wb3N0Y3NzLm9yZy8=&#34;&gt;https://postcss.org/&lt;/span&gt; ,&lt;br&gt;
+ 这个 logo 好看的很&lt;img data-src=&#34;https://camo.githubusercontent.com/a2ebaaedf9af41416a2717b3a28f405b39535397f4463c5c5119146c84c240f9/68747470733a2f2f706f73746373732e6f72672f6c6f676f2e737667&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;什么是-postcss&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是-postcss&#34;&gt;#&lt;/a&gt; 什么是 PostCss&lt;/h4&gt;
+&lt;p&gt;PostCSS 是一个允许使用 JS 插件转换样式的工具。 这些插件可以检查（lint）你的 CSS，支持 CSS Variables 和 Mixins， 编译尚未被浏览器广泛支持的先进的 CSS 语法，内联图片，以及其它很多优秀的功能。&lt;/p&gt;
+&lt;h4 id=&#34;中间待补充部分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#中间待补充部分&#34;&gt;#&lt;/a&gt; 中间待补充部分&lt;/h4&gt;
+&lt;h4 id=&#34;在-webpack-中使用-postcss&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在-webpack-中使用-postcss&#34;&gt;#&lt;/a&gt; 在 webpack 中使用 postcss&lt;/h4&gt;
+&lt;p&gt;在 webpack 中我们可以使用 postcss 进行 css 的兼容性处理&lt;br&gt;
+其实 postcss 是一个单独的工具，我们可以使用它单独的去转换 css, 首先需要下载 postcss postcss-cli&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;npm&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install postcss postcss-cli -D&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中 postcss 是工具本身， postcss-cli 是需要运行的环境。&lt;br&gt;
+我们转换 css 的时候要用到对应的插件，这里我们使用 autoprefixer 来进行处理&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;npm&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install autoprefixer -D&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后在命令行中&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;npm&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npx postcss --use 要使用的插件 -o 要处理的文件地址 要输出的地址&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npx postcss --use autoprefixer -o end.css ./src/css/style.css&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;我们使用 postcss-loader 对 css 文件进行处理，所以需要先下载 postcss-loader 插件&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;npm&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install postcss-loader -D&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后去配置文件中进行配置&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;webpack.config.js&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;loader&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;&amp;quot;postcss-loader&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;options&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;postcssOptions&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;plugins&lt;/span&gt;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;// postcss的插件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;require&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;autoprefixer&amp;quot;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      ],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;或者可以将 postcss 配置独立出来到 postcss.config.js 文件中&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;postcss.config.js&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;module&lt;/span&gt;.exports = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;plugins&lt;/span&gt;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 一般不使用这个&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// require(&amp;#x27;autoprefixer&amp;#x27;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 一般用这个&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;require&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;postcss-preset-env&amp;quot;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  ],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这里我们用了另外的一个插件 postcss-preset-env 这个插件内置 autoprefixer, 并且比 autoprefixer 好用很多&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/02/14/JavaScript/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</guid>
             <title>从进程和线程角度去理解事件循环</title>
-            <link>https://gaoxiaoxin.github.io/2022/02/14/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</link>
+            <link>https://gaoxiaoxin.github.io/2022/02/14/JavaScript/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</link>
+            <category>进程和线程</category>
             <pubDate>Mon, 14 Feb 2022 00:09:34 +0800</pubDate>
             <description><![CDATA[ &lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
 &lt;p&gt;之前因为有些事件循环的问题在深入整理的时候出了些岔子，然后一直不太懂，直到有个大佬给我发了一篇文章，写的是太棒了 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82ODQ0OTAzOTE5Nzg5ODAxNDg2&#34;&gt;https://juejin.cn/post/6844903919789801486&lt;/span&gt; 。我不想去仿照着大佬的文章写，或者说临摹，大家可以去看看原文。我这里简单说一下自己的感悟。&lt;/p&gt;
@@ -22,9 +53,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/02/13/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/02/13/JavaScript/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</guid>
             <title>浅析js事件循环,</title>
-            <link>https://gaoxiaoxin.github.io/2022/02/13/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</link>
+            <link>https://gaoxiaoxin.github.io/2022/02/13/JavaScript/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</link>
             <pubDate>Sun, 13 Feb 2022 19:49:32 +0800</pubDate>
             <description><![CDATA[ &lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
 &lt;p&gt;我们经常使用着 javaScript, 但是却有时候并不知道它是为什么去运行，是基于什么机制去执行。只是单纯的会用就行。那么我们了解的 js 是什么呢？当我们说起它，我们会想起什么呢？ 动态弱类型语言，解释性语言，单线程，非阻塞。但是它为什么是单线程，非阻塞。内部是如何实现？还是会有一些疑问。&lt;/p&gt;
@@ -73,9 +104,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/01/10/%E8%AF%A6%E8%A7%A3%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/01/10/JavaScript/%E8%AF%A6%E8%A7%A3%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/</guid>
             <title>从变量提升,this指向,作用域深耕(上)</title>
-            <link>https://gaoxiaoxin.github.io/2022/01/10/%E8%AF%A6%E8%A7%A3%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/</link>
+            <link>https://gaoxiaoxin.github.io/2022/01/10/JavaScript/%E8%AF%A6%E8%A7%A3%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/</link>
             <pubDate>Mon, 10 Jan 2022 17:14:30 +0800</pubDate>
             <description><![CDATA[ &lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
 &lt;p&gt;学习前端规规整整一年过去了，收获很多东西，也失去一些，哈哈，人生也就这样，失失得得。之前学习 js 的时候对很多东西的理解只是浮于表面，现在从另外一个角度和层次对这些知识进行整理汇总和表达。&lt;/p&gt;
@@ -127,9 +158,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/12/06/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/12/06/%E6%9D%82%E9%A1%B9/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</guid>
             <title>Python期末复习</title>
-            <link>https://gaoxiaoxin.github.io/2021/12/06/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</link>
+            <link>https://gaoxiaoxin.github.io/2021/12/06/%E6%9D%82%E9%A1%B9/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</link>
             <pubDate>Mon, 06 Dec 2021 15:58:37 +0800</pubDate>
             <description><![CDATA[ &lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
 &lt;p&gt;博主对老师公布的考点进行自己的总结，希望和大家一起学习，一起进步。如果有不对或者不准确的地方，希望各位大佬给以指正和补充，资料主要为老师的 PPT，加上自己的一些理解（菜鸡，理解的很少）不喜勿喷&lt;/p&gt;
@@ -365,9 +396,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/12/01/TypeScript/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/</guid>
             <title>TypeScript基础总结</title>
-            <link>https://gaoxiaoxin.github.io/2021/12/01/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/</link>
+            <link>https://gaoxiaoxin.github.io/2021/12/01/TypeScript/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/</link>
             <pubDate>Wed, 01 Dec 2021 19:53:42 +0800</pubDate>
             <description><![CDATA[ &lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
 &lt;p&gt;之前感觉学 Ts 的时候，自己做了笔记就万事大吉，结果。。。呵呵 (我真是个可爱的傻子)&lt;/p&gt;
@@ -437,9 +468,9 @@ console.log(message)&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/11/28/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/11/28/JavaScript/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</guid>
             <title>区分不同环境实现环境变量的切换</title>
-            <link>https://gaoxiaoxin.github.io/2021/11/28/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</link>
+            <link>https://gaoxiaoxin.github.io/2021/11/28/JavaScript/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</link>
             <pubDate>Sun, 28 Nov 2021 21:48:28 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;区分不同环境实现环境变量的切换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#区分不同环境实现环境变量的切换&#34;&gt;#&lt;/a&gt; 区分不同环境实现环境变量的切换&lt;/h3&gt;
 &lt;p&gt;在开发中，我们经常需要根据不同的环境设置不同的环境变量，常见的环境有三种:&lt;/p&gt;
@@ -460,13 +491,13 @@ console.log(message)&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;手动修改不同的变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#手动修改不同的变量&#34;&gt;#&lt;/a&gt; 手动修改不同的变量&lt;/h4&gt;
 &lt;p&gt;没错，你没想错，就是单纯的手动，在需要你&lt;span class=&#34;spoiler bulr&#34; title=&#34;...&#34;&gt;人工 (智能)&lt;/span&gt; 去修改不同环境下的变量&lt;/p&gt;
-&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption&gt;&lt;span&gt;示例&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// devlopment &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/dev&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// production &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/prod&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/test&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption&gt;&lt;span&gt;示例&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// devlopment&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/dev&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// production&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/prod&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/test&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;需要哪个，就自己去换。。。&lt;/p&gt;
 &lt;div class=&#34;note danger&#34;&gt;
 &lt;p&gt;不推荐&lt;/p&gt;
 &lt;/div&gt;
-&lt;h4 id=&#34;根据processenvnode_env的值进行区分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#根据processenvnode_env的值进行区分&#34;&gt;#&lt;/a&gt; 根据 process.env.NODE_ENV 的值进行区分&lt;/h4&gt;
-&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;示例&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; TIME_OUT = &lt;span class=&#34;number&#34;&gt;10000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (process.env.NODE_ENV === &lt;span class=&#34;string&#34;&gt;&amp;#x27;development&amp;#x27;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;#x27;http://xiaoxx.org/dev&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (process.env.NODE_ENV === &lt;span class=&#34;string&#34;&gt;&amp;#x27;production&amp;#x27;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;#x27;http://xiaoxx.org/prod&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;#x27;http://xiaoxx.org/test&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;export&lt;/span&gt; &amp;#123; BASE_URL, TIME_OUT &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;根据-processenvnode_env-的值进行区分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#根据-processenvnode_env-的值进行区分&#34;&gt;#&lt;/a&gt; 根据 process.env.NODE_ENV 的值进行区分&lt;/h4&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;示例&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; TIME_OUT = &lt;span class=&#34;number&#34;&gt;10000&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (process.env.NODE_ENV === &lt;span class=&#34;string&#34;&gt;&amp;quot;development&amp;quot;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/dev&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (process.env.NODE_ENV === &lt;span class=&#34;string&#34;&gt;&amp;quot;production&amp;quot;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/prod&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/test&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;export&lt;/span&gt; &amp;#123; BASE_URL, TIME_OUT &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;然后再该使用的地方使用就可&lt;/p&gt;
 &lt;div class=&#34;note success&#34;&gt;
 &lt;p&gt;推荐&lt;/p&gt;
@@ -484,17 +515,17 @@ console.log(message)&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;自定义文件后，需要重新启动项目&lt;br&gt;
 三个文件的配置&lt;/p&gt;
-&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;development&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/dev&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_NAME = &lt;span class=&#34;string&#34;&gt;&amp;quot;xiaoxx&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;production&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/prod&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_NAME = &lt;span class=&#34;string&#34;&gt;&amp;quot;xiaoxxprod&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;test&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/test&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_NAME = &lt;span class=&#34;string&#34;&gt;&amp;quot;xiaoxxtest&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;development&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/dev&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_NAME = &lt;span class=&#34;string&#34;&gt;&amp;quot;xiaoxx&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;production&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/prod&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_NAME = &lt;span class=&#34;string&#34;&gt;&amp;quot;xiaoxxprod&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;test&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_URL = &lt;span class=&#34;string&#34;&gt;&amp;quot;http://xiaoxx.org/test&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;VUE_APP_BASE_NAME = &lt;span class=&#34;string&#34;&gt;&amp;quot;xiaoxxtest&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h4 id=&#34;结语&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结语&#34;&gt;#&lt;/a&gt; 结语&lt;/h4&gt;
 &lt;p&gt;感谢大家的观看，希望给大家带来帮助，噩梦般的期中考试周过去了，接下来要开始学前端了！！！&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/11/20/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/11/20/Node.js/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</guid>
             <title>使用Node.js实现自动化发送邮件</title>
-            <link>https://gaoxiaoxin.github.io/2021/11/20/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</link>
+            <link>https://gaoxiaoxin.github.io/2021/11/20/Node.js/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</link>
             <pubDate>Sat, 20 Nov 2021 21:23:43 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;使用nodejs实现自动化发送邮件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用nodejs实现自动化发送邮件&#34;&gt;#&lt;/a&gt; 使用 Node.js 实现自动化发送邮件&lt;/h3&gt;
 &lt;p&gt;之前学到的一个东西，今天突然想起来，就来写了。回想自己学习前端已有快一年的时间了，但是真真的自己总结却没有太多。那就从现在开始，用现在作为一个契机。&lt;/p&gt;
@@ -516,9 +547,9 @@ console.log(message)&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/10/21/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/10/21/%E6%9D%82%E9%A1%B9/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/</guid>
             <title>测试块</title>
-            <link>https://gaoxiaoxin.github.io/2021/10/21/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/</link>
+            <link>https://gaoxiaoxin.github.io/2021/10/21/%E6%9D%82%E9%A1%B9/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/</link>
             <pubDate>Thu, 21 Oct 2021 22:12:55 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;链接块&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#链接块&#34;&gt;#&lt;/a&gt; 链接块&lt;/h3&gt;
 &lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;高小兴&#34;&gt;&lt;a href=&#34;https://gaoxiaoxin.github.io/&#34; class=&#34;image&#34; data-background-image=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8gr4e8fw1j7j30ku0kugmg.jpg&#34;&gt;&lt;/a&gt;
@@ -631,9 +662,9 @@ H&lt;sub&gt;2&lt;/sub&gt;0&lt;br&gt;
 &lt;div class=&#34;media-container&#34;&gt;&lt;div class=&#34;player&#34; data-type=&#34;video&#34; data-src=&#39;[{&#34;name&#34;:&#34;测试 1&#34;,&#34;url&#34;:&#34;https://cdn.kastatic.org/ka-youtube-converted/O_nY1TM2RZM.mp4/O_nY1TM2RZM.mp4#t=0&#34;},{&#34;name&#34;:&#34;测试 2&#34;,&#34;url&#34;:&#34;https://cdn.kastatic.org/ka-youtube-converted/O_nY1TM2RZM.mp4/O_nY1TM2RZM.mp4#t=0&#34;}]&#39;&gt;&lt;/div&gt;&lt;/div&gt; ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/06/16/%E6%9D%82%E9%A1%B9/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/</guid>
             <title>C++期末考试考点</title>
-            <link>https://gaoxiaoxin.github.io/2021/06/16/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/</link>
+            <link>https://gaoxiaoxin.github.io/2021/06/16/%E6%9D%82%E9%A1%B9/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/</link>
             <pubDate>Wed, 16 Jun 2021 08:19:40 +0800</pubDate>
             <description><![CDATA[ &lt;h3 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h3&gt;
 &lt;ol&gt;
@@ -1057,9 +1088,9 @@ H&lt;sub&gt;2&lt;/sub&gt;0&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2021/03/06/%E6%9D%82%E9%A1%B9/MarkDown%E8%AE%B2%E4%B9%89/</guid>
             <title>MarkDown的使用</title>
-            <link>https://gaoxiaoxin.github.io/2021/03/06/MarkDown%E8%AE%B2%E4%B9%89/</link>
+            <link>https://gaoxiaoxin.github.io/2021/03/06/%E6%9D%82%E9%A1%B9/MarkDown%E8%AE%B2%E4%B9%89/</link>
             <pubDate>Sat, 06 Mar 2021 20:04:49 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;markdown-使用指南&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#markdown-使用指南&#34;&gt;#&lt;/a&gt; MarkDown 使用指南&lt;/h1&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
