@@ -1,0 +1,651 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="gaoxing's Blog" href="https://gaoxiaoxin.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="gaoxing's Blog" href="https://gaoxiaoxin.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="gaoxing's Blog" href="https://gaoxiaoxin.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="webpack5" />
+
+
+<link rel="canonical" href="https://gaoxiaoxin.github.io/2022/02/19/Webpack/01_webpack%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">
+
+
+
+  <title>
+Webpack 学习 - -[Webpack] |
+gaoxing's Blog = 热爱可抵岁月漫长</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Webpack 学习
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-02-19 11:06:21">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-02-19T11:06:21+08:00">2022-02-19</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>5.7k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>5 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">gaoxing's Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/Webpack/" itemprop="item" rel="index" title="分类于 -[Webpack]"><span itemprop="name">-[Webpack]</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/2022/02/19/Webpack/01_webpack%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/header.png">
+    <meta itemprop="name" content="gaoxiaoxin">
+    <meta itemprop="description" content="热爱可抵岁月漫长, 遇见的都是天意
+拥有的都是幸运">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="gaoxing's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h4 id="写作的原因"><a class="markdownIt-Anchor" href="#写作的原因">#</a> 写作的原因</h4>
+<p>最近发现一个事，发现自己学是学了，但是学完之后没有对自己学习的内容进行一个总结，然后就发现自己学了但是没有完全学会。。。, 所以还是得总结和思考！！！</p>
+<div class="note primary">
+<p>学而不思则罔，思而不学则殆</p>
+</div>
+<h4 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h4>
+<p>我们学习前端，先是 Html,Css,Js, 自己手动的写一些引入链接，慢慢的我们了解到 less, sass/scss, 等等这些语言，但是我们不能直接在我们的 Html 中直接引用这些东西，那么我们就需要使用各种工具先将他们转化为 css, 然后再去使用。很麻烦，但也无可奈何。 慢慢的我们去学习各种框架，并且了解到他们的 cli, 并且他们可以直接使用 less, scss 这些东西，只是配置一些配置文件。那么 why?<br>
+ 这是因为他们在内部使用了一些打包工具，这里用 vue-cli 举例，它内置的是 webpack, 使用 webpack 进行打包。so, webpack 是什么呢？</p>
+<details class="info"><summary>什么是 webpack</summary><div>
+<p>webpack 是一个用于现代 JavaScript 应用程序的 静态模块打包工具。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 依赖图 (dependency graph)，然后将你项目中所需的每一个模块组合成一个或多个 bundles，它们均为静态资源，用于展示你的内容。</p>
+</div></details>
+<h4 id="webpack-基本使用"><a class="markdownIt-Anchor" href="#webpack-基本使用">#</a> Webpack 基本使用</h4>
+<h5 id="环境安装"><a class="markdownIt-Anchor" href="#环境安装">#</a> 环境安装</h5>
+<p>当我们新创建一个项目，那我们就需要下载 webpack 以及运行 webpack 的环境 webpack-cli, 前置条件是需要 node 环境.</p>
+<figure class="highlight js"><figcaption><span>npm</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm init -y <span class="comment">// 项目起一个英文名</span></span><br><span class="line">npm install webpack webpack-cli -d</span><br></pre></td></tr></table></figure>
+<p>哈哈，写完上面代码块，解决了博客的一个 bug, 舒服。<br>
+然后我们整理一下我们的项目结构，我们需要新建一个 <code>src</code>  文件夹，在其中放我们的代码。<br>
+然后在 <code>src</code>  的外层创建一个 webpack.config.js 的 webpack 的配置文件</p>
+<h5 id="webpack-的一些核心概念"><a class="markdownIt-Anchor" href="#webpack-的一些核心概念">#</a> webpack 的一些核心概念</h5>
+<ul>
+<li><code>entry</code>  入口，指示 webpack 应该使用那个模块作为开始。</li>
+<li><code>output</code>  出口，将打包好的文件放在那个地方</li>
+<li><code>loader</code>  “翻译官” 去转换和处理 webpack 不能理解的文件，webpack 默认只理解<mark> JavaScript</mark> 和<mark> Json</mark>。</li>
+<li><code>plugin</code>  插件，做一些 loader 做不了的事情，执行更加广泛的任务。如打包优化，资源管理，环境变量注入等等。</li>
+<li><code>mode</code>  模式，通过设置不同的模式，来启动 wwebpack 内置在相应环境下的优化。</li>
+</ul>
+<h5 id="webpack-的基本使用"><a class="markdownIt-Anchor" href="#webpack-的基本使用">#</a> webpack 的基本使用</h5>
+<div class="note warning">
+<p>对文件的处理都是必须在入口的依赖中</p>
+</div>
+<h6 id="基础的打包"><a class="markdownIt-Anchor" href="#基础的打包">#</a> 基础的打包</h6>
+<p>我们先使用最基础的 webpack 对 js, 进行一个基础的打包，慢慢的引入。</p>
+<figure class="highlight js"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ./src/index.js</span></span><br><span class="line"><span class="keyword">const</span> sum = <span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">20</span>, <span class="number">30</span>));</span><br></pre></td></tr></table></figure>
+<p>然后编写 webpack.config.js 文件</p>
+<figure class="highlight js"><figcaption><span>webpack.config.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>); <span class="comment">// node工具</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&quot;./src/index.js&quot;</span>, <span class="comment">// 入口文件</span></span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">&quot;./build&quot;</span>), <span class="comment">// 导出的文件夹地址</span></span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&quot;bundle.js&quot;</span>, <span class="comment">// 文件名</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>然后在命令行中运行 webpack 后，我们就能看见对应 build 文件夹了<br>
+但是我们写前端项目往往还是需要一个 HTML 文件，那么我们还是要像以前一样，自动创建一个 HTML 文件，然后自己去引入吗？答案当然是否</p>
+<h6 id="自动创建-html-文件并且引入打包文件"><a class="markdownIt-Anchor" href="#自动创建-html-文件并且引入打包文件">#</a> 自动创建 HTML 文件并且引入打包文件</h6>
+<p>这里的话我们就需要使用一个 webpack plugin ==&gt; html-webpack-plugin<br>
+<span class="exturl" data-url="aHR0cHM6Ly93ZWJwYWNrLmRvY3NjaGluYS5vcmcvcGx1Z2lucy9odG1sLXdlYnBhY2stcGx1Z2luLw==">https://webpack.docschina.org/plugins/html-webpack-plugin/</span></p>
+<figure class="highlight js"><figcaption><span>npm</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i html-webpack-plugin -d</span><br></pre></td></tr></table></figure>
+<p>然后在配置文件中引入并使用</p>
+<figure class="highlight js"><figcaption><span>webpack</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&quot;html-webpack-plugin&quot;</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&quot;./src/index.js&quot;</span>,</span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">&quot;./build&quot;</span>),</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&quot;bundle.js&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [<span class="keyword">new</span> HtmlWebpackPlugin()], <span class="comment">// plugins中放的是一个个的plugin实例</span></span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>运行 webpack 后，我们就会发现会有一个默认的 HTML 文件出现在打包后的代码中。<br>
+但是这个默认的文件看起来有些死板，我们无法对其进行控制，so 我们有什么办法吗？有的，我们可以在它的插件配置中放入一个模板<br>
+首先：我们在 <code>src</code>  文件夹里创建一个  <code>index.html</code>  文件。让其作为模板在其中写好咱们的默认配置。<br>
+然后在配置文件中进行配置。</p>
+<figure class="highlight js"><figcaption><span>webpack</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">    <span class="comment">// 复制 &#x27;./src/index.html&#x27;文件, 并自动引入打包输出的所有资源</span></span><br><span class="line">    <span class="attr">template</span>: <span class="string">&quot;./src/index.html&quot;</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>然后运行 webpack。<br>
+我们现在解决了 html, 那么就要考虑一下 前端不可或缺的 css 了</p>
+<h6 id="处理-样式css-less-scss-文件"><a class="markdownIt-Anchor" href="#处理-样式css-less-scss-文件">#</a> 处理 样式 (css, less, scss) 文件</h6>
+<ol>
+<li>处理 css 文件<br>
+我们这里使用 loader 去处理 css 文件，first: 下载，就像一句话说的：无图言叼<br>
+你都没有下载，你凭什么用！</li>
+</ol>
+<figure class="highlight js"><figcaption><span>npm</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install style-loader css-loader -d</span><br></pre></td></tr></table></figure>
+<p>和 plugin 不同的是，loader 可以不用引用，直接使用</p>
+<p>写一个 css 文件，并且在 index.js 中对其进行引用。<br>
+写配置文件</p>
+<figure class="highlight js"><figcaption><span>webpack</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&quot;html-webpack-plugin&quot;</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&quot;./src/index.js&quot;</span>,</span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&quot;bundle.js&quot;</span>,</span><br><span class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">&quot;build&quot;</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">module</span>: &#123;</span><br><span class="line">    <span class="attr">rules</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">/* 匹配对应文件 */</span></span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/.\css$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          <span class="comment">// 执行顺序, 从后到前</span></span><br><span class="line">          <span class="comment">// 创建style标签, 将js中的样式资源进行插入, 添加到header中生效</span></span><br><span class="line">          <span class="string">&quot;style-loader&quot;</span>,</span><br><span class="line">          <span class="comment">// 将css文件变为commonjs模块加载js中， 里面内容是样式字符串</span></span><br><span class="line">          <span class="string">&quot;css-loader&quot;</span>,</span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      <span class="comment">// 复制 &#x27;./src/index.html&#x27;文件, 并自动引入打包输出的所有资源</span></span><br><span class="line">      <span class="attr">template</span>: <span class="string">&quot;./src/index.html&quot;</span>,</span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这里需要注意 loader 的执行顺序</p>
+<ol start="2">
+<li>处理 less 或 scss 文件<br>
+我们这里使用 less 进行举例。<br>
+我们之前使用 less 的时候是先将 less 变为 css 然后再去使用，现在也是一样，不过之前是使用工具或者插件，现在是使用 loader ==&gt; less-loader。</li>
+</ol>
+<p>first: install</p>
+<figure class="highlight js"><figcaption><span>npm</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install less-loader -d</span><br></pre></td></tr></table></figure>
+<p>配置文件修改为:</p>
+<figure class="highlight js"><figcaption><span>webpack</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">    <span class="attr">rules</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">/* 匹配对应文件 */</span></span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/.\css$/</span>,</span><br><span class="line">        use: [</span><br><span class="line">          <span class="comment">// 执行顺序, 从后到前</span></span><br><span class="line">          <span class="comment">// 创建style标签, 将js中的样式资源进行插入, 添加到header中生效</span></span><br><span class="line">          <span class="string">&quot;style-loader&quot;</span>,</span><br><span class="line">          <span class="comment">// 将css文件变为commonjs模块加载js中， 里面内容是样式字符串</span></span><br><span class="line">          <span class="string">&quot;css-loader&quot;</span>,</span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/.\less$/</span>,</span><br><span class="line">        use :[ <span class="string">&quot;styel-loader&quot;</span>, <span class="string">&quot;css-loader&quot;</span>, <span class="string">&quot;less-loader&quot;</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>就像上面的配置文件上一样，我们对其进行打包，那么我们就会发现打包之后，我们是看不到 css 的代码的，这就很不习惯，也不方便检查。</p>
+<ol start="3">
+<li>将 css 单独进行抽离<br>
+这个看上去就和 &quot;翻译官&quot; loader 无关，所以我们使用 plugin ==&gt;  <code>mini-css-extract-plugin</code></li>
+</ol>
+<figure class="highlight js"><figcaption><span>npm</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mini-css-extract-plugin -d</span><br></pre></td></tr></table></figure>
+<p>配置文件来看</p>
+<figure class="highlight js"><figcaption><span>webpack</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&quot;html-webpack-plugin&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> miniCssExtractPlugin = <span class="built_in">require</span>(<span class="string">&quot;mini-css-extract-plugin&quot;</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">entry</span>: <span class="string">&quot;./src/js/index.js&quot;</span>,</span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&quot;bundle.js&quot;</span>,</span><br><span class="line">    <span class="attr">path</span>: path.resolve(__dirname, <span class="string">&quot;build&quot;</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">module</span>: &#123;</span><br><span class="line">    <span class="attr">rules</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        <span class="comment">// 使用插件的loader代替style-loader,可以上去看看style-loader的作用</span></span><br><span class="line">        <span class="comment">// 将js中的css抽到一个css文件中</span></span><br><span class="line">        use: [miniCssExtractPlugin.loader, <span class="string">&quot;css-loader&quot;</span>],</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      <span class="attr">template</span>: <span class="string">&quot;./src/index.html&quot;</span>,</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="comment">// 这里如果不配置filename的话就会创建一个name是hash值的css文件</span></span><br><span class="line">    <span class="keyword">new</span> miniCssExtractPlugin(&#123;</span><br><span class="line">      <span class="attr">filename</span>: <span class="string">&quot;css/[name].css&quot;</span>,</span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>css 的兼容<br>
+这个是使用 postcss 和它的 loader<br>
+ 具体文章参考 <a href="https://gaoxiaoxin.github.io/2022/02/18/JavaScript/postcss/">https://gaoxiaoxin.github.io/2022/02/18/JavaScript/postcss/</a></li>
+</ol>
+<h6 id="处理其他资源"><a class="markdownIt-Anchor" href="#处理其他资源">#</a> 处理其他资源</h6>
+<p>在 webpack5 之前，我们可以使用 file-loader 处理其他的资源，用 url-loader 来处理图片，那么在 webpack5 中，我们使用内置的资源模块类型（asset module type）<br>
+<span class="exturl" data-url="aHR0cHM6Ly93ZWJwYWNrLmRvY3NjaGluYS5vcmcvZ3VpZGVzL2Fzc2V0LW1vZHVsZXMv">https://webpack.docschina.org/guides/asset-modules/</span></p>
+<details class="success"><summary>资源模块类型（asset module type）</summary><div>
+<ul>
+<li>asset/resource 发送一个单独的文件并导出 URL。之前通过使用 file-loader 实现；</li>
+<li>asset/inline 导出一个资源的 data URI。之前通过使用 url-loader 实现；</li>
+<li>asset/source 导出资源的源代码。之前通过使用 raw-loader 实现；</li>
+<li>asset 在导出一个 data URI 和发送一个单独的文件之间自动选择。之前通过使用 url-loader，并且配置资源体积限制实现</li>
+</ul>
+</div></details>
+<ol>
+<li>处理图片资源<br>
+直接看配置文件</li>
+</ol>
+<figure class="highlight js"><figcaption><span>webpack</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">test</span>: <span class="regexp">/\.(jpe?g|png|gif|svg)$/</span>,</span><br><span class="line">  type: <span class="string">&quot;asset&quot;</span>, <span class="comment">//要使用的类型</span></span><br><span class="line">  <span class="attr">generator</span>: &#123;</span><br><span class="line">    <span class="comment">//输出的文件名</span></span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&quot;img/[name]_[hash:6][ext]&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">parser</span>: &#123;</span><br><span class="line">    <span class="attr">dataUrlCondition</span>: &#123;</span><br><span class="line">      <span class="attr">maxSize</span>: <span class="number">100</span> * <span class="number">1024</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>处理字体文件</li>
+</ol>
+<figure class="highlight js"><figcaption><span>webpack</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">test</span>: <span class="regexp">/\.(eot|ttf|woff2?)$/</span>,</span><br><span class="line">  type: <span class="string">&quot;asset/resource&quot;</span>,</span><br><span class="line">  <span class="attr">generator</span>: &#123;</span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&quot;font/[name]_[hash:6][ext]&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="引用"><a class="markdownIt-Anchor" href="#引用">#</a> 引用</h5>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82OTIzOTE4ODA1NzIyNzI2NDEzI2NvbW1lbnQ=">webpack5 基础入门</span></li>
+<li><a href="">coderwhy</a></li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/webpack5/" rel="tag"><i class="ic i-tag"></i> webpack5</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-02-19 22:58:51" itemprop="dateModified" datetime="2022-02-19T22:58:51+08:00">2022-02-19</time>
+  </span>
+  <span id="2022/02/19/Webpack/01_webpack基础学习/" class="item leancloud_visitors" data-flag-title="Webpack 学习" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechat.png" alt="gaoxiaoxin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/pay.png" alt="gaoxiaoxin 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>gaoxiaoxin <i class="ic i-at"><em>@</em></i>gaoxing's Blog
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://gaoxiaoxin.github.io/2022/02/19/Webpack/01_webpack%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Webpack 学习">https://gaoxiaoxin.github.io/2022/02/19/Webpack/01_webpack基础学习/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/02/19/hexo/shoka/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciryrr3rj20zk0m8nhk.jpg" title="shoka配置">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> hexo</span>
+  <h3>shoka配置</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99%E4%BD%9C%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-number">1.</span> <span class="toc-text"> 写作的原因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text"> Webpack 基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-number">3.1.</span> <span class="toc-text"> 环境安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#webpack-%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-number">3.2.</span> <span class="toc-text"> webpack 的一些核心概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#webpack-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">3.3.</span> <span class="toc-text"> webpack 的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9A%84%E6%89%93%E5%8C%85"><span class="toc-number">3.3.1.</span> <span class="toc-text"> 基础的打包</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E5%88%9B%E5%BB%BA-html-%E6%96%87%E4%BB%B6%E5%B9%B6%E4%B8%94%E5%BC%95%E5%85%A5%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.2.</span> <span class="toc-text"> 自动创建 HTML 文件并且引入打包文件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%A4%84%E7%90%86-%E6%A0%B7%E5%BC%8Fcss-less-scss-%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.3.</span> <span class="toc-text"> 处理 样式 (css, less, scss) 文件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90"><span class="toc-number">3.3.4.</span> <span class="toc-text"> 处理其他资源</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">3.4.</span> <span class="toc-text"> 引用</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2022/02/19/Webpack/01_webpack%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" rel="bookmark" title="Webpack学习">Webpack学习</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="gaoxiaoxin"
+      data-src="/images/header.png">
+  <p class="name" itemprop="name">gaoxiaoxin</p>
+  <div class="description" itemprop="description">遇见的都是天意
+拥有的都是幸运</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">13</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">3</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhb3hpYW94aW4=" title="https:&#x2F;&#x2F;github.com&#x2F;gaoxiaoxin"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTM5MzIzMjkyNTE=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;3932329251"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友達</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/03/06/%E6%9D%82%E9%A1%B9/MarkDown%E8%AE%B2%E4%B9%89/" title="MarkDown的使用">MarkDown的使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/02/13/JavaScript/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="浅析js事件循环,">浅析js事件循环,</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/06/16/%E6%9D%82%E9%A1%B9/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" title="C++期末考试考点">C++期末考试考点</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/12/01/TypeScript/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript基础总结">TypeScript基础总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 hexo">hexo</a>
+</div>
+
+    <span><a href="/2022/02/19/hexo/shoka/" title="shoka配置">shoka配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/10/JavaScript/%E8%AF%A6%E8%A7%A3%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/" title="从变量提升,this指向,作用域深耕(上)">从变量提升,this指向,作用域深耕(上)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/12/06/%E6%9D%82%E9%A1%B9/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="Python期末复习">Python期末复习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/11/20/Node.js/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" title="使用Node.js实现自动化发送邮件">使用Node.js实现自动化发送邮件</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/2022/02/14/JavaScript/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="从进程和线程角度去理解事件循环">从进程和线程角度去理解事件循环</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/02/18/JavaScript/postcss/" title="postcss的使用">postcss的使用</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">gaoxiaoxin @ gaoxing's Blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">38k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">35 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/02/19/Webpack/01_webpack基础学习/',
+    favicon: {
+      show: "(＠￣ー￣＠)",
+      hide: "┗( T﹏T )┛"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

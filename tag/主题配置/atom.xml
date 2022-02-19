@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://gaoxiaoxin.github.io</id>
+    <title>gaoxing&#39;s Blog • Posts by &#34;主题配置&#34; tag</title>
+    <link href="https://gaoxiaoxin.github.io" />
+    <updated>2022-02-19T02:47:34.854Z</updated>
+    <category term="进程和线程" />
+    <category term="主题配置" />
+    <category term="webpack5" />
+    <entry>
+        <id>https://gaoxiaoxin.github.io/2022/02/19/hexo/shoka/</id>
+        <title>shoka配置</title>
+        <link rel="alternate" href="https://gaoxiaoxin.github.io/2022/02/19/hexo/shoka/"/>
+        <content type="html">&lt;h4 id=&#34;参考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考&#34;&gt;#&lt;/a&gt; 参考&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy40azhrLnh5ei9hcnRpY2xlL0JldHJheVZpcmdpbmlhLzExMzU3MjM2NA==&#34;&gt;http://www.4k8k.xyz/article/BetrayVirginia/113572364&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWUv&#34;&gt;https://shoka.lostyu.me/&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;bug-处理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bug-处理&#34;&gt;#&lt;/a&gt; Bug 处理&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;在使用这个样式之后，我发现我的代码块第一行总是开头空两格！！！，我以为是配置问题，于是我就一直找这个问题作者的配置文件都快被我翻烂了。。。&lt;br&gt;
+&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8gzj0mjjaqlj30up04y3yn.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+很离谱的一个 bug.&lt;br&gt;
+ 然后，我在写博客的时候，无意中想到检查一下元素。。。故事开始了&lt;br&gt;
+&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8gzj0q2bwslj30lk0iymz4.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+发现是伪类元素 before 搞得鬼，然后我就想，我直接把样式改了不就完事？&lt;br&gt;
+所以就在&lt;br&gt;
+&lt;img data-src=&#34;https://tva3.sinaimg.cn/large/006xVoHRly8gzj0rutbl9j308h0gxmy4.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+中发现了要该的样式&lt;br&gt;
+&lt;img data-src=&#34;https://tva4.sinaimg.cn/large/006xVoHRly8gzj0swxshij308q0743yt.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+问题解决&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="主题配置" />
+        <updated>2022-02-19T02:47:34.854Z</updated>
+    </entry>
+</feed>

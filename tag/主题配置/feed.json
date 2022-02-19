@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "gaoxing's Blog • All posts by \"主题配置\" tag",
+    "description": "遇见的都是天意\n拥有的都是幸运",
+    "home_page_url": "https://gaoxiaoxin.github.io",
+    "items": [
+        {
+            "id": "https://gaoxiaoxin.github.io/2022/02/19/hexo/shoka/",
+            "url": "https://gaoxiaoxin.github.io/2022/02/19/hexo/shoka/",
+            "title": "shoka配置",
+            "date_published": "2022-02-19T02:47:34.854Z",
+            "content_html": "<h4 id=\"参考\"><a class=\"markdownIt-Anchor\" href=\"#参考\">#</a> 参考</h4>\n<ul>\n<li><span class=\"exturl\" data-url=\"aHR0cDovL3d3dy40azhrLnh5ei9hcnRpY2xlL0JldHJheVZpcmdpbmlhLzExMzU3MjM2NA==\">http://www.4k8k.xyz/article/BetrayVirginia/113572364</span></li>\n<li><span class=\"exturl\" data-url=\"aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWUv\">https://shoka.lostyu.me/</span></li>\n</ul>\n<h4 id=\"bug-处理\"><a class=\"markdownIt-Anchor\" href=\"#bug-处理\">#</a> Bug 处理</h4>\n<ol>\n<li>在使用这个样式之后，我发现我的代码块第一行总是开头空两格！！！，我以为是配置问题，于是我就一直找这个问题作者的配置文件都快被我翻烂了。。。<br>\n<img data-src=\"https://tva1.sinaimg.cn/large/006xVoHRly8gzj0mjjaqlj30up04y3yn.jpg\" alt=\"\"><br>\n很离谱的一个 bug.<br>\n 然后，我在写博客的时候，无意中想到检查一下元素。。。故事开始了<br>\n<img data-src=\"https://tva1.sinaimg.cn/large/006xVoHRly8gzj0q2bwslj30lk0iymz4.jpg\" alt=\"\"><br>\n发现是伪类元素 before 搞得鬼，然后我就想，我直接把样式改了不就完事？<br>\n所以就在<br>\n<img data-src=\"https://tva3.sinaimg.cn/large/006xVoHRly8gzj0rutbl9j308h0gxmy4.jpg\" alt=\"\"><br>\n中发现了要该的样式<br>\n<img data-src=\"https://tva4.sinaimg.cn/large/006xVoHRly8gzj0swxshij308q0743yt.jpg\" alt=\"\"><br>\n问题解决</li>\n</ol>\n",
+            "tags": [
+                "主题配置"
+            ]
+        }
+    ]
+}

@@ -4586,7 +4586,7 @@ code,
   background: var(--grey-4);
 }
 .highlight::before {
-  content: " ";
+  content: "";
   position: absolute;
   border-radius: 50%;
   background: #fc625d;
@@ -4680,7 +4680,7 @@ code,
   transition: all 0.2s ease-in-out 0s;
 }
 .code-container td pre::before {
-  content: " ";
+  content: "";
 }
 .code-container td:first-child {
   position: absolute;
