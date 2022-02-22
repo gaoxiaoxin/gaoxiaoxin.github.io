@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>gaoxing&#39;s Blog • Posts by &#34;hexo&#34; category</title>
+        <title>自能生羽翼, 何必仰云梯 • Posts by &#34;hexo&#34; category</title>
         <link>https://gaoxiaoxin.github.io</link>
         <description>遇见的都是天意
 拥有的都是幸运</description>
         <language>zh-CN</language>
         <pubDate>Sat, 19 Feb 2022 10:47:34 +0800</pubDate>
         <lastBuildDate>Sat, 19 Feb 2022 10:47:34 +0800</lastBuildDate>
+        <category>事件循环</category>
         <category>进程和线程</category>
+        <category>小技巧</category>
         <category>主题配置</category>
         <category>webpack5</category>
         <item>

@@ -5671,3 +5671,43 @@ span.label {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
+.logo .title {
+  width: 22ch;
+  -webkit-animation: typing 4s steps(22), blink 0.5s step-end infinite alternate;
+          animation: typing 4s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+@-webkit-keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 22ch;
+  }
+  100% {
+    width: 22ch;
+  }
+}
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 22ch;
+  }
+  100% {
+    width: 22ch;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
