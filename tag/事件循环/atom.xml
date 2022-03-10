@@ -8,6 +8,8 @@
     <category term="进程和线程" />
     <category term="小技巧" />
     <category term="主题配置" />
+    <category term="跨域" />
+    <category term="Web安全" />
     <category term="webpack5" />
     <entry>
         <id>https://gaoxiaoxin.github.io/2022/02/13/JavaScript/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</id>
