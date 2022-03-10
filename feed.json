@@ -5,6 +5,16 @@
     "home_page_url": "https://gaoxiaoxin.github.io",
     "items": [
         {
+            "id": "https://gaoxiaoxin.github.io/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/",
+            "url": "https://gaoxiaoxin.github.io/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/",
+            "title": "nginx配置踩坑",
+            "date_published": "2022-03-10T14:58:27.347Z",
+            "content_html": "<h4 id=\"前言\"><a class=\"markdownIt-Anchor\" href=\"#前言\">#</a> 前言</h4>\n<p>一个萝卜一个坑， 今天踩了无数坑， 也填了无数萝卜， 记录一下我的坑和萝卜们</p>\n<h4 id=\"nginx-下载\"><a class=\"markdownIt-Anchor\" href=\"#nginx-下载\">#</a> nginx 下载</h4>\n<p>we are go! 今天本来打算使用 forever + nginx 来部署我的 express 静态资源服务器的。 但是，部署上去后，发现我的项目存在跨域问题… 完蛋，跨域。但是我看了一下，我其实是可以弄 nginx 反向代理的，于是我就去找我的 nginx 配置文件。最后找到个鸡儿，找了半天我在我另外一个服务器上找到了。我这个服务器就没下载。。。<br>\n那就下载呗。。。<br>\n虽然现在想想，我可以再写一个 node 代理服务器做跳板。可能还做不好，后面试一下！</p>\n<p>如何下载？<br>\n我这里用到的是 CentOS 7, 然后百度的话是找到了一个好的安装教程 ===&gt; <span class=\"exturl\" data-url=\"aHR0cHM6Ly93d3cubGludXhpZGMuY29tL0xpbnV4LzIwMTYtMDkvMTM0OTA3Lmh0bQ==\">https://www.linuxidc.com/Linux/2016-09/134907.htm</span><br>\n 当我下载完，发现我去访问 我服务器的 80 端口，却发现连接不到，寄，然后本地 curl <span class=\"exturl\" data-url=\"aHR0cDovLzEyNy4wLjAuMTo4MA==\">http://127.0.0.1:80</span> 一下发现，本地其实是没有问题的，那么，检测服务器端口其实是开启的， 然后上链接 https://segmentfault.com/a/1190000012297511<br>\n 然后按上面那个教程配置了，我的页面也显示了，但是还是跨域…<br>\n 于是去配置反向代理，主要是在 配置 proxy_pass, rewrite 这两个， 和 webpack 一样，前者是要代理的路径， 后者是要改写的路径<br>\n<span class=\"exturl\" data-url=\"aHR0cHM6Ly9kZXZlbG9wZXIuNTFjdG8uY29tL2FydGljbGUvNjIxNDU3Lmh0bWw=\"> https://developer.51cto.com/article/621457.html</span><br>\n 然后还有一个坑就是， rewrite 配置时候，缺一个  <code>/</code>  会发生不同的效果<br>\n<span class=\"exturl\" data-url=\"aHR0cHM6Ly9kZXZlbG9wZXIuYWxpeXVuLmNvbS9hcnRpY2xlLzI2OTYxNw==\"> https://developer.aliyun.com/article/269617</span></p>\n",
+            "tags": [
+                "nginx"
+            ]
+        },
+        {
             "id": "https://gaoxiaoxin.github.io/2022/03/10/%E6%9D%82%E9%A1%B9/CORS/",
             "url": "https://gaoxiaoxin.github.io/2022/03/10/%E6%9D%82%E9%A1%B9/CORS/",
             "title": "前端需要知道的跨域!!!",

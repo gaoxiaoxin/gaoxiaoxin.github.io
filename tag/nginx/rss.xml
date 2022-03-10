@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>自能生羽翼, 何必仰云梯 • Posts by &#34;nginx&#34; tag</title>
+        <link>https://gaoxiaoxin.github.io</link>
+        <description>遇见的都是天意
+拥有的都是幸运</description>
+        <language>zh-CN</language>
+        <pubDate>Thu, 10 Mar 2022 22:58:27 +0800</pubDate>
+        <lastBuildDate>Thu, 10 Mar 2022 22:58:27 +0800</lastBuildDate>
+        <category>小技巧</category>
+        <category>进程和线程</category>
+        <category>事件循环</category>
+        <category>主题配置</category>
+        <category>nginx</category>
+        <category>跨域</category>
+        <category>Web安全</category>
+        <category>webpack5</category>
+        <item>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/</guid>
+            <title>nginx配置踩坑</title>
+            <link>https://gaoxiaoxin.github.io/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/</link>
+            <category>nginx</category>
+            <pubDate>Thu, 10 Mar 2022 22:58:27 +0800</pubDate>
+            <description><![CDATA[ &lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
+&lt;p&gt;一个萝卜一个坑， 今天踩了无数坑， 也填了无数萝卜， 记录一下我的坑和萝卜们&lt;/p&gt;
+&lt;h4 id=&#34;nginx-下载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nginx-下载&#34;&gt;#&lt;/a&gt; nginx 下载&lt;/h4&gt;
+&lt;p&gt;we are go! 今天本来打算使用 forever + nginx 来部署我的 express 静态资源服务器的。 但是，部署上去后，发现我的项目存在跨域问题… 完蛋，跨域。但是我看了一下，我其实是可以弄 nginx 反向代理的，于是我就去找我的 nginx 配置文件。最后找到个鸡儿，找了半天我在我另外一个服务器上找到了。我这个服务器就没下载。。。&lt;br&gt;
+那就下载呗。。。&lt;br&gt;
+虽然现在想想，我可以再写一个 node 代理服务器做跳板。可能还做不好，后面试一下！&lt;/p&gt;
+&lt;p&gt;如何下载？&lt;br&gt;
+我这里用到的是 CentOS 7, 然后百度的话是找到了一个好的安装教程 ===&amp;gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubGludXhpZGMuY29tL0xpbnV4LzIwMTYtMDkvMTM0OTA3Lmh0bQ==&#34;&gt;https://www.linuxidc.com/Linux/2016-09/134907.htm&lt;/span&gt;&lt;br&gt;
+ 当我下载完，发现我去访问 我服务器的 80 端口，却发现连接不到，寄，然后本地 curl &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEyNy4wLjAuMTo4MA==&#34;&gt;http://127.0.0.1:80&lt;/span&gt; 一下发现，本地其实是没有问题的，那么，检测服务器端口其实是开启的， 然后上链接 https://segmentfault.com/a/1190000012297511&lt;br&gt;
+ 然后按上面那个教程配置了，我的页面也显示了，但是还是跨域…&lt;br&gt;
+ 于是去配置反向代理，主要是在 配置 proxy_pass, rewrite 这两个， 和 webpack 一样，前者是要代理的路径， 后者是要改写的路径&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIuNTFjdG8uY29tL2FydGljbGUvNjIxNDU3Lmh0bWw=&#34;&gt; https://developer.51cto.com/article/621457.html&lt;/span&gt;&lt;br&gt;
+ 然后还有一个坑就是， rewrite 配置时候，缺一个  &lt;code&gt;/&lt;/code&gt;  会发生不同的效果&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kZXZlbG9wZXIuYWxpeXVuLmNvbS9hcnRpY2xlLzI2OTYxNw==&#34;&gt; https://developer.aliyun.com/article/269617&lt;/span&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
