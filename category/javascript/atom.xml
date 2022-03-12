@@ -3,15 +3,96 @@
     <id>https://gaoxiaoxin.github.io</id>
     <title>自能生羽翼, 何必仰云梯 • Posts by &#34;javascript&#34; category</title>
     <link href="https://gaoxiaoxin.github.io" />
-    <updated>2022-02-13T16:09:34.475Z</updated>
-    <category term="小技巧" />
-    <category term="进程和线程" />
+    <updated>2022-03-12T03:46:22.628Z</updated>
     <category term="事件循环" />
+    <category term="进程和线程" />
     <category term="主题配置" />
+    <category term="小技巧" />
     <category term="nginx" />
     <category term="跨域" />
     <category term="Web安全" />
     <category term="webpack5" />
+    <entry>
+        <id>https://gaoxiaoxin.github.io/2022/03/12/JavaScript/%E7%BB%86%E8%87%B4%E6%A2%B3%E7%90%86%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</id>
+        <title>梳理事件循环</title>
+        <link rel="alternate" href="https://gaoxiaoxin.github.io/2022/03/12/JavaScript/%E7%BB%86%E8%87%B4%E6%A2%B3%E7%90%86%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/"/>
+        <content type="html">&lt;h3 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h3&gt;
+&lt;p&gt;我之前也发了文章去研究 js 的事件循环，然后进行了一些总结，但是昨天看到一篇文章，却是又勾起了我的兴趣，其实我们一开始学 js 的时候，都知道 js 是一门动态的弱类型语言。也多多少少知道一些 js 的历史。那么我们可以从其中知道些什么呢？&lt;/p&gt;
+&lt;p&gt;其实，我们应该清楚，js 是一门基于浏览器运行的语言，它最初的环境就是浏览器，那么它的一些功能就和浏览器其实是分不开的.&lt;/p&gt;
+&lt;p&gt;那么我在这里先提两点:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;js 的单线程&lt;/li&gt;
+&lt;li&gt;js 是基于&lt;ins&gt;浏览器&lt;/ins&gt;的一门语言 (先抛去现在 js 在各方面的发展)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;Atwood’s Law: Any application that can be written in JavaScript, will eventually be written in JavaScript.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;那么接下来，我们来看&lt;/p&gt;
+&lt;h4 id=&#34;事件循环&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#事件循环&#34;&gt;#&lt;/a&gt; 事件循环&lt;/h4&gt;
+&lt;p&gt;既然我们要去探讨事件循环，那么我们就应该知道它是什么 &lt;code&gt;event loop&lt;/code&gt; , 是指在浏览器的  &lt;code&gt;js 引擎&lt;/code&gt; 中等待任务，执行任务，进入休眠状态等待更多任务这几个状态之间转换的无限循环。&lt;br&gt;
+也就是下图中的 &lt;code&gt;event loop&lt;/code&gt; , 你可以将它理解成一个算法。这个算法要完成的功能就是将上面的任务完成&lt;br&gt;
+&lt;img data-src=&#34;https://pic4.zhimg.com/80/v2-da078fa3eadf3db4bf455904ae06f84b_720w.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+那么，我们这里提到了 &lt;code&gt;js引擎&lt;/code&gt; ，并且提到了事件循环是其中的一部分，那么 &lt;code&gt;js引擎&lt;/code&gt; 到底干什么的呢？&lt;br&gt;
+ 其实它的全称应该为 &lt;code&gt;js引擎线程&lt;/code&gt;  (js 内核), 它的功能主要为：解析和执行 JavaScript 脚本。&lt;br&gt;
+它在大多数的时候都是不进行任何操作的，它只有在脚本处理程序事件激活的时候执行。&lt;br&gt;
+那么又有一个问题，我说了这么多 &lt;code&gt;js引擎线程&lt;/code&gt; ，那么 &lt;code&gt;event loop&lt;/code&gt;  就是由它控制的吗？其实不是的，它是由 &lt;code&gt;事件触发线程&lt;/code&gt; 去控制的。那么事件触发线程是如何去控制 &lt;code&gt;event loop&lt;/code&gt;  的呢？这个后面去讲.&lt;br&gt;
+ 那么现在读到这里，有人就说了，停你快拉到吧，啥进程线程的，去你的吧.&lt;br&gt;
+ 不急，我们现在来看一下浏览器中的进程和线程！&lt;/p&gt;
+&lt;h4 id=&#34;浏览器中的进程和线程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#浏览器中的进程和线程&#34;&gt;#&lt;/a&gt; 浏览器中的进程和线程&lt;/h4&gt;
+&lt;p&gt;我们电脑有一个 cpu, 它负责计算机的 &amp;quot;计算&amp;quot; 任务，它很强大，但是它一个时间只能去干一件事。&lt;ins&gt;进程&lt;/ins&gt; 就是 cpu 能处理的最小的单个任务，每个应用程序就是一个进程。 它使用&lt;ins&gt;时间片轮转进度算法&lt;/ins&gt;来实现同时运行多个进程… 这不重要 (我们主要去看浏览器), 浏览器也是其中的一个进程，它有一个主进程还有很多的子进程，通过子进程来实现多进程。&lt;/p&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;当我们打开浏览器的时候，我们的浏览器就会默认的给我们打开&lt;ins&gt;至少&lt;/ins&gt; &lt;strong&gt;1 个浏览器进程&lt;/strong&gt;，&lt;strong&gt;1 个 GPU 进程&lt;/strong&gt;，&lt;strong&gt;1 个网络进程&lt;/strong&gt;，和&lt;strong&gt; 1 个渲染进程&lt;/strong&gt; (一个 tag 页就是一个渲染进程)。ps:* 如果你有浏览器的第三方插件也会打开&lt;strong&gt;第三方插件进程 *&lt;/strong&gt;&lt;br&gt;
+ 然后其中，浏览器进程，GPU 进程，网络进程，第三方插件进程这些都是共有的，只有渲染进程会跟着 tag 页的增加而增加。这里的渲染进程还有另外一个名字，就是我们常说的浏览器内核！！！&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;这里以 chrome 浏览器举例去看我们的进程，设置 ==&amp;gt; 更多工具 ==&amp;gt; 任务管理器&lt;br&gt;
+&lt;img data-src=&#34;https://tva4.sinaimg.cn/large/006xVoHRly8h072xctzi3j30w00iydj5.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+进程的下一层就是线程，我们常说的&lt;strong&gt; js 引擎线程&lt;/strong&gt;就是在渲染进程中，那么我们的渲染进程中到底包含什么线程呢？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GUI 渲染线程：负责渲染页面，解析 HTML 和 CSS, 构建 DOM 树，CSSOM 树，渲染树和绘制页面，重绘重排也是在该线程中执行.&lt;/li&gt;
+&lt;li&gt;js 引擎线程：一个渲染进程中只能有一个 js 引擎线程，负责解析和执行 js.&lt;/li&gt;
+&lt;li&gt;计时器线程：指 setInterval 和 setTimeout，因为 JS 引擎是单线程的，所以如果处于阻塞状态，那么计时器就会不准了，所以需要单独的线程来&lt;strong&gt;负责计时器工作&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;异步 http 请求线程: XMLHttpRequest 连接后浏览器开的一个线程，比如请求有回调函数，异步线程就会将回调函数加入事件队列，等待 JS 引擎空闲执行&lt;/li&gt;
+&lt;li&gt;事件触发线程：主要用来控制事件循环，比如 JS 执行遇到计时器，AJAX 异步请求等，就会将对应任务添加到事件触发线程中，在对应事件符合触发条件触发时，就把事件添加到待处理队列的队尾，等 JS 引擎处理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上面我们大概的讲了一下，浏览器中的进程和线程，那么大家对开头讲的内容应该是有了一些深入的理解。那么就让我们回到事件循环&lt;/p&gt;
+&lt;h4 id=&#34;事件循环细读&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#事件循环细读&#34;&gt;#&lt;/a&gt; 事件循环细读&lt;/h4&gt;
+&lt;p&gt;我们需要知道事件循环到底是为了什么？我们既然有 js 引擎去解读 js 代码，那么就让他去执行呗。那么现在来想一个场景::::&amp;gt; 当你在 js 代码中写入一个 http 请求，写入一个触发事件， 这个事件需要延迟 30 秒执行（可以有些夸张）, 那么当这些长耗时的代码执行的时候，我们的页面就陷入了一种假死的状态，用户又不会知道我们在干什么！所以，为了把这些长耗时的操作提出来，大佬们研究了异步机制， 于是事件循环机制也就应运而生。这也就是 js 虽然&lt;strong&gt;单线程&lt;/strong&gt;但是却&lt;strong&gt;非阻塞&lt;/strong&gt;。&lt;br&gt;
+那么事件循环的工作环境是什么样的呢？&lt;br&gt;
+现在回到我们当时的第一张图&lt;br&gt;
+&lt;img data-src=&#34;https://pic4.zhimg.com/80/v2-da078fa3eadf3db4bf455904ae06f84b_720w.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+我们可以发现，其中  &lt;code&gt;event loop&lt;/code&gt;  只是其中的一部分，其中还有 heap (堆), stack (栈), callback queue (回调事件队列), WebAPIs. 那么这些都是什么呢？&lt;br&gt;
+js 引擎在执行 js 代码的时候，会有一个执行栈，js 代码按先后顺序入栈和执行结束后出栈.&lt;br&gt;
+ 会有一个由 &lt;code&gt;事件触发线程&lt;/code&gt; 维护的回调事件队列，&lt;br&gt;
+ 有专门处理异步事件的 webapi 接口，这些接口由渲染进程的线程提供。毕竟总不可能让你之间用 js 代码去人家线程上瞎玩吧。玩坏了这个 tag 页就 over 了。也很符合程序的封装&lt;/p&gt;
+&lt;h5 id=&#34;何谓任务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#何谓任务&#34;&gt;#&lt;/a&gt; 何谓任务？&lt;/h5&gt;
+&lt;p&gt;只要你去了解过事件循环，那么你就一点会知道一个词叫  &lt;code&gt;任务队列&lt;/code&gt; ，还会分化出来 &lt;code&gt;宏任务队列&lt;/code&gt; ， &lt;code&gt;微任务队列&lt;/code&gt; 。那么抛去 宏任务 (macro task)， 微任务 (micro task) 来说，什么是任务？&lt;/p&gt;
+&lt;p&gt;结合我们的日常生活的话，我们一时间做不完打算后面再去做的才叫任务，那么延伸一下，是不是我们的任务列表就可以对照到任务队列？&lt;br&gt;
+当 js 引擎在处理 &lt;code&gt;script&lt;/code&gt;  整体代码的时候，我们移动了鼠标，点击了键盘，一个计时任务结束，那么我们这时候任务就会被存入一个队列标明他们的先后顺序，到时候让 js 引擎去按顺序渲染。这个队列就被叫做&lt;strong&gt;任务队列&lt;/strong&gt;即宏任务队列，其实一开始是没有宏任务和微任务之分的，所以之前提的任务队列是指宏任务队列，现在是指宏微任务。那么两者都有什么区别呢？为什么要再弄一个微任务出来？&lt;/p&gt;
+&lt;h5 id=&#34;宏任务和微任务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#宏任务和微任务&#34;&gt;#&lt;/a&gt; 宏任务和微任务&lt;/h5&gt;
+&lt;p&gt;稍微了解的话，我们都会知道，宏任务和微任务都有很多（假装很多，只是量词）类型的事件组成。那么我们先不说他们由什么组成。我们先给出他们的一个含义（非官方）&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzMxNjUxNDYxOA==&#34;&gt;https://www.zhihu.com/question/316514618&lt;/span&gt; （有个回答讲的很好，我现在水平还不能完全吸收）&lt;/p&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;宏任务：多线程的异步协作&lt;br&gt;
+微任务: js 语言的本地异步 (延迟执行)&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;那么现在去看，多线程是哪几个线程，&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMXozNHkxbTdMYT9zcG1faWRfZnJvbT0zMzMuMzM3LnNlYXJjaC1jYXJkLmFsbC5jbGljaw==&#34;&gt;又回到最初的起点&lt;/span&gt; &lt;span class=&#34;spoiler&#34; title=&#34;...&#34;&gt;请大家听歌&lt;/span&gt;&lt;br&gt;
+我们可以看到我们一直都没有提到 &lt;code&gt;异步http请求线程&lt;/code&gt; 和 &lt;code&gt;定时触发线程&lt;/code&gt; ，那么我们这里就要讲这个了。&lt;br&gt;
+先看一个图&lt;br&gt;
+&lt;img data-src=&#34;https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/95d80f4ce96e4e039b051c048e8630f3~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+上面的话，我们可以看到， js 引擎在遇到 &lt;strong&gt;定时器&lt;/strong&gt;，&lt;strong&gt;http 请求&lt;/strong&gt;，就分别交给对应线程去执行。然后等执行结果出现后再讲对应的回调函数交给事件触发线程，由它放入事件队列。&lt;br&gt;
+所以，我们可以知道定时器，http 请求都是异步的宏任务。&lt;/p&gt;
+&lt;p&gt;那微任务呢？微任务是后面加进来的，这里我们就暂时知道 promise 是微任务就行 (这个不是重点), 微任务我们上面说是 js 语言的本地异步 (延迟执行), 那么它到底是那一段 js 的延迟执行呢？&lt;br&gt;
+ 其实它是生成它的宏任务的延迟执行，所以在执行完一个宏任务后要去清除微任务队列中全部的微任务。并且这样也有一个好处就是，将微任务现在在自己的作用域中，防止对其他的异步任务的干扰&lt;/p&gt;
+&lt;h5 id=&#34;后续可能会补充&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#后续可能会补充&#34;&gt;#&lt;/a&gt; 后续可能会补充&lt;/h5&gt;
+&lt;h4 id=&#34;引用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#引用&#34;&gt;#&lt;/a&gt; 引用&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82OTkxODQ5NzI4NDkzMjU2NzQxI2hlYWRpbmctMQ==&#34;&gt;https://juejin.cn/post/6991849728493256741#heading-1&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC83MDAyNTk0ODU1NDM2MTU2OTM2&#34;&gt;https://juejin.cn/post/7002594855436156936&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82ODQ0OTAzOTE5Nzg5ODAxNDg2&#34;&gt;https://juejin.cn/post/6844903919789801486&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <updated>2022-03-12T03:46:22.628Z</updated>
+    </entry>
     <entry>
         <id>https://gaoxiaoxin.github.io/2022/02/14/JavaScript/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</id>
         <title>从进程和线程角度去理解事件循环</title>
