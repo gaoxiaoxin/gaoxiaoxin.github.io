@@ -3,15 +3,55 @@
     <id>https://gaoxiaoxin.github.io</id>
     <title>自能生羽翼, 何必仰云梯 • Posts by &#34;杂项&#34; category</title>
     <link href="https://gaoxiaoxin.github.io" />
-    <updated>2022-03-10T07:16:58.662Z</updated>
-    <category term="事件循环" />
+    <updated>2022-04-06T03:18:02.463Z</updated>
     <category term="进程和线程" />
-    <category term="主题配置" />
     <category term="小技巧" />
-    <category term="nginx" />
+    <category term="事件循环" />
     <category term="跨域" />
     <category term="Web安全" />
+    <category term="nginx" />
+    <category term="主题配置" />
     <category term="webpack5" />
+    <entry>
+        <id>https://gaoxiaoxin.github.io/2022/04/06/%E6%9D%82%E9%A1%B9/xmind%E7%A0%B4%E8%A7%A3/</id>
+        <title>xmind免费使用与安装</title>
+        <link rel="alternate" href="https://gaoxiaoxin.github.io/2022/04/06/%E6%9D%82%E9%A1%B9/xmind%E7%A0%B4%E8%A7%A3/"/>
+        <content type="html">&lt;h4 id=&#34;前提&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前提&#34;&gt;#&lt;/a&gt; 前提&lt;/h4&gt;
+&lt;p&gt;博主的环境为 win10 环境&lt;/p&gt;
+&lt;h4 id=&#34;参考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考&#34;&gt;#&lt;/a&gt; 参考&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC8zZTUxMWViMjVmNjY=&#34;&gt;https://www.jianshu.com/p/3e511eb25f66&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;和上面这个博主的基本一样，只是加了一些 win10 的错误解决&lt;/p&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装&#34;&gt;#&lt;/a&gt; 安装&lt;/h4&gt;
+&lt;p&gt;一。下载 XMind&lt;/p&gt;
+&lt;p&gt;Win: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2RsMi54bWluZC5jbi94bWluZC04LXVwZGF0ZTQtd2luZG93cy5leGU=&#34;&gt;http://dl2.xmind.cn/xmind-8-update4-windows.exe&lt;/span&gt;&lt;br&gt;
+Mac: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2RsMi54bWluZC5jbi94bWluZC04LXVwZGF0ZTQtbWFjb3N4LmRtZw==&#34;&gt;http://dl2.xmind.cn/xmind-8-update4-macosx.dmg&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;然后一直安装就行，确定对应的解压路径&lt;/p&gt;
+&lt;p&gt;二。下载补丁&lt;br&gt;
+链接: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMU5nZHNzbVpIZEVlX1RUYXM2T0hLdFE=&#34;&gt;https://pan.baidu.com/s/1NgdssmZHdEe_TTas6OHKtQ&lt;/span&gt; 提取码: xuqa 复制这段内容后打开百度网盘手机 App，操作更方便哦&lt;br&gt;
+–来自百度网盘超级会员 v3 的分享&lt;/p&gt;
+&lt;p&gt;三。将补丁复制到安装路径的根目录 (刚才解压的路径)&lt;br&gt;
+&lt;img data-src=&#34;https://tva3.sinaimg.cn/large/006xVoHRly8h0zu9xk23xj30wo0in776.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;四。找到安装目录中的 Xmind.ini&lt;/p&gt;
+&lt;p&gt;在最后一行添加代码&lt;br&gt;
+&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8h0zubgzni1j30lq0osgnk.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;五。找到文件 hosts，在末尾添加 (文件在 C:\Windows\System32\drivers\etc 目录下，不是：hosts.ics)&lt;/p&gt;
+&lt;p&gt;!!! 这里 win10 不同&lt;br&gt;
+非 win10:&lt;br&gt;
+127.0.0.1 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3htaW5kLm5ldA==&#34;&gt;xmind.net&lt;/span&gt;&lt;br&gt;
+127.0.0.1 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy54bWluZC5uZXQ=&#34;&gt;www.xmind.net&lt;/span&gt;&lt;br&gt;
+win10&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;bash&#34;&gt; 127.0.0.1 xmind.net&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;bash&#34;&gt; 127.0.0.1 www.xmind.net&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;六。打开 Xmind-&amp;gt; 帮助 -&amp;gt; 序列号 -&amp;gt; 输入序列号【邮箱：随意输】&lt;/p&gt;
+&lt;p&gt;序列号在 readme.txt 中&lt;/p&gt;
+&lt;p&gt;注意：需要按照步骤来，不按步骤来，会出现&lt;/p&gt;
+&lt;p&gt;验证失败，可能为 XMind 2013 Pro 序列号。XMind 8 pro 激活教程&lt;/p&gt;
+</content>
+        <updated>2022-04-06T03:18:02.463Z</updated>
+    </entry>
     <entry>
         <id>https://gaoxiaoxin.github.io/2022/03/10/%E6%9D%82%E9%A1%B9/CORS/</id>
         <title>前端需要知道的跨域!!!</title>
