@@ -8,14 +8,15 @@
         <language>zh-CN</language>
         <pubDate>Sat, 19 Feb 2022 10:47:34 +0800</pubDate>
         <lastBuildDate>Sat, 19 Feb 2022 10:47:34 +0800</lastBuildDate>
-        <category>进程和线程</category>
         <category>小技巧</category>
         <category>事件循环</category>
+        <category>进程和线程</category>
+        <category>nginx</category>
         <category>跨域</category>
         <category>Web安全</category>
-        <category>nginx</category>
         <category>主题配置</category>
         <category>webpack5</category>
+        <category>题解</category>
         <item>
             <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/02/19/hexo/shoka/</guid>
             <title>shoka配置</title>
