@@ -6,17 +6,47 @@
         <description>遇见的都是天意
 拥有的都是幸运</description>
         <language>zh-CN</language>
-        <pubDate>Sat, 09 Apr 2022 21:43:25 +0800</pubDate>
-        <lastBuildDate>Sat, 09 Apr 2022 21:43:25 +0800</lastBuildDate>
+        <pubDate>Mon, 11 Apr 2022 21:27:19 +0800</pubDate>
+        <lastBuildDate>Mon, 11 Apr 2022 21:27:19 +0800</lastBuildDate>
         <category>小技巧</category>
         <category>事件循环</category>
+        <category>小知识</category>
         <category>进程和线程</category>
-        <category>nginx</category>
+        <category>主题配置</category>
         <category>跨域</category>
         <category>Web安全</category>
-        <category>主题配置</category>
+        <category>nginx</category>
         <category>webpack5</category>
         <category>题解</category>
+        <item>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/04/11/JavaScript/js%E7%9A%84==/</guid>
+            <title>js中的 ==</title>
+            <link>https://gaoxiaoxin.github.io/2022/04/11/JavaScript/js%E7%9A%84==/</link>
+            <category>小知识</category>
+            <pubDate>Mon, 11 Apr 2022 21:27:19 +0800</pubDate>
+            <description><![CDATA[ &lt;h4 id=&#34;js-中的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#js-中的&#34;&gt;#&lt;/a&gt; js 中的 ==&lt;/h4&gt;
+&lt;p&gt;JavaScript 中的 == 常常会导致一些小问题，那么就让我们来看看它的一些理念。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;==&lt;/code&gt;  会使得比较对象先进行转换，转换后才会再去比较。那么它的转换规则是什么呢？我们现在来看看，红宝书中有写到它的一些规则:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果有一个操作数是布尔值，则在比较相等性之前先将其转换为数值 ——false 转换为 0，而 true 转换为 1；&lt;/li&gt;
+&lt;li&gt;如果一个操作数是字符串，另一个操作数是数值，在比较相等性之前先将字符串转换为数值；&lt;/li&gt;
+&lt;li&gt;如果一个操作数是对象，另一个操作数不是，则调用对象的 valueOf () 方法，用得到的基本类 型值按照前面的规则进行比较，如果得到的不是基本数据类型就再调用 toString ();&lt;/li&gt;
+&lt;li&gt;null 和 undefined 是等价的。(客观上都表示无) 并且在转换前不能转换为任何值。&lt;/li&gt;
+&lt;li&gt;NaN 不等于任何数&lt;/li&gt;
+&lt;li&gt;如果要比较的两个操作数都是对象，那么就看两者是不是同一个对象，如果两个操作数都指向对象&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;这里有一个说法是，javascript 的作者有个设计是：给一个变量赋予对象类型，但是还没赋值，就可以用 null 来进行占位，如果给一个变量赋予原始类型，那么就用 undefined 来占位&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;其实是经过多次转换把连等号左右的操作数转换为相同类型的数据，如果中间没有转换成相同的类型，那么就都转换为 Number 类型，再进行比较。&lt;/p&gt;
+&lt;p&gt;那么现在来看几个比较经典的题目吧:&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[] == ![]; &amp;#123;&amp;#125; == !&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;对于 [] == ![], 我们来看看， 我们可以发现其实，![] 是被变为了  &lt;code&gt;false&lt;/code&gt;  那么，我们的判断现在就变为了  &lt;code&gt;[] == false&lt;/code&gt;  而我们知道 [] 其实是 对象类型，那么我们就先进行转换，[].valueOf () ==&amp;gt; 返回 [],&lt;br&gt;
+ 不是基本数据类型，那么就需要调用 toString () 返回 ‘’, 这样的话两个操作数的数据类型还是不相同，就把他们都转换为  &lt;code&gt;Number&lt;/code&gt;  类型: Number (’’) ==&amp;gt; 0 ; Number (false) ==&amp;gt; 0, 最后  &lt;code&gt;0 == 0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;对于 {} == !{}, 其实也是和上面一样&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;1.&lt;/span&gt; &amp;#123;&amp;#125; == &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 调用valueOf() 返回 &amp;#123;&amp;#125; , 再调用 toString() 返回 [Object, Object]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;2.&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;#x27;[Object, Object]&amp;#x27;&lt;/span&gt; == &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;3.&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;NaN&lt;/span&gt; == &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt; ; &lt;span class=&#34;comment&#34;&gt;// NaN 不等于任何数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/04/09/%E6%9D%82%E9%A1%B9/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E8%A7%A3/</guid>
             <title>蓝桥杯题解(13届Web)</title>

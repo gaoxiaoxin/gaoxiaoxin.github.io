@@ -24,13 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
+  <meta name="keywords" content="小知识" />
 
-<link rel="canonical" href="https://gaoxiaoxin.github.io/2022/04/06/%E6%9D%82%E9%A1%B9/xmind%E7%A0%B4%E8%A7%A3/">
+
+<link rel="canonical" href="https://gaoxiaoxin.github.io/2022/04/11/JavaScript/js%E7%9A%84==/">
 
 
 
   <title>
-xmind 免费使用与安装 - 杂项 |
+js 中的 == - javascript |
 自能生羽翼，何必仰云梯 = 热爱可抵岁月漫长</title>
 <meta name="generator" content="Hexo 5.4.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -58,23 +60,23 @@ xmind 免费使用与安装 - 杂项 |
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">xmind 免费使用与安装
+  <h1 itemprop="name headline">js 中的 ==
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2022-04-06 11:18:02">
+  <span class="item" title="创建时间：2022-04-11 21:27:19">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2022-04-06T11:18:02+08:00">2022-04-06</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-11T21:27:19+08:00">2022-04-11</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>670</span>
+    <span>989</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -115,12 +117,12 @@ xmind 免费使用与安装 - 杂项 |
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciukx8a7j20zk0m8aio.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeybxm1pj20zk0m8niv.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfw2t96j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4baakhj20zk0m8h5q.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexe4oykj20zk0m87ji.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipev1x5e4j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevgoki5j20zk0m84qp.jpg"></li>
         </ul>
       </div>
     </header>
@@ -146,12 +148,12 @@ xmind 免费使用与安装 - 杂项 |
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
 <span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="item" rel="index" title="分类于 杂项"><span itemprop="name">杂项</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/javascript/" itemprop="item" rel="index" title="分类于 javascript"><span itemprop="name">javascript</span></a>
 <meta itemprop="position" content="1" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/2022/04/06/%E6%9D%82%E9%A1%B9/xmind%E7%A0%B4%E8%A7%A3/">
+  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/2022/04/11/JavaScript/js%E7%9A%84==/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/header.png">
@@ -167,40 +169,31 @@ xmind 免费使用与安装 - 杂项 |
   <div class="body md" itemprop="articleBody">
     
 
-    <h4 id="前提"><a class="markdownIt-Anchor" href="#前提">#</a> 前提</h4>
-<p>博主的环境为 win10 环境</p>
-<h4 id="参考"><a class="markdownIt-Anchor" href="#参考">#</a> 参考</h4>
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC8zZTUxMWViMjVmNjY=">https://www.jianshu.com/p/3e511eb25f66</span></li>
-</ul>
-<div class="note primary">
-<p>和上面这个博主的基本一样，只是加了一些 win10 的错误解决</p>
+    <h4 id="js-中的"><a class="markdownIt-Anchor" href="#js-中的">#</a> js 中的 ==</h4>
+<p>JavaScript 中的 == 常常会导致一些小问题，那么就让我们来看看它的一些理念。</p>
+<p><code>==</code>  会使得比较对象先进行转换，转换后才会再去比较。那么它的转换规则是什么呢？我们现在来看看，红宝书中有写到它的一些规则:</p>
+<ol>
+<li>如果有一个操作数是布尔值，则在比较相等性之前先将其转换为数值 ——false 转换为 0，而 true 转换为 1；</li>
+<li>如果一个操作数是字符串，另一个操作数是数值，在比较相等性之前先将字符串转换为数值；</li>
+<li>如果一个操作数是对象，另一个操作数不是，则调用对象的 valueOf () 方法，用得到的基本类 型值按照前面的规则进行比较，如果得到的不是基本数据类型就再调用 toString ();</li>
+<li>null 和 undefined 是等价的。(客观上都表示无) 并且在转换前不能转换为任何值。</li>
+<li>NaN 不等于任何数</li>
+<li>如果要比较的两个操作数都是对象，那么就看两者是不是同一个对象，如果两个操作数都指向对象</li>
+</ol>
+<div class="note info">
+<p>这里有一个说法是，javascript 的作者有个设计是：给一个变量赋予对象类型，但是还没赋值，就可以用 null 来进行占位，如果给一个变量赋予原始类型，那么就用 undefined 来占位</p>
 </div>
-<h4 id="安装"><a class="markdownIt-Anchor" href="#安装">#</a> 安装</h4>
-<p>一。下载 XMind</p>
-<p>Win: <span class="exturl" data-url="aHR0cDovL2RsMi54bWluZC5jbi94bWluZC04LXVwZGF0ZTQtd2luZG93cy5leGU=">http://dl2.xmind.cn/xmind-8-update4-windows.exe</span><br>
-Mac: <span class="exturl" data-url="aHR0cDovL2RsMi54bWluZC5jbi94bWluZC04LXVwZGF0ZTQtbWFjb3N4LmRtZw==">http://dl2.xmind.cn/xmind-8-update4-macosx.dmg</span></p>
-<p>然后一直安装就行，确定对应的解压路径</p>
-<p>二。下载补丁<br>
-链接: <span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMU5nZHNzbVpIZEVlX1RUYXM2T0hLdFE=">https://pan.baidu.com/s/1NgdssmZHdEe_TTas6OHKtQ</span> 提取码: xuqa 复制这段内容后打开百度网盘手机 App，操作更方便哦<br>
-–来自百度网盘超级会员 v3 的分享</p>
-<p>三。将补丁复制到安装路径的根目录 (刚才解压的路径)<br>
-<img data-src="https://tva3.sinaimg.cn/large/006xVoHRly8h0zu9xk23xj30wo0in776.jpg" alt=""></p>
-<p>四。找到安装目录中的 Xmind.ini</p>
-<p>在最后一行添加代码<br>
-<img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8h0zubgzni1j30lq0osgnk.jpg" alt=""></p>
-<p>五。找到文件 hosts，在末尾添加 (文件在 C:\Windows\System32\drivers\etc 目录下，不是：hosts.ics)</p>
-<p>!!! 这里 win10 不同<br>
-非 win10:<br>
-127.0.0.1 <span class="exturl" data-url="aHR0cDovL3htaW5kLm5ldA==">xmind.net</span><br>
-127.0.0.1 <span class="exturl" data-url="aHR0cDovL3d3dy54bWluZC5uZXQ=">www.xmind.net</span><br>
-win10</p>
-<figure class="highlight shell"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 127.0.0.1 xmind.net</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 127.0.0.1 www.xmind.net</span></span><br></pre></td></tr></table></figure>
-<p>六。打开 Xmind-&gt; 帮助 -&gt; 序列号 -&gt; 输入序列号【邮箱：随意输】</p>
-<p>序列号在 readme.txt 中</p>
-<p>注意：需要按照步骤来，不按步骤来，会出现</p>
-<p>验证失败，可能为 XMind 2013 Pro 序列号。XMind 8 pro 激活教程</p>
+<p>其实是经过多次转换把连等号左右的操作数转换为相同类型的数据，如果中间没有转换成相同的类型，那么就都转换为 Number 类型，再进行比较。</p>
+<p>那么现在来看几个比较经典的题目吧:</p>
+<figure class="highlight js"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[] == ![]; &#123;&#125; == !&#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>对于 [] == ![], 我们来看看， 我们可以发现其实，![] 是被变为了  <code>false</code>  那么，我们的判断现在就变为了  <code>[] == false</code>  而我们知道 [] 其实是 对象类型，那么我们就先进行转换，[].valueOf () ==&gt; 返回 [],<br>
+ 不是基本数据类型，那么就需要调用 toString () 返回 ‘’, 这样的话两个操作数的数据类型还是不相同，就把他们都转换为  <code>Number</code>  类型: Number (’’) ==&gt; 0 ; Number (false) ==&gt; 0, 最后  <code>0 == 0</code></p>
+<p>对于 {} == !{}, 其实也是和上面一样</p>
+<figure class="highlight js"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> &#123;&#125; == <span class="literal">false</span> ;</span><br><span class="line"><span class="comment">// 调用valueOf() 返回 &#123;&#125; , 再调用 toString() 返回 [Object, Object]</span></span><br><span class="line"><span class="number">2.</span> <span class="string">&#x27;[Object, Object]&#x27;</span> == <span class="literal">false</span></span><br><span class="line"><span class="number">3.</span> <span class="literal">NaN</span> == <span class="literal">false</span> ; <span class="comment">// NaN 不等于任何数</span></span><br></pre></td></tr></table></figure>
 
+      <div class="tags">
+          <a href="/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86/" rel="tag"><i class="ic i-tag"></i> 小知识</a>
+      </div>
   </div>
 
    <footer>
@@ -211,9 +204,9 @@ win10</p>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-04-06 11:33:32" itemprop="dateModified" datetime="2022-04-06T11:33:32+08:00">2022-04-06</time>
+    <time title="修改时间：2022-04-12 10:29:16" itemprop="dateModified" datetime="2022-04-12T10:29:16+08:00">2022-04-12</time>
   </span>
-  <span id="2022/04/06/杂项/xmind破解/" class="item leancloud_visitors" data-flag-title="xmind 免费使用与安装" title="阅读次数">
+  <span id="2022/04/11/JavaScript/js的==/" class="item leancloud_visitors" data-flag-title="js 中的 ==" title="阅读次数">
       <span class="icon">
         <i class="ic i-eye"></i>
       </span>
@@ -250,7 +243,7 @@ win10</p>
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://gaoxiaoxin.github.io/2022/04/06/%E6%9D%82%E9%A1%B9/xmind%E7%A0%B4%E8%A7%A3/" title="xmind 免费使用与安装">https://gaoxiaoxin.github.io/2022/04/06/杂项/xmind破解/</a>
+    <a href="https://gaoxiaoxin.github.io/2022/04/11/JavaScript/js%E7%9A%84==/" title="js 中的 &#x3D;&#x3D;">https://gaoxiaoxin.github.io/2022/04/11/JavaScript/js的==/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -269,22 +262,14 @@ win10</p>
     <div class="item left">
       
 
-  <a href="/2022/03/12/JavaScript/%E7%BB%86%E8%87%B4%E6%A2%B3%E7%90%86%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexj2jgzj20zk0m8b09.jpg" title="梳理事件循环">
+  <a href="/2022/04/09/%E6%9D%82%E9%A1%B9/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E8%A7%A3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeubcbajj20zk0m8h1h.jpg" title="蓝桥杯题解(13届Web)">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> JavaScript</span>
-  <h3>梳理事件循环</h3>
-  </a>
-
-    </div>
-    <div class="item right">
-      
-
-  <a href="/2022/04/09/%E6%9D%82%E9%A1%B9/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E8%A7%A3/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitzannuj20zk0m8b29.jpg" title="蓝桥杯题解(13届Web)">
-  <span class="type">下一篇</span>
   <span class="category"><i class="ic i-flag"></i> 杂项</span>
   <h3>蓝桥杯题解(13届Web)</h3>
   </a>
 
+    </div>
+    <div class="item right">
     </div>
 </div>
 
@@ -301,11 +286,11 @@ win10</p>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E6%8F%90"><span class="toc-number">1.</span> <span class="toc-text"> 前提</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">2.</span> <span class="toc-text"> 参考</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text"> 安装</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#js-%E4%B8%AD%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text"> js 中的 &#x3D;&#x3D;</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2021/03/06/%E6%9D%82%E9%A1%B9/MarkDown%E8%AE%B2%E4%B9%89/" rel="bookmark" title="MarkDown的使用">MarkDown的使用</a></li><li><a href="/2021/06/16/%E6%9D%82%E9%A1%B9/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" rel="bookmark" title="C++期末考试考点">C++期末考试考点</a></li><li><a href="/2021/10/21/%E6%9D%82%E9%A1%B9/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" rel="bookmark" title="测试块">测试块</a></li><li><a href="/2021/12/06/%E6%9D%82%E9%A1%B9/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="Python期末复习">Python期末复习</a></li><li><a href="/2022/03/10/%E6%9D%82%E9%A1%B9/CORS/" rel="bookmark" title="前端需要知道的跨域!!!">前端需要知道的跨域!!!</a></li><li class="active"><a href="/2022/04/06/%E6%9D%82%E9%A1%B9/xmind%E7%A0%B4%E8%A7%A3/" rel="bookmark" title="xmind免费使用与安装">xmind免费使用与安装</a></li><li><a href="/2022/04/09/%E6%9D%82%E9%A1%B9/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E8%A7%A3/" rel="bookmark" title="蓝桥杯题解(13届Web)">蓝桥杯题解(13届Web)</a></li>
+          <li class="active"><a href="/2022/04/11/JavaScript/js%E7%9A%84==/" rel="bookmark" title="js中的 ==">js中的 ==</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -390,12 +375,10 @@ win10</p>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2022/03/12/JavaScript/%E7%BB%86%E8%87%B4%E6%A2%B3%E7%90%86%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2022/04/09/%E6%9D%82%E9%A1%B9/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E8%A7%A3/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -417,20 +400,40 @@ win10</p>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="分类于 杂项">杂项</a>
 </div>
 
-    <span><a href="/2022/02/13/JavaScript/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="浅析js事件循环,">浅析js事件循环,</a></span>
+    <span><a href="/2022/03/10/%E6%9D%82%E9%A1%B9/CORS/" title="前端需要知道的跨域!!!">前端需要知道的跨域!!!</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/Css/" title="分类于 Css">Css</a>
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="分类于 杂项">杂项</a>
 </div>
 
-    <span><a href="/2022/02/21/Css/Css%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="Css使用小技巧">Css使用小技巧</a></span>
+    <span><a href="/2022/04/06/%E6%9D%82%E9%A1%B9/xmind%E7%A0%B4%E8%A7%A3/" title="xmind免费使用与安装">xmind免费使用与安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Webpack/" title="分类于 -[Webpack]">-[Webpack]</a>
+</div>
+
+    <span><a href="/2022/02/19/Webpack/01_webpack%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Webpack学习">Webpack学习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="分类于 杂项">杂项</a>
+</div>
+
+    <span><a href="/2021/03/06/%E6%9D%82%E9%A1%B9/MarkDown%E8%AE%B2%E4%B9%89/" title="MarkDown的使用">MarkDown的使用</a></span>
   </li>
 
       
@@ -447,45 +450,6 @@ win10</p>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/JavaScript/" title="分类于 JavaScript">JavaScript</a>
-</div>
-
-    <span><a href="/2022/03/12/JavaScript/%E7%BB%86%E8%87%B4%E6%A2%B3%E7%90%86%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="梳理事件循环">梳理事件循环</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2022/02/18/JavaScript/postcss/" title="postcss的使用">postcss的使用</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/JavaScript/" title="分类于 JavaScript">JavaScript</a>
-</div>
-
-    <span><a href="/2022/02/14/JavaScript/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="从进程和线程角度去理解事件循环">从进程和线程角度去理解事件循环</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="分类于 服务器">服务器</a>
-</div>
-
-    <span><a href="/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" title="nginx配置踩坑">nginx配置踩坑</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/%E6%9D%82%E9%A1%B9/" title="分类于 杂项">杂项</a>
 </div>
 
@@ -496,9 +460,20 @@ win10</p>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/JavaScript/" title="分类于 JavaScript">JavaScript</a>
 </div>
 
-    <span><a href="/2022/01/10/JavaScript/%E8%AF%A6%E8%A7%A3%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/" title="从变量提升,this指向,作用域深耕(上)">从变量提升,this指向,作用域深耕(上)</a></span>
+    <span><a href="/2022/02/13/JavaScript/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="浅析js事件循环,">浅析js事件循环,</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/JavaScript/" title="分类于 JavaScript">JavaScript</a>
+</div>
+
+    <span><a href="/2022/03/12/JavaScript/%E7%BB%86%E8%87%B4%E6%A2%B3%E7%90%86%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="梳理事件循环">梳理事件循环</a></span>
   </li>
 
       
@@ -508,7 +483,16 @@ win10</p>
 <a href="/categories/%E6%9D%82%E9%A1%B9/" title="分类于 杂项">杂项</a>
 </div>
 
-    <span><a href="/2021/06/16/%E6%9D%82%E9%A1%B9/C++%E6%9C%9F%E6%9C%AB%E8%80%83%E7%82%B9/" title="C++期末考试考点">C++期末考试考点</a></span>
+    <span><a href="/2022/04/09/%E6%9D%82%E9%A1%B9/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%A2%98%E8%A7%A3/" title="蓝桥杯题解(13届Web)">蓝桥杯题解(13届Web)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/02/18/JavaScript/postcss/" title="postcss的使用">postcss的使用</a></span>
   </li>
 
   </ul>
@@ -551,7 +535,7 @@ win10</p>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2022/04/06/杂项/xmind破解/',
+    path: '2022/04/11/JavaScript/js的==/',
     favicon: {
       show: "(＠￣ー￣＠)",
       hide: "┗( T﹏T )┛"
@@ -561,8 +545,7 @@ win10</p>
       empty: "关于 「 ${query} 」，什么也没搜到",
       stats: "${time} ms 内找到 ${hits} 条结果"
     },
-    valine: true,copy_tex: true,
-    katex: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
     ignores : [
       function(uri) {
         return uri.includes('#');

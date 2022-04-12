@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "自能生羽翼, 何必仰云梯 • All posts by \"小知识\" tag",
+    "description": "遇见的都是天意\n拥有的都是幸运",
+    "home_page_url": "https://gaoxiaoxin.github.io",
+    "items": [
+        {
+            "id": "https://gaoxiaoxin.github.io/2022/04/11/JavaScript/js%E7%9A%84==/",
+            "url": "https://gaoxiaoxin.github.io/2022/04/11/JavaScript/js%E7%9A%84==/",
+            "title": "js中的 ==",
+            "date_published": "2022-04-11T13:27:19.351Z",
+            "content_html": "<h4 id=\"js-中的\"><a class=\"markdownIt-Anchor\" href=\"#js-中的\">#</a> js 中的 ==</h4>\n<p>JavaScript 中的 == 常常会导致一些小问题，那么就让我们来看看它的一些理念。</p>\n<p><code>==</code>  会使得比较对象先进行转换，转换后才会再去比较。那么它的转换规则是什么呢？我们现在来看看，红宝书中有写到它的一些规则:</p>\n<ol>\n<li>如果有一个操作数是布尔值，则在比较相等性之前先将其转换为数值 ——false 转换为 0，而 true 转换为 1；</li>\n<li>如果一个操作数是字符串，另一个操作数是数值，在比较相等性之前先将字符串转换为数值；</li>\n<li>如果一个操作数是对象，另一个操作数不是，则调用对象的 valueOf () 方法，用得到的基本类 型值按照前面的规则进行比较，如果得到的不是基本数据类型就再调用 toString ();</li>\n<li>null 和 undefined 是等价的。(客观上都表示无) 并且在转换前不能转换为任何值。</li>\n<li>NaN 不等于任何数</li>\n<li>如果要比较的两个操作数都是对象，那么就看两者是不是同一个对象，如果两个操作数都指向对象</li>\n</ol>\n<div class=\"note info\">\n<p>这里有一个说法是，javascript 的作者有个设计是：给一个变量赋予对象类型，但是还没赋值，就可以用 null 来进行占位，如果给一个变量赋予原始类型，那么就用 undefined 来占位</p>\n</div>\n<p>其实是经过多次转换把连等号左右的操作数转换为相同类型的数据，如果中间没有转换成相同的类型，那么就都转换为 Number 类型，再进行比较。</p>\n<p>那么现在来看几个比较经典的题目吧:</p>\n<figure class=\"highlight js\"><figcaption><span>demo</span></figcaption><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">[] == ![]; &#123;&#125; == !&#123;&#125;</span><br><span class=\"line\"></span><br></pre></td></tr></table></figure>\n<p>对于 [] == ![], 我们来看看， 我们可以发现其实，![] 是被变为了  <code>false</code>  那么，我们的判断现在就变为了  <code>[] == false</code>  而我们知道 [] 其实是 对象类型，那么我们就先进行转换，[].valueOf () ==&gt; 返回 [],<br>\n 不是基本数据类型，那么就需要调用 toString () 返回 ‘’, 这样的话两个操作数的数据类型还是不相同，就把他们都转换为  <code>Number</code>  类型: Number (’’) ==&gt; 0 ; Number (false) ==&gt; 0, 最后  <code>0 == 0</code></p>\n<p>对于 {} == !{}, 其实也是和上面一样</p>\n<figure class=\"highlight js\"><figcaption><span>demo</span></figcaption><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br></pre></td><td class=\"code\"><pre><span class=\"line\"><span class=\"number\">1.</span> &#123;&#125; == <span class=\"literal\">false</span> ;</span><br><span class=\"line\"><span class=\"comment\">// 调用valueOf() 返回 &#123;&#125; , 再调用 toString() 返回 [Object, Object]</span></span><br><span class=\"line\"><span class=\"number\">2.</span> <span class=\"string\">&#x27;[Object, Object]&#x27;</span> == <span class=\"literal\">false</span></span><br><span class=\"line\"><span class=\"number\">3.</span> <span class=\"literal\">NaN</span> == <span class=\"literal\">false</span> ; <span class=\"comment\">// NaN 不等于任何数</span></span><br></pre></td></tr></table></figure>\n",
+            "tags": [
+                "小知识"
+            ]
+        }
+    ]
+}
