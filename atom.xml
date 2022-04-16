@@ -5,20 +5,20 @@
     <link href="https://gaoxiaoxin.github.io" />
     <updated>2022-04-16T08:51:21.552Z</updated>
     <category term="小技巧" />
+    <category term="uniapp" />
     <category term="事件循环" />
     <category term="小知识" />
     <category term="进程和线程" />
+    <category term="主题配置" />
     <category term="跨域" />
     <category term="Web安全" />
     <category term="nginx" />
-    <category term="主题配置" />
-    <category term="uniapp" />
     <category term="webpack5" />
     <category term="题解" />
     <entry>
-        <id>https://gaoxiaoxin.github.io/2022/04/16/%E8%B7%A8%E7%AB%AF/%E5%9C%A8vscode%E4%B8%AD%E4%BD%BF%E7%94%A8uniapp/</id>
+        <id>https://gaoxiaoxin.github.io/2022/04/16/Cross-terminal/use%20uniapp%20in%20vscode/</id>
         <title>使用vscode写uniapp</title>
-        <link rel="alternate" href="https://gaoxiaoxin.github.io/2022/04/16/%E8%B7%A8%E7%AB%AF/%E5%9C%A8vscode%E4%B8%AD%E4%BD%BF%E7%94%A8uniapp/"/>
+        <link rel="alternate" href="https://gaoxiaoxin.github.io/2022/04/16/Cross-terminal/use%20uniapp%20in%20vscode/"/>
         <content type="html">&lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
 &lt;p&gt;今日再开一领域，虽然之前也写了两个 uniapp 的项目，但是并没有进行总结什么的，然后就忘掉了，bbq. 无所谓，现在也不迟。&lt;/p&gt;
 &lt;div class=&#34;note primary&#34;&gt;

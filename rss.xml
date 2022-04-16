@@ -9,20 +9,20 @@
         <pubDate>Sat, 16 Apr 2022 16:51:21 +0800</pubDate>
         <lastBuildDate>Sat, 16 Apr 2022 16:51:21 +0800</lastBuildDate>
         <category>小技巧</category>
+        <category>uniapp</category>
         <category>事件循环</category>
         <category>小知识</category>
         <category>进程和线程</category>
+        <category>主题配置</category>
         <category>跨域</category>
         <category>Web安全</category>
         <category>nginx</category>
-        <category>主题配置</category>
-        <category>uniapp</category>
         <category>webpack5</category>
         <category>题解</category>
         <item>
-            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/04/16/%E8%B7%A8%E7%AB%AF/%E5%9C%A8vscode%E4%B8%AD%E4%BD%BF%E7%94%A8uniapp/</guid>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/04/16/Cross-terminal/use%20uniapp%20in%20vscode/</guid>
             <title>使用vscode写uniapp</title>
-            <link>https://gaoxiaoxin.github.io/2022/04/16/%E8%B7%A8%E7%AB%AF/%E5%9C%A8vscode%E4%B8%AD%E4%BD%BF%E7%94%A8uniapp/</link>
+            <link>https://gaoxiaoxin.github.io/2022/04/16/Cross-terminal/use%20uniapp%20in%20vscode/</link>
             <category>uniapp</category>
             <pubDate>Sat, 16 Apr 2022 16:51:21 +0800</pubDate>
             <description><![CDATA[ &lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
