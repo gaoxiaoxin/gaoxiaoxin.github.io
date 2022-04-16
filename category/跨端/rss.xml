@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>自能生羽翼, 何必仰云梯 • Posts by &#34;跨端&#34; category</title>
+        <link>https://gaoxiaoxin.github.io</link>
+        <description>遇见的都是天意
+拥有的都是幸运</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 16 Apr 2022 16:51:21 +0800</pubDate>
+        <lastBuildDate>Sat, 16 Apr 2022 16:51:21 +0800</lastBuildDate>
+        <category>小技巧</category>
+        <category>事件循环</category>
+        <category>小知识</category>
+        <category>进程和线程</category>
+        <category>跨域</category>
+        <category>Web安全</category>
+        <category>nginx</category>
+        <category>主题配置</category>
+        <category>uniapp</category>
+        <category>webpack5</category>
+        <category>题解</category>
+        <item>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/04/16/%E8%B7%A8%E7%AB%AF/%E5%9C%A8vscode%E4%B8%AD%E4%BD%BF%E7%94%A8uniapp/</guid>
+            <title>使用vscode写uniapp</title>
+            <link>https://gaoxiaoxin.github.io/2022/04/16/%E8%B7%A8%E7%AB%AF/%E5%9C%A8vscode%E4%B8%AD%E4%BD%BF%E7%94%A8uniapp/</link>
+            <category>uniapp</category>
+            <pubDate>Sat, 16 Apr 2022 16:51:21 +0800</pubDate>
+            <description><![CDATA[ &lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
+&lt;p&gt;今日再开一领域，虽然之前也写了两个 uniapp 的项目，但是并没有进行总结什么的，然后就忘掉了，bbq. 无所谓，现在也不迟。&lt;/p&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;要是有所得罪请原谅，本是出自一番好意，&lt;br&gt;
+ 只是想显点粗浅技艺，那才是我们的初衷。&lt;br&gt;
+– 威廉・莎士比亚，《仲夏夜之梦》&lt;/p&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;开始安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开始安装&#34;&gt;#&lt;/a&gt; 开始安装&lt;/h4&gt;
+&lt;p&gt;之前我们都比较认可的一件事是写 uniapp 使用 HBuilderX 去使用会最好，毕竟这是人家 uniapp 官网都推荐的一个编辑器 (国产), 确实使用效果也不错基本就是切合 &lt;code&gt;uniapp&lt;/code&gt;  的各种功能而生的，但是，对于一个用 vscode 开发了 2 年左右的前端来说&lt;br&gt;
+它真的是不符合我的使用习惯 (我舍不得 vscode 上的插件)&lt;br&gt;
+ 那么我们又去想，其实 vscode 的最强大的功能是什么？就是它的可扩展性，那必须&lt;strong&gt;安排&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;推荐文章&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#推荐文章&#34;&gt;#&lt;/a&gt; 推荐文章&lt;/h4&gt;
+&lt;p&gt;先把我看的教程文章放在上面，以示尊敬！！！(ps: 主要很&lt;sub&gt;权威&lt;/sub&gt;棒) 对照下面两个文章食用更香哦&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9hc2suZGNsb3VkLm5ldC5jbi9hcnRpY2xlLzM2Mjg2&#34;&gt;https://ask.dcloud.net.cn/article/36286&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY3MDk3My9hcnRpY2xlL2RldGFpbHMvMTA5MjIxMTk2&#34;&gt;https://blog.csdn.net/weixin_44670973/article/details/109221196&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我在这些大佬的基础上，添加了我遇到的问题以及解决方案&lt;/p&gt;
+&lt;h4 id=&#34;开发环境搭建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开发环境搭建&#34;&gt;#&lt;/a&gt; 开发环境搭建&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;基于 vue, 必须先在全局安装 vue-cli 3.x 脚手架&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install -g @vue/cli&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;通过 CLI 创建 uni-app 项目&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption&gt;&lt;span&gt;createDemo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vue create -p dcloudio/uni-preset-vue my-project&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个时候会提示创建项目，我建议大家选择 &lt;code&gt;默认模板&lt;/code&gt; ，在上面的教程中，推荐使用 Hello uni-app 模板，但是这样的话，就会在我们的项目目录那一块多很多东西，新手容易直接懵掉。&lt;/p&gt;
+&lt;p&gt;那么当我们创建项目的同时，我们可以去安装一些插件去兼容我们的 uniapp ,&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;安装插件 以及 依赖&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;虽然在上面的文章中也指出去安装 vetur, 但是，我想说但是啊，我看文章的日期是 2019 年，那个时候还没有 vue3, 尤大大也没推荐  &lt;code&gt;Volar&lt;/code&gt;  插件，所以，我只能说，下载  &lt;code&gt;veter&lt;/code&gt;  这个插件的目的就只是要 vue 的代码提示， &lt;code&gt;volar&lt;/code&gt;  也可以实现。大家可以自己选择去使用。&lt;br&gt;
+&lt;img data-src=&#34;https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/64c65748853845df91ffaba7205ae870~tplv-k3u1fbpfcp-zoom-crop-mark:1304:1304:1304:734.awebp&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;li&gt;上面的文章有说，CLI 工程默认带了 uni-app 语法提示和 5+App 的语法提示。但是不知道是不是我脸黑，我这就没有。但是这难不倒我，vscode 大法好，我们直接去找插件，在插件搜索那一块，我们就直接&lt;br&gt;
+搜索 &lt;code&gt;uniapp&lt;/code&gt;  然后找到  &lt;code&gt;uniapp-snippet&lt;/code&gt; , 下载就行。同样可以实现代码提示&lt;/li&gt;
+&lt;li&gt;安装组件语法提示 (如果不成功就重新启动一下 vscode)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm i @dcloudio/uni-helper-json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;导入 HBuilderX 自带的代码块&lt;br&gt;
+从 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3poZXRlbmdiaWppL3VuaWFwcC1zbmlwcGV0cy12c2NvZGU=&#34;&gt;Github&lt;/span&gt;中下载，&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRlZS5jb20vbGluZ3l1bi1teS92c2NvZGUtc25pcHBldHMtdW5pYXBw&#34;&gt;git&lt;/span&gt;中下载，放在项目目录下的.vscode 目录中&lt;br&gt;
+ ps: 如果完成后没有作用就重新启动一下 vscode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;运行项目&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#运行项目&#34;&gt;#&lt;/a&gt; 运行项目&lt;/h4&gt;
+&lt;p&gt;这个 在  &lt;code&gt;package.json&lt;/code&gt;  中已经写好了很多的脚本命令，对应很多的项目运行方式， &lt;code&gt;npm run&lt;/code&gt;  就行&lt;/p&gt;
+&lt;h4 id=&#34;结尾&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结尾&#34;&gt;#&lt;/a&gt; 结尾&lt;/h4&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8h1bwf1b9ahj31400u0dod.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+生活不只有代码&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
