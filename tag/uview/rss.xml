@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>自能生羽翼, 何必仰云梯 • Posts by &#34;uview&#34; tag</title>
+        <link>https://gaoxiaoxin.github.io</link>
+        <description>遇见的都是天意
+拥有的都是幸运</description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 17 Apr 2022 12:10:15 +0800</pubDate>
+        <lastBuildDate>Sun, 17 Apr 2022 12:10:15 +0800</lastBuildDate>
+        <category>uniapp</category>
+        <category>微信小程序</category>
+        <category>uView</category>
+        <category>事件循环</category>
+        <category>小知识</category>
+        <category>进程和线程</category>
+        <category>小技巧</category>
+        <category>主题配置</category>
+        <category>nginx</category>
+        <category>跨域</category>
+        <category>Web安全</category>
+        <category>webpack5</category>
+        <category>题解</category>
+        <item>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/%E7%BB%93%E5%90%88%E4%B8%80%E4%BA%9BUI%E9%85%8D%E7%BD%AE/</guid>
+            <title>结合一些UI配置</title>
+            <link>https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/%E7%BB%93%E5%90%88%E4%B8%80%E4%BA%9BUI%E9%85%8D%E7%BD%AE/</link>
+            <category>uniapp</category>
+            <category>uView</category>
+            <pubDate>Sun, 17 Apr 2022 12:10:15 +0800</pubDate>
+            <description><![CDATA[ &lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
+&lt;p&gt;光修炼也不行，那么我们也需要练一些招式 (UI), 正常人都去自己练，但我们不一样，我们是挂逼，我们直接去外挂 (百度) 的商城找我们想要的招式。 经过挑选，我们发现 &lt;code&gt;uView&lt;/code&gt;  是一个强大的招式 (UI 组件库), 那么挂壁如我们，我们就直接购买然后消化&lt;/p&gt;
+&lt;h4 id=&#34;购买下载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#购买下载&#34;&gt;#&lt;/a&gt; 购买 (下载)&lt;/h4&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudXZpZXd1aS5jb20vY29tcG9uZW50cy9pbnRyby5odG1s&#34;&gt;https://www.uviewui.com/components/intro.html&lt;/span&gt;, 那么我们可以去官网看看.&lt;br&gt;
+ 这里因为我们是基于 vscode 去写 uniapp. 那么，我们就直接选择 npm 的安装方式.&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install uview-ui&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva2.sinaimg.cn/large/006xVoHRly8h1cln71lb8j30rn09mq3x.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cudXZpZXd1aS5jb20vY29tcG9uZW50cy9ucG1TZXR0aW5nLmh0bWw=&#34;&gt;https://www.uviewui.com/components/npmSetting.html&lt;/span&gt; (最好去看官网，这里可能因为时间原因会更改)&lt;br&gt;
+ 我们这里需要下载一些 &lt;code&gt;uView&lt;/code&gt;  的配件，因为这个组件库其实也是基于 vue2 写的，就是我们平时的 UI 库，只不过封装的更好了而已 (大佬们牛)&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;// 安装sass&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm i sass -D&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// 安装sass-loader 翻译官(主要是基于webpack)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm i sass-loader@10 -D&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这里如果对 webpack 不太理解，可以忽略，或者去看我之前写的文章。&lt;/p&gt;
+&lt;p&gt;我们还需要配置一些东西:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;引入 uView 的 js 库&lt;br&gt;
+在项目的入口 (main.js, 也可以叫 app.js) 处，引用 uView 的 js 库.(Webpack 的依赖引用)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; uView &lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;uview-ui&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Vue.use(uView);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;引入 uView 的全局 scss 文件&lt;br&gt;
+在项目的 &lt;code&gt;src&lt;/code&gt;  中的 &lt;code&gt;uni.scss&lt;/code&gt;  中引入此文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight scss&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;/* uni.scss */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;@import&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;uview-ui/theme.scss&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;引入 uView 基础样式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption&gt;&lt;span&gt;demo&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;style&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;lang&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;scss&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;css&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;css&#34;&gt;  &lt;span class=&#34;comment&#34;&gt;/* 注意要写在第一行，同时给style标签加入lang=&amp;quot;scss&amp;quot;属性 */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;css&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;@import&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;uview-ui/index.scss&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;css&#34;&gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这里有一些小问题。&lt;/p&gt;
+&lt;p&gt;当我们敲出  &lt;code&gt;import&lt;/code&gt;  的时候，会出现&lt;br&gt;
+&lt;img data-src=&#34;https://tva2.sinaimg.cn/large/006xVoHRly8h1cmlruk38j30d60233yg.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+会出现两个不同的选项，那么我们该如何区分&lt;/p&gt;
+&lt;p&gt;首先  &lt;code&gt;@import url()&lt;/code&gt;  这个是 css 的一个特性，为了开发者能将 css 分解成更小的部分，它的引入会直接发起一个 Http 的请求.&lt;br&gt;
+ 而  &lt;code&gt;@import&lt;/code&gt;  这个是 scss 的一个特性，为了更加想我们使用的模块化。它会直接将代码包含进目标 scss 文件。那么现在来看，我们明白了。&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;配置 easycom 组件模式&lt;br&gt;
+这个需要在项目的 &lt;code&gt;src&lt;/code&gt;  目录的 &lt;code&gt;pages.json&lt;/code&gt;  中进行。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;uni-app 为了调试性能的原因，修改 easycom 规则不会实时生效，配置完后，您需要重启 HX 或者重新编译项目才能正常使用 uView 的功能。&lt;/li&gt;
+&lt;li&gt;请确保您的 pages.json 中只有一个 easycom 字段，否则请自行合并多个引入规则。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;p&gt;什么，为什么我要配这个？？&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly91bmlhcHAuZGNsb3VkLmlvL2NvbGxvY2F0aW9uL3BhZ2VzLmh0bWwjZWFzeWNvbQ==&#34;&gt;https://uniapp.dcloud.io/collocation/pages.html#easycom&lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Cli 模式额外配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// vue.config.js，如没有此文件则手动创建&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;module&lt;/span&gt;.exports = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;transpileDependencies&lt;/span&gt;: [&lt;span class=&#34;string&#34;&gt;&amp;quot;uview-ui&amp;quot;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;什么什么又要弄我不懂的东西，来看看吧&lt;br&gt;
+&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8h1cq1n6dv0j30n707ngmw.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们因为在 node_modules 中的依赖太多，我们一般在配置 webpack 的时候就会直接把它整个忽略，而不去优化它，但是现在明显它运用了 vue 单文件，我们如果不进行转换那么我们就真的无法使用，bbq。所以要配置&lt;/p&gt;
+&lt;p&gt;然后用就完了。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "自能生羽翼, 何必仰云梯 • All posts by \"微信小程序\" tag",
+    "description": "遇见的都是天意\n拥有的都是幸运",
+    "home_page_url": "https://gaoxiaoxin.github.io",
+    "items": [
+        {
+            "id": "https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/%E4%B8%80%E4%BA%9B%E6%96%B0%E7%9A%84%E5%B0%9D%E8%AF%95/",
+            "url": "https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/%E4%B8%80%E4%BA%9B%E6%96%B0%E7%9A%84%E5%B0%9D%E8%AF%95/",
+            "title": "在vscode上写uniapp新的尝试",
+            "date_published": "2022-04-17T03:44:26.075Z",
+            "content_html": "<h4 id=\"前言\"><a class=\"markdownIt-Anchor\" href=\"#前言\">#</a> 前言</h4>\n<div class=\"note info\">\n<p>大帝重生系统流</p>\n</div>\n<p>今天在做突破练气境的尝试，首先根据前世的记忆，修 <code>微信小程序</code> 大法炼气。 幸好，我们前世的法器 <code>微信开发者工具</code> 还在，只不过我们暂时失去了联系，今天我们要建立起联系。大帝重生<br>\n<img data-src=\"https://tva4.sinaimg.cn/large/006xVoHRly8h1cl6l50pej30gp0b60t8.jpg\" alt=\"\"></p>\n<h4 id=\"开始\"><a class=\"markdownIt-Anchor\" href=\"#开始\">#</a> 开始</h4>\n<p>上一章，我们讲到使用 vscode 开发 uniapp 的时候，在 <code>package.json</code>  中有很多的脚本命令，那么我们可以发现其他它对应着各种各样的小程序平台，比如微信，飞书等等。那么我们可以找到一个  <code>dev:mp-weixin</code>  的 npm 脚本命令，那么我们就去执行它。<br>\n<img data-src=\"https://tva4.sinaimg.cn/large/006xVoHRly8h1cl2b45g7j30o903l74k.jpg\" alt=\"\"><br>\n出现这个东西，但是并没有按我们的想法把 <code>微信开发者工具</code> 调用起来，啥反应也没有<br>\n那么怎么办呢？百度呗 (使用我们的外挂): <span class=\"exturl\" data-url=\"aHR0cHM6Ly9sZWF5Lm5ldC8yMDIxLzAzLzIwL2xpbnV4LXZzY29kZS11bmlhcHAtd2VjaGF0Lw==\">https://leay.net/2021/03/20/linux-vscode-uniapp-wechat/</span><br>\n 找到一个大佬的博客，我们知道了需要自己启动 <code>微信开发者工具</code>  去把 我们项目目录下的 <code>dist/dev/mp-weixin</code>  文件夹当作项目导入其中。对项目的修改会热编译，微信开发者工具能实时看到修改的效果。</p>\n<h4 id=\"暂时结束\"><a class=\"markdownIt-Anchor\" href=\"#暂时结束\">#</a> 暂时结束</h4>\n<p>这里我没有找到使用 vscode 自动调起 <code>微信开发工具</code> 的方法。那就先这样吧</p>\n",
+            "tags": [
+                "uniapp",
+                "微信小程序"
+            ]
+        }
+    ]
+}

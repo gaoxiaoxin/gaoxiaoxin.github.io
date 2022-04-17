@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="uniapp" />
+  <meta name="keywords" content="uniapp,uView" />
 
 
-<link rel="canonical" href="https://gaoxiaoxin.github.io/2022/04/16/Cross-terminal/use%20uniapp%20in%20vscode/">
+<link rel="canonical" href="https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/%E7%BB%93%E5%90%88%E4%B8%80%E4%BA%9BUI%E9%85%8D%E7%BD%AE/">
 
 
 
   <title>
-使用 vscode 写 uniapp - 跨端 |
+结合一些 UI 配置 - 跨端 |
 自能生羽翼，何必仰云梯 = 热爱可抵岁月漫长</title>
 <meta name="generator" content="Hexo 5.4.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,23 +60,23 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">使用 vscode 写 uniapp
+  <h1 itemprop="name headline">结合一些 UI 配置
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2022-04-16 16:51:21">
+  <span class="item" title="创建时间：2022-04-17 12:10:15">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2022-04-16T16:51:21+08:00">2022-04-16</time>
+    <time itemprop="dateCreated datePublished" datetime="2022-04-17T12:10:15+08:00">2022-04-17</time>
   </span>
   <span class="item" title="本文字数">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>1.2k</span>
+    <span>1.5k</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -117,12 +117,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,7 +153,7 @@
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/2022/04/16/Cross-terminal/use%20uniapp%20in%20vscode/">
+  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/%E7%BB%93%E5%90%88%E4%B8%80%E4%BA%9BUI%E9%85%8D%E7%BD%AE/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/header.png">
@@ -170,59 +170,61 @@
     
 
     <h4 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h4>
-<p>今日再开一领域，虽然之前也写了两个 uniapp 的项目，但是并没有进行总结什么的，然后就忘掉了，bbq. 无所谓，现在也不迟。</p>
-<div class="note primary">
-<p>要是有所得罪请原谅，本是出自一番好意，<br>
- 只是想显点粗浅技艺，那才是我们的初衷。<br>
-– 威廉・莎士比亚，《仲夏夜之梦》</p>
-</div>
-<h4 id="开始安装"><a class="markdownIt-Anchor" href="#开始安装">#</a> 开始安装</h4>
-<p>之前我们都比较认可的一件事是写 uniapp 使用 HBuilderX 去使用会最好，毕竟这是人家 uniapp 官网都推荐的一个编辑器 (国产), 确实使用效果也不错基本就是切合 <code>uniapp</code>  的各种功能而生的，但是，对于一个用 vscode 开发了 2 年左右的前端来说<br>
-它真的是不符合我的使用习惯 (我舍不得 vscode 上的插件)<br>
- 那么我们又去想，其实 vscode 的最强大的功能是什么？就是它的可扩展性，那必须<strong>安排</strong></p>
-<h4 id="推荐文章"><a class="markdownIt-Anchor" href="#推荐文章">#</a> 推荐文章</h4>
-<p>先把我看的教程文章放在上面，以示尊敬！！！(ps: 主要很<sub>权威</sub>棒) 对照下面两个文章食用更香哦</p>
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9hc2suZGNsb3VkLm5ldC5jbi9hcnRpY2xlLzM2Mjg2">https://ask.dcloud.net.cn/article/36286</span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY3MDk3My9hcnRpY2xlL2RldGFpbHMvMTA5MjIxMTk2">https://blog.csdn.net/weixin_44670973/article/details/109221196</span></li>
-</ul>
-<p>我在这些大佬的基础上，添加了我遇到的问题以及解决方案</p>
-<h4 id="开发环境搭建"><a class="markdownIt-Anchor" href="#开发环境搭建">#</a> 开发环境搭建</h4>
+<p>光修炼也不行，那么我们也需要练一些招式 (UI), 正常人都去自己练，但我们不一样，我们是挂逼，我们直接去外挂 (百度) 的商城找我们想要的招式。 经过挑选，我们发现 <code>uView</code>  是一个强大的招式 (UI 组件库), 那么挂壁如我们，我们就直接购买然后消化</p>
+<h4 id="购买下载"><a class="markdownIt-Anchor" href="#购买下载">#</a> 购买 (下载)</h4>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cudXZpZXd1aS5jb20vY29tcG9uZW50cy9pbnRyby5odG1s">https://www.uviewui.com/components/intro.html</span>, 那么我们可以去官网看看.<br>
+ 这里因为我们是基于 vscode 去写 uniapp. 那么，我们就直接选择 npm 的安装方式.</p>
+<figure class="highlight plaintext"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install uview-ui</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://tva2.sinaimg.cn/large/006xVoHRly8h1cln71lb8j30rn09mq3x.jpg" alt=""></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cudXZpZXd1aS5jb20vY29tcG9uZW50cy9ucG1TZXR0aW5nLmh0bWw=">https://www.uviewui.com/components/npmSetting.html</span> (最好去看官网，这里可能因为时间原因会更改)<br>
+ 我们这里需要下载一些 <code>uView</code>  的配件，因为这个组件库其实也是基于 vue2 写的，就是我们平时的 UI 库，只不过封装的更好了而已 (大佬们牛)</p>
+<figure class="highlight plaintext"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 安装sass</span><br><span class="line">npm i sass -D</span><br><span class="line">// 安装sass-loader 翻译官(主要是基于webpack)</span><br><span class="line">npm i sass-loader@10 -D</span><br></pre></td></tr></table></figure>
+<p>这里如果对 webpack 不太理解，可以忽略，或者去看我之前写的文章。</p>
+<p>我们还需要配置一些东西:</p>
 <ol>
-<li>基于 vue, 必须先在全局安装 vue-cli 3.x 脚手架</li>
+<li>引入 uView 的 js 库<br>
+在项目的入口 (main.js, 也可以叫 app.js) 处，引用 uView 的 js 库.(Webpack 的依赖引用)</li>
 </ol>
-<figure class="highlight plaintext"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> uView <span class="keyword">from</span> <span class="string">&quot;uview-ui&quot;</span>;</span><br><span class="line">Vue.use(uView);</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>通过 CLI 创建 uni-app 项目</li>
+<li>引入 uView 的全局 scss 文件<br>
+在项目的 <code>src</code>  中的 <code>uni.scss</code>  中引入此文件</li>
 </ol>
-<figure class="highlight plaintext"><figcaption><span>createDemo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create -p dcloudio/uni-preset-vue my-project</span><br></pre></td></tr></table></figure>
-<p>这个时候会提示创建项目，我建议大家选择 <code>默认模板</code> ，在上面的教程中，推荐使用 Hello uni-app 模板，但是这样的话，就会在我们的项目目录那一块多很多东西，新手容易直接懵掉。</p>
-<p>那么当我们创建项目的同时，我们可以去安装一些插件去兼容我们的 uniapp ,</p>
+<figure class="highlight scss"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* uni.scss */</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&quot;uview-ui/theme.scss&quot;</span>;</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>安装插件 以及 依赖</li>
+<li>引入 uView 基础样式</li>
 </ol>
-<ul>
-<li>虽然在上面的文章中也指出去安装 vetur, 但是，我想说但是啊，我看文章的日期是 2019 年，那个时候还没有 vue3, 尤大大也没推荐  <code>Volar</code>  插件，所以，我只能说，下载  <code>veter</code>  这个插件的目的就只是要 vue 的代码提示， <code>volar</code>  也可以实现。大家可以自己选择去使用。<br>
-<img data-src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/64c65748853845df91ffaba7205ae870~tplv-k3u1fbpfcp-zoom-crop-mark:1304:1304:1304:734.awebp" alt=""></li>
-<li>上面的文章有说，CLI 工程默认带了 uni-app 语法提示和 5+App 的语法提示。但是不知道是不是我脸黑，我这就没有。但是这难不倒我，vscode 大法好，我们直接去找插件，在插件搜索那一块，我们就直接<br>
-搜索 <code>uniapp</code>  然后找到  <code>uniapp-snippet</code> , 下载就行。同样可以实现代码提示</li>
-<li>安装组件语法提示 (如果不成功就重新启动一下 vscode)</li>
-</ul>
-<figure class="highlight plaintext"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i @dcloudio/uni-helper-json</span><br></pre></td></tr></table></figure>
-<ul>
-<li>导入 HBuilderX 自带的代码块<br>
-从 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3poZXRlbmdiaWppL3VuaWFwcC1zbmlwcGV0cy12c2NvZGU=">Github</span>中下载，<br>
-<span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vbGluZ3l1bi1teS92c2NvZGUtc25pcHBldHMtdW5pYXBw">git</span>中下载，放在项目目录下的.vscode 目录中<br>
- ps: 如果完成后没有作用就重新启动一下 vscode</li>
-</ul>
-<h4 id="运行项目"><a class="markdownIt-Anchor" href="#运行项目">#</a> 运行项目</h4>
-<p>这个 在  <code>package.json</code>  中已经写好了很多的脚本命令，对应很多的项目运行方式， <code>npm run</code>  就行</p>
-<h4 id="结尾"><a class="markdownIt-Anchor" href="#结尾">#</a> 结尾</h4>
-<p><img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8h1bwf1b9ahj31400u0dod.jpg" alt=""><br>
-生活不只有代码</p>
+<figure class="highlight html"><figcaption><span>demo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">&quot;scss&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="comment">/* 注意要写在第一行，同时给style标签加入lang=&quot;scss&quot;属性 */</span></span></span><br><span class="line"><span class="css">  <span class="keyword">@import</span> <span class="string">&quot;uview-ui/index.scss&quot;</span>;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里有一些小问题。</p>
+<p>当我们敲出  <code>import</code>  的时候，会出现<br>
+<img data-src="https://tva2.sinaimg.cn/large/006xVoHRly8h1cmlruk38j30d60233yg.jpg" alt=""><br>
+会出现两个不同的选项，那么我们该如何区分</p>
+<p>首先  <code>@import url()</code>  这个是 css 的一个特性，为了开发者能将 css 分解成更小的部分，它的引入会直接发起一个 Http 的请求.<br>
+ 而  <code>@import</code>  这个是 scss 的一个特性，为了更加想我们使用的模块化。它会直接将代码包含进目标 scss 文件。那么现在来看，我们明白了。</p>
+<ol start="4">
+<li>配置 easycom 组件模式<br>
+这个需要在项目的 <code>src</code>  目录的 <code>pages.json</code>  中进行。</li>
+</ol>
+<div class="note primary">
+<ol>
+<li>uni-app 为了调试性能的原因，修改 easycom 规则不会实时生效，配置完后，您需要重启 HX 或者重新编译项目才能正常使用 uView 的功能。</li>
+<li>请确保您的 pages.json 中只有一个 easycom 字段，否则请自行合并多个引入规则。</li>
+</ol>
+</div>
+<p>什么，为什么我要配这个？？<br>
+<span class="exturl" data-url="aHR0cHM6Ly91bmlhcHAuZGNsb3VkLmlvL2NvbGxvY2F0aW9uL3BhZ2VzLmh0bWwjZWFzeWNvbQ==">https://uniapp.dcloud.io/collocation/pages.html#easycom</span></p>
+<ol start="5">
+<li>Cli 模式额外配置</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue.config.js，如没有此文件则手动创建</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">transpileDependencies</span>: [<span class="string">&quot;uview-ui&quot;</span>],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>什么什么又要弄我不懂的东西，来看看吧<br>
+<img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8h1cq1n6dv0j30n707ngmw.jpg" alt=""></p>
+<p>我们因为在 node_modules 中的依赖太多，我们一般在配置 webpack 的时候就会直接把它整个忽略，而不去优化它，但是现在明显它运用了 vue 单文件，我们如果不进行转换那么我们就真的无法使用，bbq。所以要配置</p>
+<p>然后用就完了。</p>
 
       <div class="tags">
           <a href="/tags/uniapp/" rel="tag"><i class="ic i-tag"></i> uniapp</a>
+          <a href="/tags/uView/" rel="tag"><i class="ic i-tag"></i> uView</a>
       </div>
   </div>
 
@@ -234,9 +236,9 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-04-16 22:10:32" itemprop="dateModified" datetime="2022-04-16T22:10:32+08:00">2022-04-16</time>
+    <time title="修改时间：2022-04-17 14:55:20" itemprop="dateModified" datetime="2022-04-17T14:55:20+08:00">2022-04-17</time>
   </span>
-  <span id="2022/04/16/Cross-terminal/use uniapp in vscode/" class="item leancloud_visitors" data-flag-title="使用 vscode 写 uniapp" title="阅读次数">
+  <span id="2022/04/17/Cross-terminal/结合一些UI配置/" class="item leancloud_visitors" data-flag-title="结合一些 UI 配置" title="阅读次数">
       <span class="icon">
         <i class="ic i-eye"></i>
       </span>
@@ -273,7 +275,7 @@
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="https://gaoxiaoxin.github.io/2022/04/16/Cross-terminal/use%20uniapp%20in%20vscode/" title="使用 vscode 写 uniapp">https://gaoxiaoxin.github.io/2022/04/16/Cross-terminal/use uniapp in vscode/</a>
+    <a href="https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/%E7%BB%93%E5%90%88%E4%B8%80%E4%BA%9BUI%E9%85%8D%E7%BD%AE/" title="结合一些 UI 配置">https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/结合一些UI配置/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -292,10 +294,10 @@
     <div class="item left">
       
 
-  <a href="/2022/04/11/JavaScript/js%E7%9A%84==/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclwuom7cj20zk0m8dvn.jpg" title="js中的 &#x3D;&#x3D;">
+  <a href="/2022/04/17/Cross-terminal/%E4%B8%80%E4%BA%9B%E6%96%B0%E7%9A%84%E5%B0%9D%E8%AF%95/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclj9410cj20zk0m8h12.jpg" title="在vscode上写uniapp新的尝试">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> javascript</span>
-  <h3>js中的 ==</h3>
+  <span class="category"><i class="ic i-flag"></i> 跨端</span>
+  <h3>在vscode上写uniapp新的尝试</h3>
   </a>
 
     </div>
@@ -316,11 +318,11 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text"> 开始安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E6%96%87%E7%AB%A0"><span class="toc-number">3.</span> <span class="toc-text"> 推荐文章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">4.</span> <span class="toc-text"> 开发环境搭建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E9%A1%B9%E7%9B%AE"><span class="toc-number">5.</span> <span class="toc-text"> 运行项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E5%B0%BE"><span class="toc-number">6.</span> <span class="toc-text"> 结尾</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0%E4%B8%8B%E8%BD%BD"><span class="toc-number">2.</span> <span class="toc-text"> 购买 (下载)</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li class="active"><a href="/2022/04/16/Cross-terminal/use%20uniapp%20in%20vscode/" rel="bookmark" title="使用vscode写uniapp">使用vscode写uniapp</a></li>
+          <li><a href="/2022/04/16/Cross-terminal/%E5%9C%A8vscode%E4%B8%AD%E4%BD%BF%E7%94%A8uniapp/" rel="bookmark" title="使用vscode写uniapp">使用vscode写uniapp</a></li><li><a href="/2022/04/17/Cross-terminal/%E4%B8%80%E4%BA%9B%E6%96%B0%E7%9A%84%E5%B0%9D%E8%AF%95/" rel="bookmark" title="在vscode上写uniapp新的尝试">在vscode上写uniapp新的尝试</a></li><li class="active"><a href="/2022/04/17/Cross-terminal/%E7%BB%93%E5%90%88%E4%B8%80%E4%BA%9BUI%E9%85%8D%E7%BD%AE/" rel="bookmark" title="结合一些UI配置">结合一些UI配置</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -335,7 +337,7 @@
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">21</span>
+        <span class="count">23</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -347,7 +349,7 @@
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">11</span>
+        <span class="count">13</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -430,10 +432,20 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/Css/" title="分类于 Css">Css</a>
+<a href="/categories/JavaScript/" title="分类于 JavaScript">JavaScript</a>
 </div>
 
-    <span><a href="/2022/02/21/Css/Css%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="Css使用小技巧">Css使用小技巧</a></span>
+    <span><a href="/2022/02/14/JavaScript/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="从进程和线程角度去理解事件循环">从进程和线程角度去理解事件循环</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="分类于 服务器">服务器</a>
+</div>
+
+    <span><a href="/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" title="nginx配置踩坑">nginx配置踩坑</a></span>
   </li>
 
       
@@ -450,10 +462,20 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/javascript/" title="分类于 javascript">javascript</a>
+<a href="/categories/%E8%B7%A8%E7%AB%AF/" title="分类于 跨端">跨端</a>
 </div>
 
-    <span><a href="/2022/04/11/JavaScript/js%E7%9A%84==/" title="js中的 &#x3D;&#x3D;">js中的 ==</a></span>
+    <span><a href="/2022/04/17/Cross-terminal/%E4%B8%80%E4%BA%9B%E6%96%B0%E7%9A%84%E5%B0%9D%E8%AF%95/" title="在vscode上写uniapp新的尝试">在vscode上写uniapp新的尝试</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Css/" title="分类于 Css">Css</a>
+</div>
+
+    <span><a href="/2022/02/21/Css/Css%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="Css使用小技巧">Css使用小技巧</a></span>
   </li>
 
       
@@ -462,17 +484,7 @@
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/2021/12/01/TypeScript/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript基础总结">TypeScript基础总结</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/JavaScript/" title="分类于 JavaScript">JavaScript</a>
-</div>
-
-    <span><a href="/2022/03/12/JavaScript/%E7%BB%86%E8%87%B4%E6%A2%B3%E7%90%86%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="梳理事件循环">梳理事件循环</a></span>
+    <span><a href="/2021/11/20/Node.js/%E4%BD%BF%E7%94%A8NodeJs%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" title="使用Node.js实现自动化发送邮件">使用Node.js实现自动化发送邮件</a></span>
   </li>
 
       
@@ -489,10 +501,10 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/Webpack/" title="分类于 -[Webpack]">-[Webpack]</a>
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="分类于 杂项">杂项</a>
 </div>
 
-    <span><a href="/2022/02/19/Webpack/01_webpack%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="Webpack学习">Webpack学习</a></span>
+    <span><a href="/2021/10/21/%E6%9D%82%E9%A1%B9/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" title="测试块">测试块</a></span>
   </li>
 
       
@@ -509,20 +521,9 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/JavaScript/" title="分类于 JavaScript">JavaScript</a>
 </div>
 
-    <span><a href="/2022/02/14/JavaScript/%E4%BB%8E%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%BF%9B%E7%A8%8B%E8%A7%92%E5%BA%A6%E5%8E%BB%E7%90%86%E8%A7%A3%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="从进程和线程角度去理解事件循环">从进程和线程角度去理解事件循环</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E6%9D%82%E9%A1%B9/" title="分类于 杂项">杂项</a>
-</div>
-
-    <span><a href="/2021/12/06/%E6%9D%82%E9%A1%B9/Python%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="Python期末复习">Python期末复习</a></span>
+    <span><a href="/2021/12/01/TypeScript/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript基础总结">TypeScript基础总结</a></span>
   </li>
 
   </ul>
@@ -547,13 +548,13 @@
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">74k 字</span>
+    <span title="站点总字数">76k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:07</span>
+    <span title="站点阅读时长">1:09</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
@@ -565,7 +566,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2022/04/16/Cross-terminal/use uniapp in vscode/',
+    path: '2022/04/17/Cross-terminal/结合一些UI配置/',
     favicon: {
       show: "(＠￣ー￣＠)",
       hide: "┗( T﹏T )┛"

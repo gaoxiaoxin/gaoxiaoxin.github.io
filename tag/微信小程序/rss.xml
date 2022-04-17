@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>自能生羽翼, 何必仰云梯 • Posts by &#34;微信小程序&#34; tag</title>
+        <link>https://gaoxiaoxin.github.io</link>
+        <description>遇见的都是天意
+拥有的都是幸运</description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 17 Apr 2022 11:44:26 +0800</pubDate>
+        <lastBuildDate>Sun, 17 Apr 2022 11:44:26 +0800</lastBuildDate>
+        <category>uniapp</category>
+        <category>微信小程序</category>
+        <category>uView</category>
+        <category>事件循环</category>
+        <category>小知识</category>
+        <category>进程和线程</category>
+        <category>小技巧</category>
+        <category>主题配置</category>
+        <category>nginx</category>
+        <category>跨域</category>
+        <category>Web安全</category>
+        <category>webpack5</category>
+        <category>题解</category>
+        <item>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/%E4%B8%80%E4%BA%9B%E6%96%B0%E7%9A%84%E5%B0%9D%E8%AF%95/</guid>
+            <title>在vscode上写uniapp新的尝试</title>
+            <link>https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/%E4%B8%80%E4%BA%9B%E6%96%B0%E7%9A%84%E5%B0%9D%E8%AF%95/</link>
+            <category>uniapp</category>
+            <category>微信小程序</category>
+            <pubDate>Sun, 17 Apr 2022 11:44:26 +0800</pubDate>
+            <description><![CDATA[ &lt;h4 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h4&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;大帝重生系统流&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;今天在做突破练气境的尝试，首先根据前世的记忆，修 &lt;code&gt;微信小程序&lt;/code&gt; 大法炼气。 幸好，我们前世的法器 &lt;code&gt;微信开发者工具&lt;/code&gt; 还在，只不过我们暂时失去了联系，今天我们要建立起联系。大帝重生&lt;br&gt;
+&lt;img data-src=&#34;https://tva4.sinaimg.cn/large/006xVoHRly8h1cl6l50pej30gp0b60t8.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;开始&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开始&#34;&gt;#&lt;/a&gt; 开始&lt;/h4&gt;
+&lt;p&gt;上一章，我们讲到使用 vscode 开发 uniapp 的时候，在 &lt;code&gt;package.json&lt;/code&gt;  中有很多的脚本命令，那么我们可以发现其他它对应着各种各样的小程序平台，比如微信，飞书等等。那么我们可以找到一个  &lt;code&gt;dev:mp-weixin&lt;/code&gt;  的 npm 脚本命令，那么我们就去执行它。&lt;br&gt;
+&lt;img data-src=&#34;https://tva4.sinaimg.cn/large/006xVoHRly8h1cl2b45g7j30o903l74k.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+出现这个东西，但是并没有按我们的想法把 &lt;code&gt;微信开发者工具&lt;/code&gt; 调用起来，啥反应也没有&lt;br&gt;
+那么怎么办呢？百度呗 (使用我们的外挂): &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9sZWF5Lm5ldC8yMDIxLzAzLzIwL2xpbnV4LXZzY29kZS11bmlhcHAtd2VjaGF0Lw==&#34;&gt;https://leay.net/2021/03/20/linux-vscode-uniapp-wechat/&lt;/span&gt;&lt;br&gt;
+ 找到一个大佬的博客，我们知道了需要自己启动 &lt;code&gt;微信开发者工具&lt;/code&gt;  去把 我们项目目录下的 &lt;code&gt;dist/dev/mp-weixin&lt;/code&gt;  文件夹当作项目导入其中。对项目的修改会热编译，微信开发者工具能实时看到修改的效果。&lt;/p&gt;
+&lt;h4 id=&#34;暂时结束&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#暂时结束&#34;&gt;#&lt;/a&gt; 暂时结束&lt;/h4&gt;
+&lt;p&gt;这里我没有找到使用 vscode 自动调起 &lt;code&gt;微信开发工具&lt;/code&gt; 的方法。那就先这样吧&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
