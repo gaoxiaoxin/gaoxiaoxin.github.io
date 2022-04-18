@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>自能生羽翼, 何必仰云梯 • Posts by &#34;人生感悟&#34; tag</title>
+        <link>https://gaoxiaoxin.github.io</link>
+        <description>遇见的都是天意
+拥有的都是幸运</description>
+        <language>zh-CN</language>
+        <pubDate>Tue, 19 Apr 2022 00:54:07 +0800</pubDate>
+        <lastBuildDate>Tue, 19 Apr 2022 00:54:07 +0800</lastBuildDate>
+        <category>uniapp</category>
+        <category>微信小程序</category>
+        <category>uView</category>
+        <category>小技巧</category>
+        <category>事件循环</category>
+        <category>小知识</category>
+        <category>进程和线程</category>
+        <category>nginx</category>
+        <category>主题配置</category>
+        <category>跨域</category>
+        <category>Web安全</category>
+        <category>人生感悟</category>
+        <category>webpack5</category>
+        <category>题解</category>
+        <item>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/04/19/%E6%9D%82%E9%A1%B9/%E7%8E%B0%E9%98%B6%E6%AE%B5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</guid>
+            <title>现阶段的一些思考</title>
+            <link>https://gaoxiaoxin.github.io/2022/04/19/%E6%9D%82%E9%A1%B9/%E7%8E%B0%E9%98%B6%E6%AE%B5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</link>
+            <category>人生感悟</category>
+            <pubDate>Tue, 19 Apr 2022 00:54:07 +0800</pubDate>
+            <description><![CDATA[ &lt;h4 id=&#34;正文&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#正文&#34;&gt;#&lt;/a&gt; 正文&lt;/h4&gt;
+&lt;p&gt;深夜一点更文，对自身技术之路的一些思考，我并不认为这是一种 emo。我只是相对自己进行一个梳理。&lt;/p&gt;
+&lt;p&gt;之前我的好友  &lt;code&gt;安全-朱师傅&lt;/code&gt;  写了他对安全这条道路的一些&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly91cmRyLWd1bmduaXIuZ2l0aHViLmlvLzIwMjIvMDQvMTMvJUU1JUFGJUI5JUU1JUFFJTg5JUU1JTg1JUE4JUU0JUI5JThCJUU4JUI3JUFGJUU3JTlBJTg0JUU2JTgwJTlEJUU4JTgwJTgzLw==&#34;&gt;思考&lt;/span&gt;&lt;br&gt;
+也对我有一些触动。&lt;/p&gt;
+&lt;p&gt;回想一下一年半前 (其实不到), 开始学前端，以来自己不管技术方面还是其他方面都学了很多。&lt;br&gt;
+细数一下，自一开始的  &lt;code&gt;Html&lt;/code&gt; ,  &lt;code&gt;Css&lt;/code&gt; ,  &lt;code&gt;JavaScript&lt;/code&gt;  的前端三剑客，然后写了当时的一个科协作业。&lt;/p&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;比较有趣的是，我魔改了当时的作业需求，在默认需求之外，添加了狂暴模式 (–&amp;gt;), 利用了学长写的后端接口的一个规律性，暴力的把当时的所有学前端的人的私人数据都请求了下来 (定时器轮询，30ms 一次) 当时还想学长会不会知道，在群里骂娘 (还有些期待)。&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;之后就去学了前端的框架  &lt;code&gt;Vue&lt;/code&gt; （以及它的生态）, UI 框架  &lt;code&gt;Element UI&lt;/code&gt;  并且也使用  &lt;code&gt;Vue&lt;/code&gt;  写了一个简单的社团报名系统 (伪，因为功能特别少).&lt;br&gt;
+ 然后就开心进行了前端第一次考核，然后最终考核这个样子，中间学了一点  &lt;code&gt;Node.js&lt;/code&gt; ,  &lt;code&gt;less&lt;/code&gt; ,  &lt;code&gt;sass&lt;/code&gt;  (其实和 less 基本一样，不过这个好像强点), 也磕磕绊绊的进了中心 (当时有点浪，面试就是奔着唠嗑去的 (不知名的学长背锅))。&lt;br&gt;
+慢慢的走过来，学了 Node.js 框架 &lt;code&gt;express&lt;/code&gt; , 数据库 &lt;code&gt;mongoDB&lt;/code&gt; , 学了原生的 &lt;code&gt;微信小程序&lt;/code&gt; ， &lt;code&gt;uniapp&lt;/code&gt; , 还有一些小程序 UI 框架的使用。后面又去学习了 &lt;code&gt;Webpack&lt;/code&gt; ,  &lt;code&gt;Vue3&lt;/code&gt; ,  &lt;code&gt;TypeScript&lt;/code&gt; 。&lt;br&gt;
+然后为了部署项目又学了&lt;br&gt;
+ &lt;code&gt;Linux&lt;/code&gt; ,  &lt;code&gt;Nginx&lt;/code&gt; ,  &lt;code&gt;docker&lt;/code&gt;  还有服务器的一些操作。&lt;br&gt;
+然后看了点 &lt;code&gt;计算机网络&lt;/code&gt; ，以及 js 的一些可能算核心的原理，Vue 的一些原理，用 js 去实现数据结构。&lt;br&gt;
+为了写一个项目学了 &lt;code&gt;echarts&lt;/code&gt;  (里面的文档基本熟悉)&lt;/p&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;这里还有一些比较细碎的知识点，就不说了&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;然后为了熟悉技术，写了一个基于 Vue 的商城和一个后台管理，一个基于微信小程序的商城，一个基于 uniapp 的商城 (就是前面的翻版), 一个基于 node + express + mongoDB 的项目，一个基于 uniapp 的社团报名小程序，一个基于 Vue3 + Ts 的后台管理，一个基于 vue2 + echarts 的可视化网页 (主要是美观). 还有一些别的小项目就不说了，其实还写过很多的静态页面 (响应式的和不响应的)。&lt;br&gt;
+现在回头看看，确实也学的不少 (可能不多，大佬勿喷)。现在又急赶着想去实习 (被风气影响了？)。其实我感觉是受到了一些出去实习的学长的影响，比较羡慕吧。&lt;/p&gt;
+&lt;p&gt;但是返回头想一想，我们去实习的目的是什么？是学技术，混一个实习经历。 但是我真的掌握好我学的这些东西了吗？其实不然，因为各种各样的原因，学的杂又快，并不能说是熟练，只能说是熟悉或者是了解基本操作。一句话总结：现在的节奏太快，之前也没有一个高效的学习方法。导致一个知识点不断的反复。所以我真的该去人云亦云去实习吗，大众效应？&lt;br&gt;
+ 我的目标和想法是什么？什么才是我真真该做的？滚去梳理自己的知识体系。&lt;/p&gt;
+&lt;h4 id=&#34;后面的计划&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#后面的计划&#34;&gt;#&lt;/a&gt; 后面的计划&lt;/h4&gt;
+&lt;p&gt;利用写项目，写博客总结，来梳理之前的知识。&lt;/p&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;回头路别有一番滋味&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Be YourSelf!&lt;br&gt;
+ 这就是我，一个在前端不断横跳的菜鸡大二在校生，练习时长 1 年半。祝诸君武道昌盛！&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

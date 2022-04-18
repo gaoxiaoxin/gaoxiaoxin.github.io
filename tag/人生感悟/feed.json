@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "自能生羽翼, 何必仰云梯 • All posts by \"人生感悟\" tag",
+    "description": "遇见的都是天意\n拥有的都是幸运",
+    "home_page_url": "https://gaoxiaoxin.github.io",
+    "items": [
+        {
+            "id": "https://gaoxiaoxin.github.io/2022/04/19/%E6%9D%82%E9%A1%B9/%E7%8E%B0%E9%98%B6%E6%AE%B5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/",
+            "url": "https://gaoxiaoxin.github.io/2022/04/19/%E6%9D%82%E9%A1%B9/%E7%8E%B0%E9%98%B6%E6%AE%B5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/",
+            "title": "现阶段的一些思考",
+            "date_published": "2022-04-18T16:54:07.128Z",
+            "content_html": "<h4 id=\"正文\"><a class=\"markdownIt-Anchor\" href=\"#正文\">#</a> 正文</h4>\n<p>深夜一点更文，对自身技术之路的一些思考，我并不认为这是一种 emo。我只是相对自己进行一个梳理。</p>\n<p>之前我的好友  <code>安全-朱师傅</code>  写了他对安全这条道路的一些<span class=\"exturl\" data-url=\"aHR0cHM6Ly91cmRyLWd1bmduaXIuZ2l0aHViLmlvLzIwMjIvMDQvMTMvJUU1JUFGJUI5JUU1JUFFJTg5JUU1JTg1JUE4JUU0JUI5JThCJUU4JUI3JUFGJUU3JTlBJTg0JUU2JTgwJTlEJUU4JTgwJTgzLw==\">思考</span><br>\n也对我有一些触动。</p>\n<p>回想一下一年半前 (其实不到), 开始学前端，以来自己不管技术方面还是其他方面都学了很多。<br>\n细数一下，自一开始的  <code>Html</code> ,  <code>Css</code> ,  <code>JavaScript</code>  的前端三剑客，然后写了当时的一个科协作业。</p>\n<div class=\"note primary\">\n<p>比较有趣的是，我魔改了当时的作业需求，在默认需求之外，添加了狂暴模式 (–&gt;), 利用了学长写的后端接口的一个规律性，暴力的把当时的所有学前端的人的私人数据都请求了下来 (定时器轮询，30ms 一次) 当时还想学长会不会知道，在群里骂娘 (还有些期待)。</p>\n</div>\n<p>之后就去学了前端的框架  <code>Vue</code> （以及它的生态）, UI 框架  <code>Element UI</code>  并且也使用  <code>Vue</code>  写了一个简单的社团报名系统 (伪，因为功能特别少).<br>\n 然后就开心进行了前端第一次考核，然后最终考核这个样子，中间学了一点  <code>Node.js</code> ,  <code>less</code> ,  <code>sass</code>  (其实和 less 基本一样，不过这个好像强点), 也磕磕绊绊的进了中心 (当时有点浪，面试就是奔着唠嗑去的 (不知名的学长背锅))。<br>\n慢慢的走过来，学了 Node.js 框架 <code>express</code> , 数据库 <code>mongoDB</code> , 学了原生的 <code>微信小程序</code> ， <code>uniapp</code> , 还有一些小程序 UI 框架的使用。后面又去学习了 <code>Webpack</code> ,  <code>Vue3</code> ,  <code>TypeScript</code> 。<br>\n然后为了部署项目又学了<br>\n <code>Linux</code> ,  <code>Nginx</code> ,  <code>docker</code>  还有服务器的一些操作。<br>\n然后看了点 <code>计算机网络</code> ，以及 js 的一些可能算核心的原理，Vue 的一些原理，用 js 去实现数据结构。<br>\n为了写一个项目学了 <code>echarts</code>  (里面的文档基本熟悉)</p>\n<div class=\"note primary\">\n<p>这里还有一些比较细碎的知识点，就不说了</p>\n</div>\n<p>然后为了熟悉技术，写了一个基于 Vue 的商城和一个后台管理，一个基于微信小程序的商城，一个基于 uniapp 的商城 (就是前面的翻版), 一个基于 node + express + mongoDB 的项目，一个基于 uniapp 的社团报名小程序，一个基于 Vue3 + Ts 的后台管理，一个基于 vue2 + echarts 的可视化网页 (主要是美观). 还有一些别的小项目就不说了，其实还写过很多的静态页面 (响应式的和不响应的)。<br>\n现在回头看看，确实也学的不少 (可能不多，大佬勿喷)。现在又急赶着想去实习 (被风气影响了？)。其实我感觉是受到了一些出去实习的学长的影响，比较羡慕吧。</p>\n<p>但是返回头想一想，我们去实习的目的是什么？是学技术，混一个实习经历。 但是我真的掌握好我学的这些东西了吗？其实不然，因为各种各样的原因，学的杂又快，并不能说是熟练，只能说是熟悉或者是了解基本操作。一句话总结：现在的节奏太快，之前也没有一个高效的学习方法。导致一个知识点不断的反复。所以我真的该去人云亦云去实习吗，大众效应？<br>\n 我的目标和想法是什么？什么才是我真真该做的？滚去梳理自己的知识体系。</p>\n<h4 id=\"后面的计划\"><a class=\"markdownIt-Anchor\" href=\"#后面的计划\">#</a> 后面的计划</h4>\n<p>利用写项目，写博客总结，来梳理之前的知识。</p>\n<div class=\"note primary\">\n<p>回头路别有一番滋味</p>\n</div>\n<p>Be YourSelf!<br>\n 这就是我，一个在前端不断横跳的菜鸡大二在校生，练习时长 1 年半。祝诸君武道昌盛！</p>\n",
+            "tags": [
+                "人生感悟"
+            ]
+        }
+    ]
+}
