@@ -1,0 +1,77 @@
+- site: 515.code-实验室 
+  owner: BA_NANA
+  url: https://www.515code.com/
+  desc: 永远相信，你遇到的bug即将迎刃而解 , 永远相信,美好的事情即将发生
+  image: https://cdn.jsdelivr.net/gh/BA-NANA/ba-nana.github.io@1.0/assets/img/head.jpg
+  color: "#24b8c3"
+
+- site: Gality小菜鸡的垃圾桶
+  owner: Gality
+  url: https://gality.cn/
+  desc: 不困于心,不惑于行
+  image: https://gality.cn/wp-content/uploads/2020/10/logo.png
+  color: "#24b8c3"
+
+- site: Epsilonzy
+  owner: Epsilonzy
+  url: http://47.104.105.233/
+  desc: 一个帅气，温柔， 技术还牛的大学长
+  image: https://s3.ax1x.com/2020/12/29/rqiaVS.jpg
+  color: "#24b8c3"
+
+- site: Hanzoy的代码栈
+  owner: Hanzoy
+  url: https://www.hanzoy.com/
+  desc: 努力学习游戏制作的小白 === 百级大神，练小号
+  image: https://tva4.sinaimg.cn/large/006xVoHRly8gr4eht5gu0j30j60j6t9e.jpg
+  color: "#24b8c3"
+
+- site: LeeHS's Blog
+  owner: LeeHS
+  url: https://leehs.gitee.io/blog/
+  desc: 温柔，幽默，有领导力的帅气学长  ps(是我想走的路线) ， ps(体型不是)哈哈 
+  image: https://tva2.sinaimg.cn/large/006xVoHRly8gr4ttj1ctyj30e10e00t8.jpg
+  color: "#24b8c3"
+
+- site: Tyt's Blog
+  owner: Tyt
+  url: http://callmetyt.top/
+  desc: Just Keep Going , 说是前端，其实是全栈 , 强就完了
+  image: https://img2.ali213.net/picfile/News/2020/09/27/584_202009277113099.png
+  color: "#24b8c3"
+
+- site: My space
+  owner: Chen Zilin
+  url: https://chenzilin1102.github.io/
+  desc: 我的C语言组长, 一个大学霸, 不定期就远程喂我狗粮 , 呜呜
+  image: https://chenzilin1102.github.io/images/myself1.1.jpg
+  color: "#24b8c3"
+
+- site: gungnir | 九日
+  owner: gungnir
+  url: https://urdr-gungnir.github.io/
+  desc: 一名比我还能逃课的黑客帅哥 
+  image: https://tva2.sinaimg.cn/large/006xVoHRly8gr4ex3wpd9j30u00u040c.jpg
+  color: "#e9546b"
+
+- site: 追梦在路上
+  owner: 追梦在路上
+  url: http://xcy1010.cn/
+  desc: 点进他的博客杀毒会报病毒,别问为什么知道的！！！，也是一名帅帅的黑客
+  image: https://tva3.sinaimg.cn/large/006xVoHRly8gr4f76wd8xj30hs0hs0tm.jpg
+  color: "#e9546b"
+
+- site: haley's blog
+  owner: haley
+  url: https://haley06.github.io/
+  desc: 强,太强了, 虽然是个软妹,但还是好强！！！ 
+  image: https://tva3.sinaimg.cn/large/006xVoHRly8gr4vy52fbpj30u00u0q58.jpg
+  color: "#e9546b"
+
+- site: 優萌初華
+  owner: 霜月琉璃
+  url: https://shoka.lostyu.me
+  desc: 琉璃的医学 & 编程笔记 (本博文主题作者)
+  image: https://cdn.jsdelivr.net/gh/amehime/shoka@latest/images/avatar.jpg
+  color: "#e9546b"
+
