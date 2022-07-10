@@ -8,22 +8,22 @@
         <language>zh-CN</language>
         <pubDate>Sun, 13 Feb 2022 19:49:32 +0800</pubDate>
         <lastBuildDate>Sun, 13 Feb 2022 19:49:32 +0800</lastBuildDate>
-        <category>小技巧</category>
         <category>uniapp</category>
-        <category>uView</category>
-        <category>小知识</category>
         <category>微信小程序</category>
+        <category>uView</category>
         <category>事件循环</category>
+        <category>小技巧</category>
+        <category>小知识</category>
         <category>进程和线程</category>
+        <category>主题配置</category>
         <category>后端</category>
         <category>Express</category>
-        <category>主题配置</category>
-        <category>nginx</category>
+        <category>webpack5</category>
         <category>跨域</category>
         <category>Web安全</category>
         <category>人生感悟</category>
-        <category>webpack5</category>
         <category>题解</category>
+        <category>nginx</category>
         <item>
             <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/02/13/JavaScript/js%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</guid>
             <title>浅析js事件循环,</title>
