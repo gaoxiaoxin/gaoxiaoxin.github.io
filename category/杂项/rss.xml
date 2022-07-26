@@ -6,24 +6,86 @@
         <description>遇见的都是天意
 拥有的都是幸运</description>
         <language>zh-CN</language>
-        <pubDate>Tue, 19 Apr 2022 00:54:07 +0800</pubDate>
-        <lastBuildDate>Tue, 19 Apr 2022 00:54:07 +0800</lastBuildDate>
+        <pubDate>Tue, 26 Jul 2022 19:06:04 +0800</pubDate>
+        <lastBuildDate>Tue, 26 Jul 2022 19:06:04 +0800</lastBuildDate>
+        <category>小技巧</category>
+        <category>后端</category>
+        <category>Express</category>
         <category>uniapp</category>
         <category>微信小程序</category>
         <category>uView</category>
         <category>事件循环</category>
-        <category>小技巧</category>
         <category>小知识</category>
         <category>进程和线程</category>
-        <category>主题配置</category>
-        <category>后端</category>
-        <category>Express</category>
         <category>webpack5</category>
+        <category>nginx</category>
+        <category>主题配置</category>
         <category>跨域</category>
         <category>Web安全</category>
+        <category>webhook</category>
         <category>人生感悟</category>
         <category>题解</category>
-        <category>nginx</category>
+        <item>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/07/26/%E6%9D%82%E9%A1%B9/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E4%B9%A6webhook%E7%9B%91%E5%90%ACGitHub/</guid>
+            <title>基于飞书连接webhook监听Github代码提交</title>
+            <link>https://gaoxiaoxin.github.io/2022/07/26/%E6%9D%82%E9%A1%B9/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E4%B9%A6webhook%E7%9B%91%E5%90%ACGitHub/</link>
+            <category>webhook</category>
+            <pubDate>Tue, 26 Jul 2022 19:06:04 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;起因&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#起因&#34;&gt;#&lt;/a&gt; 起因&lt;/h3&gt;
+&lt;p&gt;由于我们小组最近在和后端在写一个项目（Make Money Together）, 然后后端的自动化飞书机器人（检测代码提交，检测代码报错等等）我感觉好舒服。加上之前也有去了解自动化的一些事情。于是就去了解了一些这方面的东西。&lt;br&gt;
+了解到了 github 的 webhook 和 飞书自定义机器人。 那么让我们来瞧一瞧&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC83MDI0MzU3MjcyNDYxNjcyNDc4&#34;&gt; https://juejin.cn/post/7024357272461672478&lt;/span&gt; 从这个博主上学到了很多东西&lt;br&gt;
+但是这个博主写的有些不全。&lt;/p&gt;
+&lt;h3 id=&#34;什么是webhook&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#什么是webhook&#34;&gt;#&lt;/a&gt; 什么是 webhook&lt;/h3&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;讲技术 - 什么是 Web Hook？&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zZWdtZW50ZmF1bHQuY29tL2EvMTE5MDAwMDAyMDI0OTk4OA==&#34;&gt;https://segmentfault.com/a/1190000020249988&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;个人总结一下，web hook 就是一个触发器，在特定的事件中被触发，然后向一个特定的 url 发送数据 (post).&lt;/p&gt;
+&lt;h3 id=&#34;创建飞书机器人&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#创建飞书机器人&#34;&gt;#&lt;/a&gt; 创建飞书机器人&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;首先，在飞书中创建一个群组，然后在群组中添加机器人。&lt;br&gt;
+&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8h4ksd9el5pj30qo0k6go0.jpg&#34; alt=&#34;添加机器人&#34;&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://tva3.sinaimg.cn/large/006xVoHRly8h4kse17ny4j30qo0k6jsv.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://tva2.sinaimg.cn/large/006xVoHRly8h4ksf612r8j30qo0k6gn0.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+这样的话，我们就获得了我们向 &lt;code&gt;飞书&lt;/code&gt; 传递数据的接口了，就是 webhook 地址&lt;br&gt;
+&lt;img data-src=&#34;https://segmentfault.com/img/remote/1460000020249992?w=1000&amp;amp;h=690&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+那这个要用在哪里呢？ 我们接下来看&lt;/li&gt;
+&lt;li&gt;然后我们首先来看看，它这个 G7 人是如果工作的.（APEX 玩家狂喜）, 对于发请求这件事，请出我们的大哥 &lt;code&gt;postman&lt;/code&gt; &lt;br&gt;
+&lt;img data-src=&#34;https://tva2.sinaimg.cn/large/006xVoHRly8h4ksqf8hkrj313j0h940t.jpg&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;postman 发送的是官方文档中的测试数据。&lt;br&gt;
+具体的关于机器人相关的事情，我们来看飞书的官网&lt;br&gt;
+只能说飞书是个好东西。&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9vcGVuLmZlaXNodS5jbi9kb2N1bWVudC91a1RNdWtUTXVrVE0vdWNUTTVZakwzRVRPMjR5Tnhrak4jOGIwZjJhMWI=&#34;&gt;https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN#8b0f2a1b&lt;/span&gt;&lt;br&gt;
+ 那么在其中我们可以看到发送文本消息的格式。（请记住它，我们后面有用到）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;开启github仓库的webhook服务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#开启github仓库的webhook服务&#34;&gt;#&lt;/a&gt; 开启 GitHub 仓库的 webhook 服务&lt;/h3&gt;
+&lt;p&gt;GitHub 是个宝藏，让我们来探索它。当我们打开一个仓库的设置页面时，我们会在它的侧边栏那面发现一个 webhook 的选项，点击它。&lt;br&gt;
+&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8h4kt5ly8ibj319w0lztb5.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://tva4.sinaimg.cn/large/006xVoHRly8h4kt6lwfgdj315j0o977x.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+其中&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;payload url 就是当 GitHub 的 webhook 机制触发时它要传输的数据的地址。（注意，这里先不写飞书的 webhook 地址）;&lt;/li&gt;
+&lt;li&gt;content type 是我们传递数据的格式，是 &lt;code&gt;json&lt;/code&gt;  还是 &lt;code&gt;xml&lt;/code&gt; , 我们这里选 &lt;code&gt;json&lt;/code&gt;  格式。 &lt;code&gt;application/json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;secret 是密钥&lt;/li&gt;
+&lt;li&gt;就是选择触发 webhook 的事件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;编写中间件过滤github请求数据&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#编写中间件过滤github请求数据&#34;&gt;#&lt;/a&gt; 编写中间件过滤 GitHub 请求数据&lt;/h3&gt;
+&lt;p&gt;其实当我们去看 GitHub 传输的数据，我们就会发现它的数据格式和飞书机器人接受的数据类型是不同的！！！&lt;br&gt;
+那么我们就需要做一个请求拦截、过滤、转发的中间件。&lt;br&gt;
+使用我们较为熟悉的 node 去写，博主这里是使用了 express。&lt;/p&gt;
+&lt;figure class=&#34;highlight js&#34;&gt;&lt;figcaption&gt;&lt;span&gt;中间件&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; express = &lt;span class=&#34;built_in&#34;&gt;require&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;express&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; app = express();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; axios = &lt;span class=&#34;built_in&#34;&gt;require&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;axios&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;app.use(express.json());&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;app.use(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  express.urlencoded(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;extended&lt;/span&gt;: &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; url =&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&amp;quot;你的飞书webhook地址&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 写成posts&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;app.post(&lt;span class=&#34;string&#34;&gt;&amp;quot;/webhook&amp;quot;&lt;/span&gt;, &lt;span class=&#34;keyword&#34;&gt;async&lt;/span&gt; (req, res) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;keyword&#34;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;let&lt;/span&gt; content = req.body;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; name = content.pusher.name;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; commitMessage = content.commits[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].message;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;const&lt;/span&gt; added = content.commits[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;].added;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;await&lt;/span&gt; axios.post(url, &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;msg_type&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;content&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;attr&#34;&gt;text&lt;/span&gt;: &lt;span class=&#34;string&#34;&gt;`&lt;span class=&#34;subst&#34;&gt;$&amp;#123;name&amp;#125;&lt;/span&gt;提交了代码, \n 提交信息为: &lt;span class=&#34;subst&#34;&gt;$&amp;#123;commitMessage&amp;#125;&lt;/span&gt;;\n 修改: \n &lt;span class=&#34;subst&#34;&gt;$&amp;#123;added.join(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;subst&#34;&gt;&lt;span class=&#34;string&#34;&gt;          &lt;span class=&#34;string&#34;&gt;&amp;quot;,\n &amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;subst&#34;&gt;&lt;span class=&#34;string&#34;&gt;        )&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;        `&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    res.end();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;#125; &lt;span class=&#34;keyword&#34;&gt;catch&lt;/span&gt; (error) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(error);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;app.listen(&lt;span class=&#34;number&#34;&gt;8003&lt;/span&gt;, &lt;span class=&#34;function&#34;&gt;() =&amp;gt;&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(&lt;span class=&#34;string&#34;&gt;&amp;quot;server is running&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;代码很简单，因为我们的功能就很简单。&lt;br&gt;
+但是这里有一个问题就是，我们的中间件部署后才能使用，本地部署的话，GitHub 的 webhook 地址是不允许我们使用本地的地址的。所以我们就需要把我们的中间件项目部署到我们的服务器上。&lt;br&gt;
+这里推荐使用 forever + nginx 进行线程持久化部署。也可以用 docker, 达成目的就行。&lt;br&gt;
+然后我们把我们部署后的项目地址填到 GitHub 的 webhook 的 payload url 中。我们就可以进行测试啦。&lt;/p&gt;
+&lt;h3 id=&#34;结尾&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结尾&#34;&gt;#&lt;/a&gt; 结尾&lt;/h3&gt;
+&lt;p&gt;深夜更文，编程真是有趣。&lt;br&gt;
+回顾我，茫茫碌碌，路路无为。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/04/19/%E6%9D%82%E9%A1%B9/%E7%8E%B0%E9%98%B6%E6%AE%B5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/</guid>
             <title>现阶段的一些思考</title>
