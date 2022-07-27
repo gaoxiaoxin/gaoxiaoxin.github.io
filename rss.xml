@@ -9,22 +9,22 @@
         <pubDate>Tue, 26 Jul 2022 19:06:04 +0800</pubDate>
         <lastBuildDate>Tue, 26 Jul 2022 19:06:04 +0800</lastBuildDate>
         <category>小技巧</category>
-        <category>后端</category>
-        <category>Express</category>
-        <category>uniapp</category>
-        <category>微信小程序</category>
-        <category>uView</category>
         <category>事件循环</category>
         <category>小知识</category>
         <category>进程和线程</category>
+        <category>uniapp</category>
+        <category>微信小程序</category>
+        <category>uView</category>
+        <category>后端</category>
+        <category>Express</category>
         <category>webpack5</category>
-        <category>nginx</category>
         <category>主题配置</category>
+        <category>nginx</category>
         <category>跨域</category>
         <category>Web安全</category>
         <category>webhook</category>
-        <category>人生感悟</category>
         <category>题解</category>
+        <category>人生感悟</category>
         <item>
             <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/07/26/%E6%9D%82%E9%A1%B9/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E4%B9%A6webhook%E7%9B%91%E5%90%ACGitHub/</guid>
             <title>基于飞书连接webhook监听Github代码提交</title>
@@ -80,7 +80,9 @@
 &lt;p&gt;代码很简单，因为我们的功能就很简单。&lt;br&gt;
 但是这里有一个问题就是，我们的中间件部署后才能使用，本地部署的话，GitHub 的 webhook 地址是不允许我们使用本地的地址的。所以我们就需要把我们的中间件项目部署到我们的服务器上。&lt;br&gt;
 这里推荐使用 forever + nginx 进行线程持久化部署。也可以用 docker, 达成目的就行。&lt;br&gt;
-然后我们把我们部署后的项目地址填到 GitHub 的 webhook 的 payload url 中。我们就可以进行测试啦。&lt;/p&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucWV0b29sLmNvbS9zY3JpcHRzL3ZpZXcvMjU2NTUuaHRtbA==&#34;&gt;https://www.qetool.com/scripts/view/25655.html&lt;/span&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption&gt;&lt;span&gt;forever基本命令&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;forever list // 列出当前所有运行的服务&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;forever start -w index.js // 文件改动自动重启 （index.js是你要启动的那个文件）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;forever stopall // 停止所有服务&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;forever stop app.js //停止其中一个node App &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;forever stop [id] // forever list 找到对应的id，然后&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后我们把我们部署后的项目地址填到 GitHub 的 webhook 的 payload url 中。我们就可以进行测试啦。&lt;/p&gt;
 &lt;h3 id=&#34;结尾&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结尾&#34;&gt;#&lt;/a&gt; 结尾&lt;/h3&gt;
 &lt;p&gt;深夜更文，编程真是有趣。&lt;br&gt;
 回顾我，茫茫碌碌，路路无为。&lt;/p&gt;

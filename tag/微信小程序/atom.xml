@@ -5,22 +5,22 @@
     <link href="https://gaoxiaoxin.github.io" />
     <updated>2022-04-17T03:44:26.075Z</updated>
     <category term="小技巧" />
-    <category term="后端" />
-    <category term="Express" />
-    <category term="uniapp" />
-    <category term="微信小程序" />
-    <category term="uView" />
     <category term="事件循环" />
     <category term="小知识" />
     <category term="进程和线程" />
+    <category term="uniapp" />
+    <category term="微信小程序" />
+    <category term="uView" />
+    <category term="后端" />
+    <category term="Express" />
     <category term="webpack5" />
-    <category term="nginx" />
     <category term="主题配置" />
+    <category term="nginx" />
     <category term="跨域" />
     <category term="Web安全" />
     <category term="webhook" />
-    <category term="人生感悟" />
     <category term="题解" />
+    <category term="人生感悟" />
     <entry>
         <id>https://gaoxiaoxin.github.io/2022/04/17/Cross-terminal/%E4%B8%80%E4%BA%9B%E6%96%B0%E7%9A%84%E5%B0%9D%E8%AF%95/</id>
         <title>在vscode上写uniapp新的尝试</title>

@@ -9,22 +9,22 @@
         <pubDate>Sat, 19 Feb 2022 10:47:34 +0800</pubDate>
         <lastBuildDate>Sat, 19 Feb 2022 10:47:34 +0800</lastBuildDate>
         <category>小技巧</category>
-        <category>后端</category>
-        <category>Express</category>
-        <category>uniapp</category>
-        <category>微信小程序</category>
-        <category>uView</category>
         <category>事件循环</category>
         <category>小知识</category>
         <category>进程和线程</category>
+        <category>uniapp</category>
+        <category>微信小程序</category>
+        <category>uView</category>
+        <category>后端</category>
+        <category>Express</category>
         <category>webpack5</category>
-        <category>nginx</category>
         <category>主题配置</category>
+        <category>nginx</category>
         <category>跨域</category>
         <category>Web安全</category>
         <category>webhook</category>
-        <category>人生感悟</category>
         <category>题解</category>
+        <category>人生感悟</category>
         <item>
             <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/02/19/hexo/shoka/</guid>
             <title>shoka配置</title>
