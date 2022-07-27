@@ -8,23 +8,23 @@
         <language>zh-CN</language>
         <pubDate>Thu, 10 Mar 2022 22:58:27 +0800</pubDate>
         <lastBuildDate>Thu, 10 Mar 2022 22:58:27 +0800</lastBuildDate>
-        <category>小技巧</category>
-        <category>事件循环</category>
-        <category>小知识</category>
-        <category>进程和线程</category>
         <category>uniapp</category>
         <category>微信小程序</category>
         <category>uView</category>
+        <category>事件循环</category>
+        <category>进程和线程</category>
+        <category>小知识</category>
+        <category>小技巧</category>
         <category>后端</category>
         <category>Express</category>
-        <category>webpack5</category>
-        <category>主题配置</category>
         <category>nginx</category>
+        <category>webpack5</category>
         <category>跨域</category>
         <category>Web安全</category>
         <category>webhook</category>
-        <category>题解</category>
         <category>人生感悟</category>
+        <category>主题配置</category>
+        <category>题解</category>
         <item>
             <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/</guid>
             <title>nginx配置踩坑</title>
