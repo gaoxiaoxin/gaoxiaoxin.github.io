@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "自能生羽翼, 何必仰云梯 • All posts by \"自动化部署\" tag",
+    "description": "遇见的都是天意\n拥有的都是幸运",
+    "home_page_url": "https://gaoxiaoxin.github.io",
+    "items": [
+        {
+            "id": "https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/",
+            "url": "https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/",
+            "title": "基于Docker,nginx,Github Action的项目自动化部署",
+            "date_published": "2022-08-10T12:31:54.199Z",
+            "content_html": "<h3 id=\"前言\"><a class=\"markdownIt-Anchor\" href=\"#前言\">#</a> 前言</h3>\n<p>由于在写一个项目，需要实时的将代码进行部署。提供给大家进行测试。有需求就需要有解决方案。那怎么办呢？巧的是，我之前了解过  <code>jenkins</code>  !!! 大名鼎鼎的持续集成工具 (CI).</p>\n<blockquote>\n<p>jenkins 主要用于持续，自动的构建 / 测试软件项目 / 监控外部任务的运行 (错误监控). 关键的一点，它是用 Java 语言编写，所以需要 Java 环境，和其他和 Java 沾边的东西 (对前端并不是很友好).</p>\n</blockquote>\n<p>碰巧，我手头有这么一个项目部署的视频！！！(jenkins + docker) coderwhy 老师教的。但是！！！当我去按照教程下载的时候就发现事情不对，老师录制视频的时间太靠前了。导致 Jenkins 的版本出现问题.<br>\n 它需要 java11 以上的版本 (老师项目中教的是 1.8), 然后还有其他奇奇怪怪的 Bug. 导致使用 jenkins 部署项目的事情还没开始就先破产了.</p>\n<h3 id=\"转换思路\"><a class=\"markdownIt-Anchor\" href=\"#转换思路\">#</a> 转换思路</h3>\n<p>当我发现出问题之后，我想起的是去找一个另外的新教程。于是找到一个，emmm (黑马的) 很不错</p>\n<ul>\n<li><span class=\"exturl\" data-url=\"aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTNZNDExRTduZD9wPTMmYW1wO3NwbV9pZF9mcm9tPXBhZ2VEcml2ZXImYW1wO3ZkX3NvdXJjZT1mZjBhN2I4ZDk5MWJjNWZhYmNhMWY2MDA4OGM4MWQ3Nw==\">https://www.bilibili.com/video/BV13Y411E7nd?p=3&amp;spm_id_from=pageDriver&amp;vd_source=ff0a7b8d991bc5fabca1f60088c81d77</span><br>\n 于是去看，发现需要 docker 基础.emmm 我也不太会。只能去学.</li>\n<li><span class=\"exturl\" data-url=\"aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMUNKNDExVDdCSz9wPTI0JmFtcDt2ZF9zb3VyY2U9ZmYwYTdiOGQ5OTFiYzVmYWJjYTFmNjAwODhjODFkNzc=\">https://www.bilibili.com/video/BV1CJ411T7BK?p=24&amp;vd_source=ff0a7b8d991bc5fabca1f60088c81d77</span><br>\n 然后也写了一点小总结.<br>\n&lt;----- 待续 -----&gt;</li>\n</ul>\n",
+            "tags": [
+                "nginx",
+                "自动化部署"
+            ]
+        }
+    ]
+}

@@ -3,24 +3,51 @@
     <id>https://gaoxiaoxin.github.io</id>
     <title>自能生羽翼, 何必仰云梯 • Posts by &#34;nginx&#34; tag</title>
     <link href="https://gaoxiaoxin.github.io" />
-    <updated>2022-03-10T14:58:27.347Z</updated>
+    <updated>2022-08-10T12:31:54.199Z</updated>
+    <category term="小技巧" />
     <category term="uniapp" />
     <category term="微信小程序" />
     <category term="uView" />
     <category term="事件循环" />
-    <category term="进程和线程" />
     <category term="小知识" />
-    <category term="小技巧" />
+    <category term="进程和线程" />
     <category term="后端" />
     <category term="Express" />
-    <category term="nginx" />
+    <category term="主题配置" />
     <category term="webpack5" />
+    <category term="docker" />
+    <category term="nginx" />
+    <category term="自动化部署" />
     <category term="跨域" />
     <category term="Web安全" />
     <category term="webhook" />
     <category term="人生感悟" />
-    <category term="主题配置" />
     <category term="题解" />
+    <entry>
+        <id>https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</id>
+        <title>基于Docker,nginx,Github Action的项目自动化部署</title>
+        <link rel="alternate" href="https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+        <content type="html">&lt;h3 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h3&gt;
+&lt;p&gt;由于在写一个项目，需要实时的将代码进行部署。提供给大家进行测试。有需求就需要有解决方案。那怎么办呢？巧的是，我之前了解过  &lt;code&gt;jenkins&lt;/code&gt;  !!! 大名鼎鼎的持续集成工具 (CI).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;jenkins 主要用于持续，自动的构建 / 测试软件项目 / 监控外部任务的运行 (错误监控). 关键的一点，它是用 Java 语言编写，所以需要 Java 环境，和其他和 Java 沾边的东西 (对前端并不是很友好).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;碰巧，我手头有这么一个项目部署的视频！！！(jenkins + docker) coderwhy 老师教的。但是！！！当我去按照教程下载的时候就发现事情不对，老师录制视频的时间太靠前了。导致 Jenkins 的版本出现问题.&lt;br&gt;
+ 它需要 java11 以上的版本 (老师项目中教的是 1.8), 然后还有其他奇奇怪怪的 Bug. 导致使用 jenkins 部署项目的事情还没开始就先破产了.&lt;/p&gt;
+&lt;h3 id=&#34;转换思路&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#转换思路&#34;&gt;#&lt;/a&gt; 转换思路&lt;/h3&gt;
+&lt;p&gt;当我发现出问题之后，我想起的是去找一个另外的新教程。于是找到一个，emmm (黑马的) 很不错&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTNZNDExRTduZD9wPTMmYW1wO3NwbV9pZF9mcm9tPXBhZ2VEcml2ZXImYW1wO3ZkX3NvdXJjZT1mZjBhN2I4ZDk5MWJjNWZhYmNhMWY2MDA4OGM4MWQ3Nw==&#34;&gt;https://www.bilibili.com/video/BV13Y411E7nd?p=3&amp;amp;spm_id_from=pageDriver&amp;amp;vd_source=ff0a7b8d991bc5fabca1f60088c81d77&lt;/span&gt;&lt;br&gt;
+ 于是去看，发现需要 docker 基础.emmm 我也不太会。只能去学.&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMUNKNDExVDdCSz9wPTI0JmFtcDt2ZF9zb3VyY2U9ZmYwYTdiOGQ5OTFiYzVmYWJjYTFmNjAwODhjODFkNzc=&#34;&gt;https://www.bilibili.com/video/BV1CJ411T7BK?p=24&amp;amp;vd_source=ff0a7b8d991bc5fabca1f60088c81d77&lt;/span&gt;&lt;br&gt;
+ 然后也写了一点小总结.&lt;br&gt;
+&amp;lt;----- 待续 -----&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="nginx" />
+        <category term="自动化部署" />
+        <updated>2022-08-10T12:31:54.199Z</updated>
+    </entry>
     <entry>
         <id>https://gaoxiaoxin.github.io/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/</id>
         <title>nginx配置踩坑</title>
@@ -30,8 +57,8 @@
 &lt;h4 id=&#34;nginx-下载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nginx-下载&#34;&gt;#&lt;/a&gt; nginx 下载&lt;/h4&gt;
 &lt;p&gt;we are go! 今天本来打算使用 forever + nginx 来部署我的 express 静态资源服务器的。 但是，部署上去后，发现我的项目存在跨域问题… 完蛋，跨域。但是我看了一下，我其实是可以弄 nginx 反向代理的，于是我就去找我的 nginx 配置文件。最后找到个鸡儿，找了半天我在我另外一个服务器上找到了。我这个服务器就没下载。。。&lt;br&gt;
 那就下载呗。。。&lt;br&gt;
-虽然现在想想，我可以再写一个 node 代理服务器做跳板。可能还做不好，后面试一下！&lt;/p&gt;
-&lt;p&gt;如何下载？&lt;br&gt;
+虽然现在想想，我可以再写一个 node 代理服务器做跳板。可能还做不好，后面试一下！&lt;br&gt;
+ 如何下载？&lt;br&gt;
 我这里用到的是 CentOS 7, 然后百度的话是找到了一个好的安装教程 ===&amp;gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubGludXhpZGMuY29tL0xpbnV4LzIwMTYtMDkvMTM0OTA3Lmh0bQ==&#34;&gt;https://www.linuxidc.com/Linux/2016-09/134907.htm&lt;/span&gt;&lt;br&gt;
  当我下载完，发现我去访问 我服务器的 80 端口，却发现连接不到，寄，然后本地 curl &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEyNy4wLjAuMTo4MA==&#34;&gt;http://127.0.0.1:80&lt;/span&gt; 一下发现，本地其实是没有问题的，那么，检测服务器端口其实是开启的， 然后上链接 https://segmentfault.com/a/1190000012297511&lt;br&gt;
  然后按上面那个教程配置了，我的页面也显示了，但是还是跨域…&lt;br&gt;

@@ -1,0 +1,695 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="自能生羽翼, 何必仰云梯" href="https://gaoxiaoxin.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="自能生羽翼, 何必仰云梯" href="https://gaoxiaoxin.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="自能生羽翼, 何必仰云梯" href="https://gaoxiaoxin.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="docker" />
+
+
+<link rel="canonical" href="https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/docker/">
+
+
+
+  <title>
+Docker 学习 (基础篇) - 服务器 |
+自能生羽翼，何必仰云梯 = 热爱可抵岁月漫长</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Docker 学习 (基础篇)
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-08-10 21:11:26">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-08-10T21:11:26+08:00">2022-08-10</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>2.7k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">gaoxiaoxin.blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" itemprop="item" rel="index" title="分类于 服务器"><span itemprop="name">服务器</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/docker/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/header.png">
+    <meta itemprop="name" content="gaoxiaoxin">
+    <meta itemprop="description" content="热爱可抵岁月漫长, 遇见的都是天意
+拥有的都是幸运">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="自能生羽翼，何必仰云梯">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h3 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h3>
+<div class="note primary">
+<p>要是有所得罪请原谅，本是出自一番好意，<br>
+ 只是想显点粗浅技艺，那才是我们的初衷。<br>
+– 威廉・莎士比亚，《仲夏夜之梦》</p>
+</div>
+<p>最近看了一些 docker 的教程，也学到了不少东西。起码对 docker 的这些概念和操作更加熟练了.</p>
+<h3 id="docker-基本概念"><a class="markdownIt-Anchor" href="#docker-基本概念">#</a> Docker 基本概念</h3>
+<blockquote>
+<p>Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.<br>
+You can download and install Docker on multiple platforms. Refer to the following section and choose the best installation path for you.</p>
+</blockquote>
+<blockquote>
+<p>Docker 是一个用于开发，交付和运行应用程序的开发平台.Docker 使您能够将应用程序与基础架构分离以便您可以快速的交付软件。使用 Docker，您可以像管理应用程序一样管理基础设施。通过利用 Docker 快速交付、测试和部署代码的方法，您可以显着减少编写代码和在生产中运行之间的延迟。</p>
+</blockquote>
+<p><strong>Docker 的用途</strong></p>
+<ul>
+<li>提供一次性环境</li>
+<li>提供弹性的云服务</li>
+<li>组建微服务架构</li>
+</ul>
+<p><strong>Docker 的概念</strong></p>
+<ul>
+<li>
+<p>镜像 (Image):</p>
+<blockquote>
+<p>是一个特殊的文件系统，除了提供容器运行时所需的程序，库，资源，配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）. 镜像不包含任何动态数据，其内容在构建之后也不会被改变.</p>
+</blockquote>
+</li>
+<li>
+<p>容器 (Container):</p>
+<blockquote>
+<p>镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的 类 和 实例 一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。<br>
+容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的 命名空间。因此容器可以拥有自己的 root 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户 ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。这种特性使得容器封装的应用比直接在宿主运行更加安全。</p>
+</blockquote>
+</li>
+</ul>
+<div class="note warning">
+<p>最好不要向 docker 的容器中写入数据。最好的是通过 <code>数据卷</code> 或者 <code>绑定宿主目录</code> 。在这些位置的读写会跳过容器的存储层.</p>
+</div>
+<ul>
+<li>仓库 (repository):
+<blockquote>
+<p>类似于 GitHub 的一个东西，可以将你的镜像发布到公开的仓库，或者私人的。去供广大用户使用</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>Docker 安装</strong><br>
+这里就不说了，因为每个人对应的服务器环境不一样。对应的安装方法可以去 docker 的官网去看.</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRvY2tlci5jb20vZ2V0LWRvY2tlci8=">https://docs.docker.com/get-docker/</span><br>
+ 安装好之后，记得配置镜像加速器</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly95ZWFzeS5naXRib29rLmlvL2RvY2tlcl9wcmFjdGljZS9pbnN0YWxsL21pcnJvcg==">https://yeasy.gitbook.io/docker_practice/install/mirror</span></li>
+</ul>
+<h3 id="docker-基本命令"><a class="markdownIt-Anchor" href="#docker-基本命令">#</a> Docker 基本命令</h3>
+<p>首先下载好之后，我们需要将 docker 服务启动起来</p>
+<ol>
+<li>docker 服务相关命令</li>
+</ol>
+<figure class="highlight plaintext"><figcaption><span>启动docker服务</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 启动docker服务</span><br><span class="line">systemctl start docker</span><br><span class="line"># 停止docker服务</span><br><span class="line">systemctl stop docker</span><br><span class="line"># 重启docker服务</span><br><span class="line">systemctl restart docker</span><br><span class="line"># 查看docker服务状态</span><br><span class="line">systemctl status docker</span><br><span class="line"># 设置开机启动docker</span><br><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>docker 镜像命令</li>
+</ol>
+<ul>
+<li>查看远端仓库是否有这个镜像</li>
+</ul>
+<figure class="highlight docker"><figcaption><span>search</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker search [镜像名]</span><br><span class="line"><span class="comment"># eg:</span></span><br><span class="line">docker search node</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://tva2.sinaimg.cn/large/006xVoHRly8h52472s0ptj30xj0g9q8b.jpg" alt=""></p>
+<ul>
+<li>查看当前所有镜像</li>
+</ul>
+<figure class="highlight docker"><figcaption><span>images</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8h524aiqtalj30jx079ac3.jpg" alt=""></p>
+<ul>
+<li>删除镜像</li>
+</ul>
+<figure class="highlight docker"><figcaption><span>rmi</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi [镜像名/镜像id]</span><br></pre></td></tr></table></figure>
+<p>eg:<br>
+<img data-src="https://tva2.sinaimg.cn/large/006xVoHRly8h524gqxmxkj30ko07o0ur.jpg" alt=""><br>
+ 会报错<br>
+<img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8h524i1v5tbj30vo01qwew.jpg" alt=""><br>
+说当前镜像有子镜像存在，无法删除<br>
+那么删除个别的<br>
+<img data-src="https://tva3.sinaimg.cn/large/006xVoHRly8h524ldxyiej317n0i27cj.jpg" alt=""><br>
+经过多次尝试，删除了 node 版本为 15 的镜像<br>
+<img data-src="https://tva3.sinaimg.cn/large/006xVoHRly8h524nj7rh0j30q30bzdka.jpg" alt=""></p>
+<ul>
+<li>从远程仓库拉取镜像 (其实应该先学如何拉取的)</li>
+</ul>
+<figure class="highlight docker"><figcaption><span>pull</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull [包的名称:版本]</span><br><span class="line">eg:</span><br><span class="line">docker pull node:<span class="number">15.10</span>.<span class="number">0</span>-slim</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8h524q1zp0mj30no0dgadm.jpg" alt=""><br>
+这些都是基本操作，还有很多高大上的操作，就需要大家自己去学啦。 3. docker 容器命令</p>
+<ul>
+<li>查看容器</li>
+</ul>
+<figure class="highlight docker"><figcaption><span>查看容器</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看在运行的容器</span></span><br><span class="line">docker ps</span><br><span class="line"><span class="comment"># 查看所有容器</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8h52ymotb1aj30py0baq5v.jpg" alt=""></p>
+<ul>
+<li>创建容器<br>
+基于镜像创建容器</li>
+</ul>
+<figure class="highlight docker"><figcaption><span>创建容器</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> [参数] [版本]:[版本号] [进入容器后的操作]</span></span><br><span class="line">eg</span><br><span class="line">docker <span class="keyword">run</span><span class="bash"> -it centos:7 bin/bash</span></span><br><span class="line"><span class="comment"># 这里需要先下载centos的镜像文件。毕竟容器是基于镜像运行。</span></span><br></pre></td></tr></table></figure>
+<p><img data-src="https://tva1.sinaimg.cn/large/006xVoHRly8h5301w666dj30cr00zq2w.jpg" alt=""><br>
+这里看到前面的用户那面已经发生了改变，那么的话，我们现在其实就已经在基于 centos 镜像的容器内部了。</p>
+<blockquote>
+<p>关于参数</p>
+</blockquote>
+<ol>
+<li>-i：保持容器运行。通常和 - t 同时使用。加入 it 参数后，容器创建后自动进入容器中，退出容器后，容器关闭。</li>
+<li>-t：为容器重新分配一个 <code>伪输入终端</code> 。</li>
+<li>-d: 以守护 (后台) 模式运行容器。创建一个容器在后台运行。退出容器后，容器不会关闭。</li>
+<li>–name: 为容器创建名字。（我们上面没用，docker 就会自动的给容器创建一个名字。）</li>
+</ol>
+<ul>
+<li>进入容器<br>
+当我们敲下 - id 命令启动一个后台运行的容器后，我们该怎么进入这个容器呢？<br>
+ 让我们来看看。</li>
+</ul>
+<figure class="highlight docker"><figcaption><span>进入后台运行的容器</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先创建一个后台运行的docker容器</span></span><br><span class="line">docker <span class="keyword">run</span><span class="bash"> --name=<span class="built_in">test</span> -id centos:7 bash</span></span><br><span class="line"><span class="comment"># 下面进入</span></span><br><span class="line">docker exec -it test bash</span><br></pre></td></tr></table></figure>
+<p><img data-src="https://tva4.sinaimg.cn/large/006xVoHRly8h530dh0c4dj30eg01jmxa.jpg" alt=""><br>
+<img data-src="https://tva4.sinaimg.cn/large/006xVoHRly8h530ojore0j30co00x0so.jpg" alt=""><br>
+<img data-src="https://tva4.sinaimg.cn/large/006xVoHRly8h530qj6chqj30qc03igma.jpg" alt=""></p>
+<ul>
+<li>容器的停止和开启</li>
+</ul>
+<figure class="highlight docker"><figcaption><span>停止容器</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker stop [容器名称，或者id]</span><br><span class="line">eg</span><br><span class="line"><span class="comment"># 之前开启的容器</span></span><br><span class="line">docker stop test</span><br><span class="line"><span class="comment"># 开启容器</span></span><br><span class="line">docker start test</span><br><span class="line"><span class="comment"># 重启容器</span></span><br><span class="line">docker restart test</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看容器信息</li>
+</ul>
+<figure class="highlight docker"><figcaption><span>查看容器信息</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect test</span><br></pre></td></tr></table></figure>
+<h3 id="docker-数据卷"><a class="markdownIt-Anchor" href="#docker-数据卷">#</a> docker 数据卷</h3>
+<p>&lt;----- 待续 -----&gt;<br>
+ 对不起各位看官，最近有些忙 ┭┮﹏┭┮</p>
+<h3 id="参考"><a class="markdownIt-Anchor" href="#参考">#</a> 参考</h3>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly95ZWFzeS5naXRib29rLmlvL2RvY2tlcl9wcmFjdGljZS8=">https://yeasy.gitbook.io/docker_practice/</span> Docker - 从入门到实践</li>
+</ul>
+
+      <div class="tags">
+          <a href="/tags/docker/" rel="tag"><i class="ic i-tag"></i> docker</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-10-22 01:34:11" itemprop="dateModified" datetime="2022-10-22T01:34:11+08:00">2022-10-22</time>
+  </span>
+  <span id="2022/08/10/服务器/docker/" class="item leancloud_visitors" data-flag-title="Docker 学习 (基础篇)" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechat.png" alt="gaoxiaoxin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/pay.png" alt="gaoxiaoxin 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>gaoxiaoxin <i class="ic i-at"><em>@</em></i>自能生羽翼，何必仰云梯
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/docker/" title="Docker 学习 (基础篇)">https://gaoxiaoxin.github.io/2022/08/10/服务器/docker/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipey84bjtj20zk0m8hdt.jpg" title="基于Docker,nginx,Github Action的项目自动化部署">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 服务器</span>
+  <h3>基于Docker,nginx,Github Action的项目自动化部署</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/09/04/Node.js/express%E5%85%A5%E9%97%A82/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciundwu5j20zk0m8n9e.jpg" title="express项目入门（2）">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> Node</span>
+  <h3>express项目入门（2）</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text"> Docker 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text"> Docker 基本命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-number">4.</span> <span class="toc-text"> docker 数据卷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">5.</span> <span class="toc-text"> 参考</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" rel="bookmark" title="nginx配置踩坑">nginx配置踩坑</a></li><li><a href="/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/" rel="bookmark" title="基于Docker,nginx,Github Action的项目自动化部署">基于Docker,nginx,Github Action的项目自动化部署</a></li><li class="active"><a href="/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/docker/" rel="bookmark" title="Docker学习(基础篇)">Docker学习(基础篇)</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="gaoxiaoxin"
+      data-src="/images/header.png">
+  <p class="name" itemprop="name">gaoxiaoxin</p>
+  <div class="description" itemprop="description">遇见的都是天意
+拥有的都是幸运</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">29</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">10</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">19</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dhb3hpYW94aW4=" title="https:&#x2F;&#x2F;github.com&#x2F;gaoxiaoxin"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTM5MzIzMjkyNTE=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;3932329251"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友達</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/09/04/Node.js/express%E5%85%A5%E9%97%A82/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Node-js/" title="分类于 Node">Node</a>
+</div>
+
+    <span><a href="/2022/05/09/Node.js/express%E5%85%A5%E9%97%A8/" title="express项目入门（1）">express项目入门（1）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/12/01/TypeScript/TypeScript%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" title="TypeScript基础总结">TypeScript基础总结</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/hexo/" title="分类于 hexo">hexo</a>
+</div>
+
+    <span><a href="/2022/02/19/hexo/shoka/" title="shoka配置">shoka配置</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/Node-js/" title="分类于 Node">Node</a>
+</div>
+
+    <span><a href="/2022/09/04/Node.js/express%E5%85%A5%E9%97%A82/" title="express项目入门（2）">express项目入门（2）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="分类于 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/04/19/%E6%9D%82%E9%A1%B9/%E7%8E%B0%E9%98%B6%E6%AE%B5%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/" title="现阶段的一些思考">现阶段的一些思考</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9D%82%E9%A1%B9/" title="分类于 杂项">杂项</a>
+</div>
+
+    <span><a href="/2022/07/26/%E6%9D%82%E9%A1%B9/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E4%B9%A6webhook%E7%9B%91%E5%90%ACGitHub/" title="基于飞书连接webhook监听Github代码提交">基于飞书连接webhook监听Github代码提交</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="分类于 服务器">服务器</a>
+</div>
+
+    <span><a href="/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" title="nginx配置踩坑">nginx配置踩坑</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2021/11/28/JavaScript/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/" title="区分不同环境实现环境变量的切换">区分不同环境实现环境变量的切换</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="分类于 服务器">服务器</a>
+</div>
+
+    <span><a href="/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/" title="基于Docker,nginx,Github Action的项目自动化部署">基于Docker,nginx,Github Action的项目自动化部署</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%B7%A8%E7%AB%AF/" title="分类于 跨端">跨端</a>
+</div>
+
+    <span><a href="/2022/04/17/Cross-terminal/%E4%B8%80%E4%BA%9B%E6%96%B0%E7%9A%84%E5%B0%9D%E8%AF%95/" title="在vscode上写uniapp新的尝试">在vscode上写uniapp新的尝试</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">gaoxiaoxin @ 自能生羽翼，何必仰云梯</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">95k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:26</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/08/10/服务器/docker/',
+    favicon: {
+      show: "(＠￣ー￣＠)",
+      hide: "┗( T﹏T )┛"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

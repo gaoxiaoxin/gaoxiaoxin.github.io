@@ -6,25 +6,197 @@
         <description>遇见的都是天意
 拥有的都是幸运</description>
         <language>zh-CN</language>
-        <pubDate>Thu, 10 Mar 2022 22:58:27 +0800</pubDate>
-        <lastBuildDate>Thu, 10 Mar 2022 22:58:27 +0800</lastBuildDate>
+        <pubDate>Wed, 10 Aug 2022 21:11:26 +0800</pubDate>
+        <lastBuildDate>Wed, 10 Aug 2022 21:11:26 +0800</lastBuildDate>
+        <category>小技巧</category>
         <category>uniapp</category>
         <category>微信小程序</category>
         <category>uView</category>
         <category>事件循环</category>
-        <category>进程和线程</category>
         <category>小知识</category>
-        <category>小技巧</category>
+        <category>进程和线程</category>
         <category>后端</category>
         <category>Express</category>
-        <category>nginx</category>
+        <category>主题配置</category>
         <category>webpack5</category>
+        <category>docker</category>
+        <category>nginx</category>
+        <category>自动化部署</category>
         <category>跨域</category>
         <category>Web安全</category>
         <category>webhook</category>
         <category>人生感悟</category>
-        <category>主题配置</category>
         <category>题解</category>
+        <item>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/docker/</guid>
+            <title>Docker学习(基础篇)</title>
+            <link>https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/docker/</link>
+            <category>docker</category>
+            <pubDate>Wed, 10 Aug 2022 21:11:26 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h3&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;要是有所得罪请原谅，本是出自一番好意，&lt;br&gt;
+ 只是想显点粗浅技艺，那才是我们的初衷。&lt;br&gt;
+– 威廉・莎士比亚，《仲夏夜之梦》&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;最近看了一些 docker 的教程，也学到了不少东西。起码对 docker 的这些概念和操作更加熟练了.&lt;/p&gt;
+&lt;h3 id=&#34;docker-基本概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#docker-基本概念&#34;&gt;#&lt;/a&gt; Docker 基本概念&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.&lt;br&gt;
+You can download and install Docker on multiple platforms. Refer to the following section and choose the best installation path for you.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Docker 是一个用于开发，交付和运行应用程序的开发平台.Docker 使您能够将应用程序与基础架构分离以便您可以快速的交付软件。使用 Docker，您可以像管理应用程序一样管理基础设施。通过利用 Docker 快速交付、测试和部署代码的方法，您可以显着减少编写代码和在生产中运行之间的延迟。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Docker 的用途&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提供一次性环境&lt;/li&gt;
+&lt;li&gt;提供弹性的云服务&lt;/li&gt;
+&lt;li&gt;组建微服务架构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Docker 的概念&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;镜像 (Image):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;是一个特殊的文件系统，除了提供容器运行时所需的程序，库，资源，配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）. 镜像不包含任何动态数据，其内容在构建之后也不会被改变.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;容器 (Container):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的 类 和 实例 一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。&lt;br&gt;
+容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的 命名空间。因此容器可以拥有自己的 root 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户 ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。这种特性使得容器封装的应用比直接在宿主运行更加安全。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;note warning&#34;&gt;
+&lt;p&gt;最好不要向 docker 的容器中写入数据。最好的是通过 &lt;code&gt;数据卷&lt;/code&gt; 或者 &lt;code&gt;绑定宿主目录&lt;/code&gt; 。在这些位置的读写会跳过容器的存储层.&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;仓库 (repository):
+&lt;blockquote&gt;
+&lt;p&gt;类似于 GitHub 的一个东西，可以将你的镜像发布到公开的仓库，或者私人的。去供广大用户使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Docker 安装&lt;/strong&gt;&lt;br&gt;
+这里就不说了，因为每个人对应的服务器环境不一样。对应的安装方法可以去 docker 的官网去看.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kb2NzLmRvY2tlci5jb20vZ2V0LWRvY2tlci8=&#34;&gt;https://docs.docker.com/get-docker/&lt;/span&gt;&lt;br&gt;
+ 安装好之后，记得配置镜像加速器&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly95ZWFzeS5naXRib29rLmlvL2RvY2tlcl9wcmFjdGljZS9pbnN0YWxsL21pcnJvcg==&#34;&gt;https://yeasy.gitbook.io/docker_practice/install/mirror&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;docker-基本命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#docker-基本命令&#34;&gt;#&lt;/a&gt; Docker 基本命令&lt;/h3&gt;
+&lt;p&gt;首先下载好之后，我们需要将 docker 服务启动起来&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;docker 服务相关命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;figcaption&gt;&lt;span&gt;启动docker服务&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;# 启动docker服务&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;systemctl start docker&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 停止docker服务&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;systemctl stop docker&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 重启docker服务&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;systemctl restart docker&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 查看docker服务状态&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;systemctl status docker&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;# 设置开机启动docker&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;systemctl enable docker&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;docker 镜像命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;查看远端仓库是否有这个镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight docker&#34;&gt;&lt;figcaption&gt;&lt;span&gt;search&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker search [镜像名]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# eg:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker search node&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva2.sinaimg.cn/large/006xVoHRly8h52472s0ptj30xj0g9q8b.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;查看当前所有镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight docker&#34;&gt;&lt;figcaption&gt;&lt;span&gt;images&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker images&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8h524aiqtalj30jx079ac3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight docker&#34;&gt;&lt;figcaption&gt;&lt;span&gt;rmi&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker rmi [镜像名/镜像id]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;eg:&lt;br&gt;
+&lt;img data-src=&#34;https://tva2.sinaimg.cn/large/006xVoHRly8h524gqxmxkj30ko07o0ur.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+ 会报错&lt;br&gt;
+&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8h524i1v5tbj30vo01qwew.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+说当前镜像有子镜像存在，无法删除&lt;br&gt;
+那么删除个别的&lt;br&gt;
+&lt;img data-src=&#34;https://tva3.sinaimg.cn/large/006xVoHRly8h524ldxyiej317n0i27cj.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+经过多次尝试，删除了 node 版本为 15 的镜像&lt;br&gt;
+&lt;img data-src=&#34;https://tva3.sinaimg.cn/large/006xVoHRly8h524nj7rh0j30q30bzdka.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从远程仓库拉取镜像 (其实应该先学如何拉取的)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight docker&#34;&gt;&lt;figcaption&gt;&lt;span&gt;pull&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker pull [包的名称:版本]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;eg:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker pull node:&lt;span class=&#34;number&#34;&gt;15.10&lt;/span&gt;.&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;-slim&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8h524q1zp0mj30no0dgadm.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+这些都是基本操作，还有很多高大上的操作，就需要大家自己去学啦。 3. docker 容器命令&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;查看容器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight docker&#34;&gt;&lt;figcaption&gt;&lt;span&gt;查看容器&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 查看在运行的容器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker ps&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 查看所有容器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker ps -a&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8h52ymotb1aj30py0baq5v.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建容器&lt;br&gt;
+基于镜像创建容器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight docker&#34;&gt;&lt;figcaption&gt;&lt;span&gt;创建容器&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker &lt;span class=&#34;keyword&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;bash&#34;&gt; [参数] [版本]:[版本号] [进入容器后的操作]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;eg&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker &lt;span class=&#34;keyword&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;bash&#34;&gt; -it centos:7 bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 这里需要先下载centos的镜像文件。毕竟容器是基于镜像运行。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/006xVoHRly8h5301w666dj30cr00zq2w.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+这里看到前面的用户那面已经发生了改变，那么的话，我们现在其实就已经在基于 centos 镜像的容器内部了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;关于参数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;-i：保持容器运行。通常和 - t 同时使用。加入 it 参数后，容器创建后自动进入容器中，退出容器后，容器关闭。&lt;/li&gt;
+&lt;li&gt;-t：为容器重新分配一个 &lt;code&gt;伪输入终端&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;-d: 以守护 (后台) 模式运行容器。创建一个容器在后台运行。退出容器后，容器不会关闭。&lt;/li&gt;
+&lt;li&gt;–name: 为容器创建名字。（我们上面没用，docker 就会自动的给容器创建一个名字。）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;进入容器&lt;br&gt;
+当我们敲下 - id 命令启动一个后台运行的容器后，我们该怎么进入这个容器呢？&lt;br&gt;
+ 让我们来看看。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight docker&#34;&gt;&lt;figcaption&gt;&lt;span&gt;进入后台运行的容器&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 首先创建一个后台运行的docker容器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker &lt;span class=&#34;keyword&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;bash&#34;&gt; --name=&lt;span class=&#34;built_in&#34;&gt;test&lt;/span&gt; -id centos:7 bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 下面进入&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker exec -it test bash&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://tva4.sinaimg.cn/large/006xVoHRly8h530dh0c4dj30eg01jmxa.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://tva4.sinaimg.cn/large/006xVoHRly8h530ojore0j30co00x0so.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://tva4.sinaimg.cn/large/006xVoHRly8h530qj6chqj30qc03igma.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;容器的停止和开启&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight docker&#34;&gt;&lt;figcaption&gt;&lt;span&gt;停止容器&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker stop [容器名称，或者id]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;eg&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 之前开启的容器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker stop test&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 开启容器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker start test&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 重启容器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker restart test&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;查看容器信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight docker&#34;&gt;&lt;figcaption&gt;&lt;span&gt;查看容器信息&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker inspect test&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;docker-数据卷&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#docker-数据卷&#34;&gt;#&lt;/a&gt; docker 数据卷&lt;/h3&gt;
+&lt;p&gt;&amp;lt;----- 待续 -----&amp;gt;&lt;br&gt;
+ 对不起各位看官，最近有些忙 ┭┮﹏┭┮&lt;/p&gt;
+&lt;h3 id=&#34;参考&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参考&#34;&gt;#&lt;/a&gt; 参考&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly95ZWFzeS5naXRib29rLmlvL2RvY2tlcl9wcmFjdGljZS8=&#34;&gt;https://yeasy.gitbook.io/docker_practice/&lt;/span&gt; Docker - 从入门到实践&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</guid>
+            <title>基于Docker,nginx,Github Action的项目自动化部署</title>
+            <link>https://gaoxiaoxin.github.io/2022/08/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</link>
+            <category>nginx</category>
+            <category>自动化部署</category>
+            <pubDate>Wed, 10 Aug 2022 20:31:54 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;前言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前言&#34;&gt;#&lt;/a&gt; 前言&lt;/h3&gt;
+&lt;p&gt;由于在写一个项目，需要实时的将代码进行部署。提供给大家进行测试。有需求就需要有解决方案。那怎么办呢？巧的是，我之前了解过  &lt;code&gt;jenkins&lt;/code&gt;  !!! 大名鼎鼎的持续集成工具 (CI).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;jenkins 主要用于持续，自动的构建 / 测试软件项目 / 监控外部任务的运行 (错误监控). 关键的一点，它是用 Java 语言编写，所以需要 Java 环境，和其他和 Java 沾边的东西 (对前端并不是很友好).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;碰巧，我手头有这么一个项目部署的视频！！！(jenkins + docker) coderwhy 老师教的。但是！！！当我去按照教程下载的时候就发现事情不对，老师录制视频的时间太靠前了。导致 Jenkins 的版本出现问题.&lt;br&gt;
+ 它需要 java11 以上的版本 (老师项目中教的是 1.8), 然后还有其他奇奇怪怪的 Bug. 导致使用 jenkins 部署项目的事情还没开始就先破产了.&lt;/p&gt;
+&lt;h3 id=&#34;转换思路&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#转换思路&#34;&gt;#&lt;/a&gt; 转换思路&lt;/h3&gt;
+&lt;p&gt;当我发现出问题之后，我想起的是去找一个另外的新教程。于是找到一个，emmm (黑马的) 很不错&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMTNZNDExRTduZD9wPTMmYW1wO3NwbV9pZF9mcm9tPXBhZ2VEcml2ZXImYW1wO3ZkX3NvdXJjZT1mZjBhN2I4ZDk5MWJjNWZhYmNhMWY2MDA4OGM4MWQ3Nw==&#34;&gt;https://www.bilibili.com/video/BV13Y411E7nd?p=3&amp;amp;spm_id_from=pageDriver&amp;amp;vd_source=ff0a7b8d991bc5fabca1f60088c81d77&lt;/span&gt;&lt;br&gt;
+ 于是去看，发现需要 docker 基础.emmm 我也不太会。只能去学.&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMUNKNDExVDdCSz9wPTI0JmFtcDt2ZF9zb3VyY2U9ZmYwYTdiOGQ5OTFiYzVmYWJjYTFmNjAwODhjODFkNzc=&#34;&gt;https://www.bilibili.com/video/BV1CJ411T7BK?p=24&amp;amp;vd_source=ff0a7b8d991bc5fabca1f60088c81d77&lt;/span&gt;&lt;br&gt;
+ 然后也写了一点小总结.&lt;br&gt;
+&amp;lt;----- 待续 -----&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/03/10/%E6%9C%8D%E5%8A%A1%E5%99%A8/nginx%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/</guid>
             <title>nginx配置踩坑</title>
@@ -36,8 +208,8 @@
 &lt;h4 id=&#34;nginx-下载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nginx-下载&#34;&gt;#&lt;/a&gt; nginx 下载&lt;/h4&gt;
 &lt;p&gt;we are go! 今天本来打算使用 forever + nginx 来部署我的 express 静态资源服务器的。 但是，部署上去后，发现我的项目存在跨域问题… 完蛋，跨域。但是我看了一下，我其实是可以弄 nginx 反向代理的，于是我就去找我的 nginx 配置文件。最后找到个鸡儿，找了半天我在我另外一个服务器上找到了。我这个服务器就没下载。。。&lt;br&gt;
 那就下载呗。。。&lt;br&gt;
-虽然现在想想，我可以再写一个 node 代理服务器做跳板。可能还做不好，后面试一下！&lt;/p&gt;
-&lt;p&gt;如何下载？&lt;br&gt;
+虽然现在想想，我可以再写一个 node 代理服务器做跳板。可能还做不好，后面试一下！&lt;br&gt;
+ 如何下载？&lt;br&gt;
 我这里用到的是 CentOS 7, 然后百度的话是找到了一个好的安装教程 ===&amp;gt; &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubGludXhpZGMuY29tL0xpbnV4LzIwMTYtMDkvMTM0OTA3Lmh0bQ==&#34;&gt;https://www.linuxidc.com/Linux/2016-09/134907.htm&lt;/span&gt;&lt;br&gt;
  当我下载完，发现我去访问 我服务器的 80 端口，却发现连接不到，寄，然后本地 curl &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEyNy4wLjAuMTo4MA==&#34;&gt;http://127.0.0.1:80&lt;/span&gt; 一下发现，本地其实是没有问题的，那么，检测服务器端口其实是开启的， 然后上链接 https://segmentfault.com/a/1190000012297511&lt;br&gt;
  然后按上面那个教程配置了，我的页面也显示了，但是还是跨域…&lt;br&gt;
