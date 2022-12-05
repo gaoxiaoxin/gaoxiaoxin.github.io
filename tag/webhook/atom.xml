@@ -7,14 +7,13 @@
     <category term="小技巧" />
     <category term="uniapp" />
     <category term="微信小程序" />
+    <category term="后端" />
+    <category term="Express" />
     <category term="uView" />
     <category term="事件循环" />
     <category term="小知识" />
     <category term="进程和线程" />
-    <category term="后端" />
-    <category term="Express" />
     <category term="主题配置" />
-    <category term="webpack5" />
     <category term="docker" />
     <category term="nginx" />
     <category term="自动化部署" />
@@ -22,6 +21,7 @@
     <category term="Web安全" />
     <category term="webhook" />
     <category term="人生感悟" />
+    <category term="webpack5" />
     <category term="题解" />
     <entry>
         <id>https://gaoxiaoxin.github.io/2022/07/26/%E6%9D%82%E9%A1%B9/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E4%B9%A6webhook%E7%9B%91%E5%90%ACGitHub/</id>
