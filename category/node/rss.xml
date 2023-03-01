@@ -8,25 +8,25 @@
         <language>zh-CN</language>
         <pubDate>Sun, 04 Sep 2022 17:03:13 +0800</pubDate>
         <lastBuildDate>Sun, 04 Sep 2022 17:03:13 +0800</lastBuildDate>
-        <category>小技巧</category>
         <category>uniapp</category>
         <category>微信小程序</category>
-        <category>后端</category>
-        <category>Express</category>
+        <category>小技巧</category>
         <category>uView</category>
-        <category>事件循环</category>
         <category>小知识</category>
         <category>进程和线程</category>
+        <category>事件循环</category>
+        <category>后端</category>
+        <category>Express</category>
+        <category>webpack5</category>
         <category>主题配置</category>
-        <category>docker</category>
-        <category>nginx</category>
-        <category>自动化部署</category>
         <category>跨域</category>
         <category>Web安全</category>
         <category>webhook</category>
-        <category>人生感悟</category>
-        <category>webpack5</category>
         <category>题解</category>
+        <category>人生感悟</category>
+        <category>docker</category>
+        <category>nginx</category>
+        <category>自动化部署</category>
         <item>
             <guid isPermalink="true">https://gaoxiaoxin.github.io/2022/09/04/Node.js/express%E5%85%A5%E9%97%A82/</guid>
             <title>express项目入门（2）</title>
